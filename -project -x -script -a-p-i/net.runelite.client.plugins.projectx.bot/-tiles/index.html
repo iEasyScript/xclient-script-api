@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Tiles</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="../../../styles/theme.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    Project X Script API
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+3.0.1        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
+                        data-filter=":/main">jvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/main"
+                                       data-filter=":/main"/>
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+                <a class="navigation-controls--btn navigation-controls--btn_homepage" id="homepage-link"
+                   href="https://github.com/iEasyScript/xclient-script-api"></a>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    Project X Script API
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="Project X Script API::net.runelite.client.plugins.projectx.bot/Tiles///PointingToDeclaration//-251573632">
+  <div class="breadcrumbs"><a href="../../../index.html">Project X Script API</a><span class="delimiter">/</span><a href="../index.html">net.runelite.client.plugins.projectx.bot</a><span class="delimiter">/</span><span class="current">Tiles</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Tiles</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="index.html">Tiles</a><span class="token keyword"> implements </span><span data-unresolved-link="net.runelite.api/Tile///PointingToDeclaration/">Tile</span></div><p class="paragraph">Scene-grid helpers: walkability, reachability, local routes and the shared dangerous-tile tracker. </p><p class="paragraph">Every client read goes through one helper: inline when already on the client thread, otherwise through <code class="lang-java">ClientThread.invoke(Supplier)</code>, which waits up to 10 s and throws on timeout. With no client at all, each member returns its documented fallback. </p><p class="paragraph">The scene grid is 104 x 104; a scene position is in bounds when both coordinates are in 0..103.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="1235930045%2FConstructors%2F-251573632" anchor-label="Tiles" id="1235930045%2FConstructors%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tiles.html"><span><span>Tiles</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1235930045%2FConstructors%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>void <a href="-tiles.html"><span class="token function">Tiles</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Companion functions</h2>
+        <div class="table"><a data-name="-1906139185%2FFunctions%2F-251573632" anchor-label="addDangerousGameObjectTile" id="-1906139185%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-dangerous-game-object-tile.html"><span>add</span><wbr></wbr><span>Dangerous</span><wbr></wbr><span>Game</span><wbr></wbr><span>Object</span><wbr></wbr><span><span>Tile</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1906139185%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="add-dangerous-game-object-tile.html"><span class="token function">addDangerousGameObjectTile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/GameObject///PointingToDeclaration/">GameObject</span> gameObject<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int time</span></span><span class="token punctuation">)</span></div><div class="brief ">Marks a game object's tile as dangerous for <code class="lang-java">time</code> ms, dodging when stood on.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-398389969%2FFunctions%2F-251573632" anchor-label="addDangerousGraphicsObjectTile" id="-398389969%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-dangerous-graphics-object-tile.html"><span>add</span><wbr></wbr><span>Dangerous</span><wbr></wbr><span>Graphics</span><wbr></wbr><span>Object</span><wbr></wbr><span><span>Tile</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-398389969%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="add-dangerous-graphics-object-tile.html"><span class="token function">addDangerousGraphicsObjectTile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/GraphicsObject///PointingToDeclaration/">GraphicsObject</span> graphicsObject<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int time</span></span><span class="token punctuation">)</span></div><div class="brief ">Marks the tile under a graphics object as dangerous for <code class="lang-java">time</code> ms, and dodges when the player is standing on it.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="849834052%2FFunctions%2F-251573632" anchor-label="addDangerousGraphicsObjectTileForInstances" id="849834052%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-dangerous-graphics-object-tile-for-instances.html"><span>add</span><wbr></wbr><span>Dangerous</span><wbr></wbr><span>Graphics</span><wbr></wbr><span>Object</span><wbr></wbr><span>Tile</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Instances</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="849834052%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="add-dangerous-graphics-object-tile-for-instances.html"><span class="token function">addDangerousGraphicsObjectTileForInstances</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/GraphicsObject///PointingToDeclaration/">GraphicsObject</span> graphicsObject<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int time</span></span><span class="token punctuation">)</span></div><div class="brief ">Instance-aware variant: records both the template world point and the local point, ignores graphics more than 10 tiles from the player, and never dodges.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-115213232%2FFunctions%2F-251573632" anchor-label="areSurroundingTilesWalkable" id="-115213232%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="are-surrounding-tiles-walkable.html"><span>are</span><wbr></wbr><span>Surrounding</span><wbr></wbr><span>Tiles</span><wbr></wbr><span><span>Walkable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-115213232%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="are-surrounding-tiles-walkable.html"><span class="token function">areSurroundingTilesWalkable</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> worldPoint<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int sizeX<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int sizeY</span></span><span class="token punctuation">)</span></div><div class="brief ">Whether the player can reach any tile of the ring around a <code class="lang-java">sizeX</code> x <code class="lang-java">sizeY</code> footprint centred on <code class="lang-java">worldPoint</code>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-342317583%2FFunctions%2F-251573632" anchor-label="fullPathTo" id="-342317583%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="full-path-to.html"><span>full</span><wbr></wbr><span>Path</span><wbr></wbr><span><span>To</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-342317583%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Tile///PointingToDeclaration/">Tile</span><span class="token operator">&gt;</span> <a href="full-path-to.html"><span class="token function">fullPathTo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Tile///PointingToDeclaration/">Tile</span> source<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Tile///PointingToDeclaration/">Tile</span> other</span></span><span class="token punctuation">)</span></div><div class="brief ">Every tile of the local route from <code class="lang-java">source</code> (included) to the end point.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-998152066%2FFunctions%2F-251573632" anchor-label="getDangerousGraphicsObjectTiles" id="-998152066%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-dangerous-graphics-object-tiles.html"><span>get</span><wbr></wbr><span>Dangerous</span><wbr></wbr><span>Graphics</span><wbr></wbr><span>Object</span><wbr></wbr><span><span>Tiles</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-998152066%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> <a href="get-dangerous-graphics-object-tiles.html"><span class="token function">getDangerousGraphicsObjectTiles</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Read-only live view of the instance-adder tiles and their remaining milliseconds.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-424571603%2FFunctions%2F-251573632" anchor-label="getDangerousLocalTiles" id="-424571603%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-dangerous-local-tiles.html"><span>get</span><wbr></wbr><span>Dangerous</span><wbr></wbr><span>Local</span><wbr></wbr><span><span>Tiles</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-424571603%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/LocalPoint///PointingToDeclaration/">LocalPoint</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> <a href="get-dangerous-local-tiles.html"><span class="token function">getDangerousLocalTiles</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Read-only live view of the dangerous local points and their remaining milliseconds.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1817756003%2FFunctions%2F-251573632" anchor-label="getNearestWalkableTile" id="-1817756003%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-nearest-walkable-tile.html"><span>get</span><wbr></wbr><span>Nearest</span><wbr></wbr><span>Walkable</span><wbr></wbr><span><span>Tile</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1817756003%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="../-coordinate/index.html">Coordinate</a> <a href="get-nearest-walkable-tile.html"><span class="token function">getNearestWalkableTile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/GameObject///PointingToDeclaration/">GameObject</span> tileObject</span></span><span class="token punctuation">)</span></div><div class="brief ">The walkable tile around a game object nearest the player (by <a href="../-coordinate/quick-distance.html">quickDistance</a>), preferring tiles from which the object can be meleed.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> <a href="get-nearest-walkable-tile.html"><span class="token function">getNearestWalkableTile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> source</span></span><span class="token punctuation">)</span></div><div class="brief ">The first walkable cardinal neighbour of <code class="lang-java">source</code> (N, S, E, W) that is not the player's tile.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1915402579%2FFunctions%2F-251573632" anchor-label="getNearestWalkableTileWithLineOfSight" id="-1915402579%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-nearest-walkable-tile-with-line-of-sight.html"><span>get</span><wbr></wbr><span>Nearest</span><wbr></wbr><span>Walkable</span><wbr></wbr><span>Tile</span><wbr></wbr><span>With</span><wbr></wbr><span>Line</span><wbr></wbr><span>Of</span><wbr></wbr><span><span>Sight</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1915402579%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> <a href="get-nearest-walkable-tile-with-line-of-sight.html"><span class="token function">getNearestWalkableTileWithLineOfSight</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> source</span></span><span class="token punctuation">)</span></div><div class="brief "><code class="lang-java">source</code> or its first cardinal neighbour (N, S, E, W, not the player's tile) that has no wall object, a valid tile, and is walkable or holds a bank booth.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-729846507%2FFunctions%2F-251573632" anchor-label="getReachableTilesFromTile" id="-729846507%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-reachable-tiles-from-tile.html"><span>get</span><wbr></wbr><span>Reachable</span><wbr></wbr><span>Tiles</span><wbr></wbr><span>From</span><wbr></wbr><span><span>Tile</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-729846507%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html">HashMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> <a href="get-reachable-tiles-from-tile.html"><span class="token function">getReachableTilesFromTile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> tile</span></span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html">HashMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> <a href="get-reachable-tiles-from-tile.html"><span class="token function">getReachableTilesFromTile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> tile<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int distance</span></span><span class="token punctuation">)</span></div><br><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html">HashMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> <a href="get-reachable-tiles-from-tile.html"><span class="token function">getReachableTilesFromTile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> tile<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int distance<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean ignoreCollision</span></span><span class="token punctuation">)</span></div><div class="brief ">Breadth-first step counts from <code class="lang-java">tile</code> out to <code class="lang-java">distance</code> steps.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1817252752%2FFunctions%2F-251573632" anchor-label="getReachableTilesFromTileIgnoreCollision" id="-1817252752%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-reachable-tiles-from-tile-ignore-collision.html"><span>get</span><wbr></wbr><span>Reachable</span><wbr></wbr><span>Tiles</span><wbr></wbr><span>From</span><wbr></wbr><span>Tile</span><wbr></wbr><span>Ignore</span><wbr></wbr><span><span>Collision</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1817252752%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html">HashMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> <a href="get-reachable-tiles-from-tile-ignore-collision.html"><span class="token function">getReachableTilesFromTileIgnoreCollision</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> tile<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int distance</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-75933900%2FFunctions%2F-251573632" anchor-label="getSafeTile" id="-75933900%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-safe-tile.html"><span>get</span><wbr></wbr><span>Safe</span><wbr></wbr><span><span>Tile</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-75933900%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> <a href="get-safe-tile.html"><span class="token function">getSafeTile</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">The nearest safe tile within 4 tiles of the player, or null.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="325052544%2FFunctions%2F-251573632" anchor-label="getSafeTiles" id="325052544%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-safe-tiles.html"><span>get</span><wbr></wbr><span>Safe</span><wbr></wbr><span><span>Tiles</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="325052544%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span><span class="token operator">&gt;</span> <a href="get-safe-tiles.html"><span class="token function">getSafeTiles</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int radius</span></span><span class="token punctuation">)</span></div><div class="brief ">Walkable tiles around the player that are not dangerous, in walkable-scan order.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-482807348%2FFunctions%2F-251573632" anchor-label="getTile" id="-482807348%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-tile.html"><span>get</span><wbr></wbr><span><span>Tile</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-482807348%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api/Tile///PointingToDeclaration/">Tile</span> <a href="get-tile.html"><span class="token function">getTile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int x<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int y</span></span><span class="token punctuation">)</span></div><div class="brief ">The top-level scene tile at world (x, y) on the current plane, or null.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-505439400%2FFunctions%2F-251573632" anchor-label="getWalkableTilesAroundPlayer" id="-505439400%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-walkable-tiles-around-player.html"><span>get</span><wbr></wbr><span>Walkable</span><wbr></wbr><span>Tiles</span><wbr></wbr><span>Around</span><wbr></wbr><span><span>Player</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-505439400%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span><span class="token operator">&gt;</span> <a href="get-walkable-tiles-around-player.html"><span class="token function">getWalkableTilesAroundPlayer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int radius</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1060527619%2FFunctions%2F-251573632" anchor-label="getWalkableTilesAroundTile" id="1060527619%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-walkable-tiles-around-tile.html"><span>get</span><wbr></wbr><span>Walkable</span><wbr></wbr><span>Tiles</span><wbr></wbr><span>Around</span><wbr></wbr><span><span>Tile</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1060527619%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span><span class="token operator">&gt;</span> <a href="get-walkable-tiles-around-tile.html"><span class="token function">getWalkableTilesAroundTile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> point<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int radius</span></span><span class="token punctuation">)</span></div><div class="brief ">Walkable tiles in the square of <code class="lang-java">radius</code> around a scene-space point (the point itself excluded).</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1066538666%2FFunctions%2F-251573632" anchor-label="hoverOverTile" id="1066538666%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hover-over-tile.html"><span>hover</span><wbr></wbr><span>Over</span><wbr></wbr><span><span>Tile</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1066538666%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="hover-over-tile.html"><span class="token function">hoverOverTile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Tile///PointingToDeclaration/">Tile</span> tile</span></span><span class="token punctuation">)</span></div><div class="brief ">Moves the natural mouse over <code class="lang-java">tile</code> without clicking.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-928723157%2FFunctions%2F-251573632" anchor-label="init" id="-928723157%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="init.html"><span><span>init</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-928723157%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="init.html"><span class="token function">init</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Starts the background decay of dangerous tiles: every 600 ms (one tick) each entry loses 600 ms and expires at zero.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-91011696%2FFunctions%2F-251573632" anchor-label="isBankBooth" id="-91011696%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-bank-booth.html"><span>is</span><wbr></wbr><span>Bank</span><wbr></wbr><span><span>Booth</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-91011696%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-bank-booth.html"><span class="token function">isBankBooth</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> source</span></span><span class="token punctuation">)</span></div><div class="brief ">Whether the first game object on <code class="lang-java">source</code> is a bank booth.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1380543505%2FFunctions%2F-251573632" anchor-label="isGameObjectInteractableFromReachableTile" id="-1380543505%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-game-object-interactable-from-reachable-tile.html"><span>is</span><wbr></wbr><span>Game</span><wbr></wbr><span>Object</span><wbr></wbr><span>Interactable</span><wbr></wbr><span>From</span><wbr></wbr><span>Reachable</span><wbr></wbr><span><span>Tile</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1380543505%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-game-object-interactable-from-reachable-tile.html"><span class="token function">isGameObjectInteractableFromReachableTile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/GameObject///PointingToDeclaration/">GameObject</span> gameObject</span></span><span class="token punctuation">)</span></div><div class="brief ">Whether the player can interact with any tile of a game object's footprint from a tile they can reach, starting from the player's local scene position.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-499164965%2FFunctions%2F-251573632" anchor-label="isGameObjectReachable" id="-499164965%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-game-object-reachable.html"><span>is</span><wbr></wbr><span>Game</span><wbr></wbr><span>Object</span><wbr></wbr><span><span>Reachable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-499164965%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-game-object-reachable.html"><span class="token function">isGameObjectReachable</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/GameObject///PointingToDeclaration/">GameObject</span> gameObject</span></span><span class="token punctuation">)</span></div><div class="brief ">Whether the player can walk next to a game object's footprint.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2085150365%2FFunctions%2F-251573632" anchor-label="isTileObjectReachable" id="-2085150365%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-tile-object-reachable.html"><span>is</span><wbr></wbr><span>Tile</span><wbr></wbr><span>Object</span><wbr></wbr><span><span>Reachable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2085150365%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-tile-object-reachable.html"><span class="token function">isTileObjectReachable</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/TileObject///PointingToDeclaration/">TileObject</span> tileObject</span></span><span class="token punctuation">)</span></div><div class="brief ">Whether the player can interact with a tile object (walls use their orientation).</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1412024779%2FFunctions%2F-251573632" anchor-label="isTileReachable" id="1412024779%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-tile-reachable.html"><span>is</span><wbr></wbr><span>Tile</span><wbr></wbr><span><span>Reachable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1412024779%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-tile-reachable.html"><span class="token function">isTileReachable</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> targetPoint</span></span><span class="token punctuation">)</span></div><div class="brief ">Whether the player can walk to <code class="lang-java">targetPoint</code> (scene or template space).</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="858710828%2FFunctions%2F-251573632" anchor-label="isValidTile" id="858710828%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-valid-tile.html"><span>is</span><wbr></wbr><span>Valid</span><wbr></wbr><span><span>Tile</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="858710828%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-valid-tile.html"><span class="token function">isValidTile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Tile///PointingToDeclaration/">Tile</span> tile</span></span><span class="token punctuation">)</span></div><div class="brief ">Whether the tile's collision flags carry none of the movement bits.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="533131542%2FFunctions%2F-251573632" anchor-label="isWalkable" id="533131542%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-walkable.html"><span>is</span><wbr></wbr><span><span>Walkable</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="533131542%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-walkable.html"><span class="token function">isWalkable</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Tile///PointingToDeclaration/">Tile</span> tile</span></span><span class="token punctuation">)</span></div><div class="brief ">Whether the tile's scene position has no blocking object or floor.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-walkable.html"><span class="token function">isWalkable</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/LocalPoint///PointingToDeclaration/">LocalPoint</span> localPoint</span></span><span class="token punctuation">)</span></div><div class="brief ">Whether the scene tile of <code class="lang-java">localPoint</code> is walkable; false outside the scene.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-walkable.html"><span class="token function">isWalkable</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> worldPoint</span></span><span class="token punctuation">)</span></div><div class="brief ">Whether the point is walkable; it may be in scene or template space inside an instance.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1590251710%2FFunctions%2F-251573632" anchor-label="pathTo" id="-1590251710%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="path-to.html"><span>path</span><wbr></wbr><span><span>To</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1590251710%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Tile///PointingToDeclaration/">Tile</span><span class="token operator">&gt;</span> <a href="path-to.html"><span class="token function">pathTo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Tile///PointingToDeclaration/">Tile</span> source<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Tile///PointingToDeclaration/">Tile</span> other</span></span><span class="token punctuation">)</span></div><div class="brief ">The corner checkpoints of the local route, ending at the end point, at most 25 of them counted from the source end.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-128694311%2FFunctions%2F-251573632" anchor-label="tileHasWalls" id="-128694311%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="tile-has-walls.html"><span>tile</span><wbr></wbr><span>Has</span><wbr></wbr><span><span>Walls</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-128694311%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="tile-has-walls.html"><span class="token function">tileHasWalls</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> source</span></span><span class="token punctuation">)</span></div><div class="brief ">Whether a wall object sits exactly on <code class="lang-java">source</code>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="533317557%2FFunctions%2F-251573632" anchor-label="getBridge" id="533317557%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#533317557%2FFunctions%2F-251573632"><span>get</span><wbr></wbr><span><span>Bridge</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="533317557%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Tile///PointingToDeclaration/">Tile</span> <a href="index.html#533317557%2FFunctions%2F-251573632"><span class="token function">getBridge</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-993408545%2FFunctions%2F-251573632" anchor-label="getDecorativeObject" id="-993408545%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-993408545%2FFunctions%2F-251573632"><span>get</span><wbr></wbr><span>Decorative</span><wbr></wbr><span><span>Object</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-993408545%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/DecorativeObject///PointingToDeclaration/">DecorativeObject</span> <a href="index.html#-993408545%2FFunctions%2F-251573632"><span class="token function">getDecorativeObject</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1310264954%2FFunctions%2F-251573632" anchor-label="getGameObjects" id="1310264954%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1310264954%2FFunctions%2F-251573632"><span>get</span><wbr></wbr><span>Game</span><wbr></wbr><span><span>Objects</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1310264954%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/GameObject///PointingToDeclaration/">GameObject</span><span class="token operator">&gt;</span> <a href="index.html#1310264954%2FFunctions%2F-251573632"><span class="token function">getGameObjects</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-944161629%2FFunctions%2F-251573632" anchor-label="getGroundItems" id="-944161629%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-944161629%2FFunctions%2F-251573632"><span>get</span><wbr></wbr><span>Ground</span><wbr></wbr><span><span>Items</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-944161629%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/TileItem///PointingToDeclaration/">TileItem</span><span class="token operator">&gt;</span> <a href="index.html#-944161629%2FFunctions%2F-251573632"><span class="token function">getGroundItems</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1293311624%2FFunctions%2F-251573632" anchor-label="getGroundObject" id="-1293311624%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1293311624%2FFunctions%2F-251573632"><span>get</span><wbr></wbr><span>Ground</span><wbr></wbr><span><span>Object</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1293311624%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/GroundObject///PointingToDeclaration/">GroundObject</span> <a href="index.html#-1293311624%2FFunctions%2F-251573632"><span class="token function">getGroundObject</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1695853694%2FFunctions%2F-251573632" anchor-label="getItemLayer" id="1695853694%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1695853694%2FFunctions%2F-251573632"><span>get</span><wbr></wbr><span>Item</span><wbr></wbr><span><span>Layer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1695853694%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/ItemLayer///PointingToDeclaration/">ItemLayer</span> <a href="index.html#1695853694%2FFunctions%2F-251573632"><span class="token function">getItemLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-292824836%2FFunctions%2F-251573632" anchor-label="getLocalLocation" id="-292824836%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-292824836%2FFunctions%2F-251573632"><span>get</span><wbr></wbr><span>Local</span><wbr></wbr><span><span>Location</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-292824836%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/LocalPoint///PointingToDeclaration/">LocalPoint</span> <a href="index.html#-292824836%2FFunctions%2F-251573632"><span class="token function">getLocalLocation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2030603616%2FFunctions%2F-251573632" anchor-label="getPlane" id="2030603616%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#2030603616%2FFunctions%2F-251573632"><span>get</span><wbr></wbr><span><span>Plane</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2030603616%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span>int <a href="index.html#2030603616%2FFunctions%2F-251573632"><span class="token function">getPlane</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="214151470%2FFunctions%2F-251573632" anchor-label="getRenderLevel" id="214151470%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#214151470%2FFunctions%2F-251573632"><span>get</span><wbr></wbr><span>Render</span><wbr></wbr><span><span>Level</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="214151470%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span>int <a href="index.html#214151470%2FFunctions%2F-251573632"><span class="token function">getRenderLevel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="563218427%2FFunctions%2F-251573632" anchor-label="getSceneLocation" id="563218427%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#563218427%2FFunctions%2F-251573632"><span>get</span><wbr></wbr><span>Scene</span><wbr></wbr><span><span>Location</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="563218427%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Point///PointingToDeclaration/">Point</span> <a href="index.html#563218427%2FFunctions%2F-251573632"><span class="token function">getSceneLocation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-182829297%2FFunctions%2F-251573632" anchor-label="getSceneTileModel" id="-182829297%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-182829297%2FFunctions%2F-251573632"><span>get</span><wbr></wbr><span>Scene</span><wbr></wbr><span>Tile</span><wbr></wbr><span><span>Model</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-182829297%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/SceneTileModel///PointingToDeclaration/">SceneTileModel</span> <a href="index.html#-182829297%2FFunctions%2F-251573632"><span class="token function">getSceneTileModel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2071664506%2FFunctions%2F-251573632" anchor-label="getSceneTilePaint" id="2071664506%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#2071664506%2FFunctions%2F-251573632"><span>get</span><wbr></wbr><span>Scene</span><wbr></wbr><span>Tile</span><wbr></wbr><span><span>Paint</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2071664506%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/SceneTilePaint///PointingToDeclaration/">SceneTilePaint</span> <a href="index.html#2071664506%2FFunctions%2F-251573632"><span class="token function">getSceneTilePaint</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="333632789%2FFunctions%2F-251573632" anchor-label="getWallObject" id="333632789%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#333632789%2FFunctions%2F-251573632"><span>get</span><wbr></wbr><span>Wall</span><wbr></wbr><span><span>Object</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="333632789%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/WallObject///PointingToDeclaration/">WallObject</span> <a href="index.html#333632789%2FFunctions%2F-251573632"><span class="token function">getWallObject</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1864302005%2FFunctions%2F-251573632" anchor-label="getWorldLocation" id="1864302005%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1864302005%2FFunctions%2F-251573632"><span>get</span><wbr></wbr><span>World</span><wbr></wbr><span><span>Location</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1864302005%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> <a href="index.html#1864302005%2FFunctions%2F-251573632"><span class="token function">getWorldLocation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1044115225%2FFunctions%2F-251573632" anchor-label="setGroundObject" id="-1044115225%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1044115225%2FFunctions%2F-251573632"><span>set</span><wbr></wbr><span>Ground</span><wbr></wbr><span><span>Object</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1044115225%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span>void <a href="index.html#-1044115225%2FFunctions%2F-251573632"><span class="token function">setGroundObject</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/GroundObject///PointingToDeclaration/">GroundObject</span> p</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-499623417%2FFunctions%2F-251573632" anchor-label="setSceneTileModel" id="-499623417%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-499623417%2FFunctions%2F-251573632"><span>set</span><wbr></wbr><span>Scene</span><wbr></wbr><span>Tile</span><wbr></wbr><span><span>Model</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-499623417%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span>void <a href="index.html#-499623417%2FFunctions%2F-251573632"><span class="token function">setSceneTileModel</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/SceneTileModel///PointingToDeclaration/">SceneTileModel</span> p</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1894329191%2FFunctions%2F-251573632" anchor-label="setSceneTilePaint" id="1894329191%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1894329191%2FFunctions%2F-251573632"><span>set</span><wbr></wbr><span>Scene</span><wbr></wbr><span>Tile</span><wbr></wbr><span><span>Paint</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1894329191%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span>void <a href="index.html#1894329191%2FFunctions%2F-251573632"><span class="token function">setSceneTilePaint</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/SceneTilePaint///PointingToDeclaration/">SceneTilePaint</span> p</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Project X Script API 3.0.1 · client 2.12.0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

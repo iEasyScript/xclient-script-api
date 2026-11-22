@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>CombatSpells</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="../../../styles/theme.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    Project X Script API
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+3.0.1        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
+                        data-filter=":/main">jvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/main"
+                                       data-filter=":/main"/>
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+                <a class="navigation-controls--btn navigation-controls--btn_homepage" id="homepage-link"
+                   href="https://github.com/iEasyScript/xclient-script-api"></a>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    Project X Script API
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="Project X Script API::net.runelite.client.plugins.projectx.bot/CombatSpells///PointingToDeclaration//-251573632">
+  <div class="breadcrumbs"><a href="../../../index.html">Project X Script API</a><span class="delimiter">/</span><a href="../index.html">net.runelite.client.plugins.projectx.bot</a><span class="delimiter">/</span><span class="current">CombatSpells</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Combat</span><wbr></wbr><span><span>Spells</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">enum </span><a href="index.html">CombatSpells</a><span class="token keyword"> implements </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.magic/Spell///PointingToDeclaration/">Spell</span></div><p class="paragraph">Combat (autocast) spells.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="ENTRY">Entries</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="ENTRY">
+        <h2 class="tableheader">Entries</h2>
+        <div class="table"><a data-name="-719564279%2FClasslikes%2F-251573632" anchor-label="WIND_STRIKE" id="-719564279%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-i-n-d_-s-t-r-i-k-e/index.html">WIND_STRIKE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-719564279%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-w-i-n-d_-s-t-r-i-k-e/index.html">WIND_STRIKE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-547160286%2FClasslikes%2F-251573632" anchor-label="WATER_STRIKE" id="-547160286%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-a-t-e-r_-s-t-r-i-k-e/index.html">WATER_STRIKE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-547160286%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-w-a-t-e-r_-s-t-r-i-k-e/index.html">WATER_STRIKE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="330032079%2FClasslikes%2F-251573632" anchor-label="EARTH_STRIKE" id="330032079%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-e-a-r-t-h_-s-t-r-i-k-e/index.html">EARTH_STRIKE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="330032079%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-e-a-r-t-h_-s-t-r-i-k-e/index.html">EARTH_STRIKE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1469867877%2FClasslikes%2F-251573632" anchor-label="FIRE_STRIKE" id="-1469867877%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-i-r-e_-s-t-r-i-k-e/index.html">FIRE_STRIKE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1469867877%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-f-i-r-e_-s-t-r-i-k-e/index.html">FIRE_STRIKE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1909583252%2FClasslikes%2F-251573632" anchor-label="WIND_BOLT" id="-1909583252%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-i-n-d_-b-o-l-t/index.html">WIND_BOLT</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1909583252%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-w-i-n-d_-b-o-l-t/index.html">WIND_BOLT</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-666947131%2FClasslikes%2F-251573632" anchor-label="WATER_BOLT" id="-666947131%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-a-t-e-r_-b-o-l-t/index.html">WATER_BOLT</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-666947131%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-w-a-t-e-r_-b-o-l-t/index.html">WATER_BOLT</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1528603214%2FClasslikes%2F-251573632" anchor-label="EARTH_BOLT" id="-1528603214%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-e-a-r-t-h_-b-o-l-t/index.html">EARTH_BOLT</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1528603214%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-e-a-r-t-h_-b-o-l-t/index.html">EARTH_BOLT</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2103039358%2FClasslikes%2F-251573632" anchor-label="FIRE_BOLT" id="2103039358%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-i-r-e_-b-o-l-t/index.html">FIRE_BOLT</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2103039358%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-f-i-r-e_-b-o-l-t/index.html">FIRE_BOLT</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1573093577%2FClasslikes%2F-251573632" anchor-label="WIND_BLAST" id="1573093577%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-i-n-d_-b-l-a-s-t/index.html">WIND_BLAST</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1573093577%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-w-i-n-d_-b-l-a-s-t/index.html">WIND_BLAST</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1440107664%2FClasslikes%2F-251573632" anchor-label="WATER_BLAST" id="1440107664%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-a-t-e-r_-b-l-a-s-t/index.html">WATER_BLAST</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1440107664%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-w-a-t-e-r_-b-l-a-s-t/index.html">WATER_BLAST</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="498572867%2FClasslikes%2F-251573632" anchor-label="EARTH_BLAST" id="498572867%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-e-a-r-t-h_-b-l-a-s-t/index.html">EARTH_BLAST</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="498572867%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-e-a-r-t-h_-b-l-a-s-t/index.html">EARTH_BLAST</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1410342903%2FClasslikes%2F-251573632" anchor-label="FIRE_BLAST" id="1410342903%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-i-r-e_-b-l-a-s-t/index.html">FIRE_BLAST</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1410342903%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-f-i-r-e_-b-l-a-s-t/index.html">FIRE_BLAST</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-734006320%2FClasslikes%2F-251573632" anchor-label="WIND_WAVE" id="-734006320%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-i-n-d_-w-a-v-e/index.html">WIND_WAVE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-734006320%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-w-i-n-d_-w-a-v-e/index.html">WIND_WAVE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="508629801%2FClasslikes%2F-251573632" anchor-label="WATER_WAVE" id="508629801%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-a-t-e-r_-w-a-v-e/index.html">WATER_WAVE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="508629801%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-w-a-t-e-r_-w-a-v-e/index.html">WATER_WAVE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-353026282%2FClasslikes%2F-251573632" anchor-label="EARTH_WAVE" id="-353026282%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-e-a-r-t-h_-w-a-v-e/index.html">EARTH_WAVE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-353026282%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-e-a-r-t-h_-w-a-v-e/index.html">EARTH_WAVE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1016351006%2FClasslikes%2F-251573632" anchor-label="FIRE_WAVE" id="-1016351006%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-i-r-e_-w-a-v-e/index.html">FIRE_WAVE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1016351006%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-f-i-r-e_-w-a-v-e/index.html">FIRE_WAVE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1311122561%2FClasslikes%2F-251573632" anchor-label="WIND_SURGE" id="-1311122561%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-i-n-d_-s-u-r-g-e/index.html">WIND_SURGE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1311122561%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-w-i-n-d_-s-u-r-g-e/index.html">WIND_SURGE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1444108474%2FClasslikes%2F-251573632" anchor-label="WATER_SURGE" id="-1444108474%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-w-a-t-e-r_-s-u-r-g-e/index.html">WATER_SURGE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1444108474%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-w-a-t-e-r_-s-u-r-g-e/index.html">WATER_SURGE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1909324025%2FClasslikes%2F-251573632" anchor-label="EARTH_SURGE" id="1909324025%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-e-a-r-t-h_-s-u-r-g-e/index.html">EARTH_SURGE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1909324025%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-e-a-r-t-h_-s-u-r-g-e/index.html">EARTH_SURGE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1473873235%2FClasslikes%2F-251573632" anchor-label="FIRE_SURGE" id="-1473873235%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-i-r-e_-s-u-r-g-e/index.html">FIRE_SURGE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1473873235%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-f-i-r-e_-s-u-r-g-e/index.html">FIRE_SURGE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1767255952%2FClasslikes%2F-251573632" anchor-label="SMOKE_RUSH" id="-1767255952%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-m-o-k-e_-r-u-s-h/index.html">SMOKE_RUSH</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1767255952%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-s-m-o-k-e_-r-u-s-h/index.html">SMOKE_RUSH</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-544731817%2FClasslikes%2F-251573632" anchor-label="SHADOW_RUSH" id="-544731817%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-h-a-d-o-w_-r-u-s-h/index.html">SHADOW_RUSH</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-544731817%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-s-h-a-d-o-w_-r-u-s-h/index.html">SHADOW_RUSH</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1141296123%2FClasslikes%2F-251573632" anchor-label="BLOOD_RUSH" id="-1141296123%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-l-o-o-d_-r-u-s-h/index.html">BLOOD_RUSH</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1141296123%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-b-l-o-o-d_-r-u-s-h/index.html">BLOOD_RUSH</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1942694188%2FClasslikes%2F-251573632" anchor-label="ICE_RUSH" id="-1942694188%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-c-e_-r-u-s-h/index.html">ICE_RUSH</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1942694188%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-i-c-e_-r-u-s-h/index.html">ICE_RUSH</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="960587280%2FClasslikes%2F-251573632" anchor-label="SMOKE_BURST" id="960587280%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-m-o-k-e_-b-u-r-s-t/index.html">SMOKE_BURST</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="960587280%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-s-m-o-k-e_-b-u-r-s-t/index.html">SMOKE_BURST</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="204129801%2FClasslikes%2F-251573632" anchor-label="SHADOW_BURST" id="204129801%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-h-a-d-o-w_-b-u-r-s-t/index.html">SHADOW_BURST</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="204129801%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-s-h-a-d-o-w_-b-u-r-s-t/index.html">SHADOW_BURST</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1109494501%2FClasslikes%2F-251573632" anchor-label="BLOOD_BURST" id="-1109494501%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-l-o-o-d_-b-u-r-s-t/index.html">BLOOD_BURST</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1109494501%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-b-l-o-o-d_-b-u-r-s-t/index.html">BLOOD_BURST</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-183030740%2FClasslikes%2F-251573632" anchor-label="ICE_BURST" id="-183030740%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-c-e_-b-u-r-s-t/index.html">ICE_BURST</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-183030740%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-i-c-e_-b-u-r-s-t/index.html">ICE_BURST</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1554785707%2FClasslikes%2F-251573632" anchor-label="SMOKE_BLITZ" id="-1554785707%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-m-o-k-e_-b-l-i-t-z/index.html">SMOKE_BLITZ</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1554785707%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-s-m-o-k-e_-b-l-i-t-z/index.html">SMOKE_BLITZ</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1983724110%2FClasslikes%2F-251573632" anchor-label="SHADOW_BLITZ" id="1983724110%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-h-a-d-o-w_-b-l-i-t-z/index.html">SHADOW_BLITZ</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1983724110%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-s-h-a-d-o-w_-b-l-i-t-z/index.html">SHADOW_BLITZ</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="670099808%2FClasslikes%2F-251573632" anchor-label="BLOOD_BLITZ" id="670099808%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-l-o-o-d_-b-l-i-t-z/index.html">BLOOD_BLITZ</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="670099808%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-b-l-o-o-d_-b-l-i-t-z/index.html">BLOOD_BLITZ</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1596563569%2FClasslikes%2F-251573632" anchor-label="ICE_BLITZ" id="1596563569%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-c-e_-b-l-i-t-z/index.html">ICE_BLITZ</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1596563569%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-i-c-e_-b-l-i-t-z/index.html">ICE_BLITZ</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="910510032%2FClasslikes%2F-251573632" anchor-label="SMOKE_BARRAGE" id="910510032%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-m-o-k-e_-b-a-r-r-a-g-e/index.html">SMOKE_BARRAGE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="910510032%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-s-m-o-k-e_-b-a-r-r-a-g-e/index.html">SMOKE_BARRAGE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-195654263%2FClasslikes%2F-251573632" anchor-label="SHADOW_BARRAGE" id="-195654263%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-h-a-d-o-w_-b-a-r-r-a-g-e/index.html">SHADOW_BARRAGE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-195654263%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-s-h-a-d-o-w_-b-a-r-r-a-g-e/index.html">SHADOW_BARRAGE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="131776539%2FClasslikes%2F-251573632" anchor-label="BLOOD_BARRAGE" id="131776539%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-l-o-o-d_-b-a-r-r-a-g-e/index.html">BLOOD_BARRAGE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="131776539%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-b-l-o-o-d_-b-a-r-r-a-g-e/index.html">BLOOD_BARRAGE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1405220588%2FClasslikes%2F-251573632" anchor-label="ICE_BARRAGE" id="1405220588%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-c-e_-b-a-r-r-a-g-e/index.html">ICE_BARRAGE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1405220588%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-i-c-e_-b-a-r-r-a-g-e/index.html">ICE_BARRAGE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Companion functions</h2>
+        <div class="table"><a data-name="-306116477%2FFunctions%2F-251573632" anchor-label="convertRequiredRunes" id="-306116477%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-306116477%2FFunctions%2F-251573632"><span>convert</span><wbr></wbr><span>Required</span><wbr></wbr><span><span>Runes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-306116477%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> <a href="index.html#-306116477%2FFunctions%2F-251573632"><span class="token function">convertRequiredRunes</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.magic/Runes///PointingToDeclaration/">Runes</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> map</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-21517240%2FFunctions%2F-251573632" anchor-label="valueOf" id="-21517240%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="value-of.html"><span>value</span><wbr></wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-21517240%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="index.html">CombatSpells</a> <a href="value-of.html"><span class="token function">valueOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> name</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Returns the enum constant of this type with the specified name. The string must match exactly an identifier used to declare an enum constant in this type. (Extraneous whitespace characters are not permitted.)</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1027397239%2FFunctions%2F-251573632" anchor-label="values" id="-1027397239%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="values.html"><span><span>values</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1027397239%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">CombatSpells</a><span class="token operator">&gt;</span> <a href="values.html"><span class="token function">values</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Returns an array containing the constants of this enum type, in the order they're declared. This method may be used to iterate over the constants.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="-1079360913%2FProperties%2F-251573632" anchor-label="magicAction" id="-1079360913%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1079360913%2FProperties%2F-251573632"><span>magic</span><wbr></wbr><span><span>Action</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1079360913%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.skillcalculator.skills/MagicAction///PointingToDeclaration/">MagicAction</span> <a href="index.html#-1079360913%2FProperties%2F-251573632">magicAction</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="615562653%2FProperties%2F-251573632" anchor-label="name" id="615562653%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#615562653%2FProperties%2F-251573632"><span><span>name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="615562653%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> <a href="index.html#615562653%2FProperties%2F-251573632">name</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1464007027%2FProperties%2F-251573632" anchor-label="requiredLevel" id="-1464007027%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1464007027%2FProperties%2F-251573632"><span>required</span><wbr></wbr><span><span>Level</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1464007027%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span>int <a href="index.html#-1464007027%2FProperties%2F-251573632">requiredLevel</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1406263903%2FProperties%2F-251573632" anchor-label="spellbook" id="-1406263903%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1406263903%2FProperties%2F-251573632"><span><span>spellbook</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1406263903%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="../-spellbooks/index.html">Spellbooks</a> <a href="index.html#-1406263903%2FProperties%2F-251573632">spellbook</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1625214247%2FProperties%2F-251573632" anchor-label="varbitValue" id="1625214247%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1625214247%2FProperties%2F-251573632"><span>varbit</span><wbr></wbr><span><span>Value</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1625214247%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="index.html#1625214247%2FProperties%2F-251573632">varbitValue</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="1236506410%2FFunctions%2F-251573632" anchor-label="getMagicAction" id="1236506410%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-magic-action.html"><span>get</span><wbr></wbr><span>Magic</span><wbr></wbr><span><span>Action</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1236506410%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.skillcalculator.skills/MagicAction///PointingToDeclaration/">MagicAction</span> <a href="get-magic-action.html"><span class="token function">getMagicAction</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.skillcalculator.skills/MagicAction///PointingToDeclaration/">MagicAction</span> <a href="index.html#2023393371%2FFunctions%2F-251573632"><span class="token function">getMagicAction</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1517552113%2FFunctions%2F-251573632" anchor-label="getName" id="1517552113%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-name.html"><span>get</span><wbr></wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1517552113%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> <a href="get-name.html"><span class="token function">getName</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1594991706%2FFunctions%2F-251573632" anchor-label="getRequiredLevel" id="-1594991706%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-required-level.html"><span>get</span><wbr></wbr><span>Required</span><wbr></wbr><span><span>Level</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1594991706%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>int <a href="get-required-level.html"><span class="token function">getRequiredLevel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span>int <a href="index.html#-424443527%2FFunctions%2F-251573632"><span class="token function">getRequiredLevel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="133347684%2FFunctions%2F-251573632" anchor-label="getRequiredRunes" id="133347684%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-required-runes.html"><span>get</span><wbr></wbr><span>Required</span><wbr></wbr><span><span>Runes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="133347684%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html">HashMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.magic/Runes///PointingToDeclaration/">Runes</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> <a href="get-required-runes.html"><span class="token function">getRequiredRunes</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1310434738%2FFunctions%2F-251573632" anchor-label="getSpellbook" id="-1310434738%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-spellbook.html"><span>get</span><wbr></wbr><span><span>Spellbook</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1310434738%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="../-spellbooks/index.html">Spellbooks</a> <a href="get-spellbook.html"><span class="token function">getSpellbook</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span><a href="../-spellbooks/index.html">Spellbooks</a> <a href="index.html#1510928013%2FFunctions%2F-251573632"><span class="token function">getSpellbook</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1618361773%2FFunctions%2F-251573632" anchor-label="getVarbitValue" id="-1618361773%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-varbit-value.html"><span>get</span><wbr></wbr><span>Varbit</span><wbr></wbr><span><span>Value</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1618361773%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="get-varbit-value.html"><span class="token function">getVarbitValue</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1306194365%2FFunctions%2F-251573632" anchor-label="hasRequiredLevel" id="1306194365%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1306194365%2FFunctions%2F-251573632"><span>has</span><wbr></wbr><span>Required</span><wbr></wbr><span><span>Level</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1306194365%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>boolean <a href="index.html#1306194365%2FFunctions%2F-251573632"><span class="token function">hasRequiredLevel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1443122128%2FFunctions%2F-251573632" anchor-label="hasRequiredSpellbook" id="1443122128%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1443122128%2FFunctions%2F-251573632"><span>has</span><wbr></wbr><span>Required</span><wbr></wbr><span><span>Spellbook</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1443122128%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>boolean <a href="index.html#1443122128%2FFunctions%2F-251573632"><span class="token function">hasRequiredSpellbook</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-901046520%2FFunctions%2F-251573632" anchor-label="hasRequirements" id="-901046520%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-901046520%2FFunctions%2F-251573632"><span>has</span><wbr></wbr><span><span>Requirements</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-901046520%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>boolean <a href="index.html#-901046520%2FFunctions%2F-251573632"><span class="token function">hasRequirements</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Project X Script API 3.0.1 · client 2.12.0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

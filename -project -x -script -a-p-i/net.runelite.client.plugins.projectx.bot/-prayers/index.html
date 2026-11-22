@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Prayers</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="../../../styles/theme.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    Project X Script API
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+3.0.1        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
+                        data-filter=":/main">jvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/main"
+                                       data-filter=":/main"/>
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+                <a class="navigation-controls--btn navigation-controls--btn_homepage" id="homepage-link"
+                   href="https://github.com/iEasyScript/xclient-script-api"></a>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    Project X Script API
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="Project X Script API::net.runelite.client.plugins.projectx.bot/Prayers///PointingToDeclaration//-251573632">
+  <div class="breadcrumbs"><a href="../../../index.html">Project X Script API</a><span class="delimiter">/</span><a href="../index.html">net.runelite.client.plugins.projectx.bot</a><span class="delimiter">/</span><span class="current">Prayers</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Prayers</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">enum </span><a href="index.html">Prayers</a></div><p class="paragraph">Prayers: turn them on and off, check points, quick prayers, flicking. </p><div class="sample-container"><pre><code class="block lang-java" theme="idea">
+Prayers.toggle(Prayers.PROTECT_MELEE, true);
+if (Prayers.isPrayerActive(Prayers.PIETY)) { ... }
+</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div><p class="paragraph">Each constant is a prayer (<code class="lang-java">Prayers.PIETY</code>); the static methods act on them. Named <code class="lang-java">Prayers</code> so it does not clash with RuneLite's <code class="lang-java">net.runelite.api.Prayer</code>.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="ENTRY">Entries</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="ENTRY">
+        <h2 class="tableheader">Entries</h2>
+        <div class="table"><a data-name="-1853364720%2FClasslikes%2F-251573632" anchor-label="THICK_SKIN" id="-1853364720%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-t-h-i-c-k_-s-k-i-n/index.html">THICK_SKIN</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1853364720%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-t-h-i-c-k_-s-k-i-n/index.html">THICK_SKIN</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1506939761%2FClasslikes%2F-251573632" anchor-label="BURST_STRENGTH" id="1506939761%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-u-r-s-t_-s-t-r-e-n-g-t-h/index.html">BURST_STRENGTH</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1506939761%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-b-u-r-s-t_-s-t-r-e-n-g-t-h/index.html">BURST_STRENGTH</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1043889115%2FClasslikes%2F-251573632" anchor-label="CLARITY_THOUGHT" id="-1043889115%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c-l-a-r-i-t-y_-t-h-o-u-g-h-t/index.html">CLARITY_THOUGHT</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1043889115%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-c-l-a-r-i-t-y_-t-h-o-u-g-h-t/index.html">CLARITY_THOUGHT</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1253775699%2FClasslikes%2F-251573632" anchor-label="SHARP_EYE" id="1253775699%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-h-a-r-p_-e-y-e/index.html">SHARP_EYE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1253775699%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-s-h-a-r-p_-e-y-e/index.html">SHARP_EYE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="516779553%2FClasslikes%2F-251573632" anchor-label="MYSTIC_WILL" id="516779553%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-m-y-s-t-i-c_-w-i-l-l/index.html">MYSTIC_WILL</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="516779553%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-m-y-s-t-i-c_-w-i-l-l/index.html">MYSTIC_WILL</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1019478542%2FClasslikes%2F-251573632" anchor-label="ROCK_SKIN" id="1019478542%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-o-c-k_-s-k-i-n/index.html">ROCK_SKIN</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1019478542%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-r-o-c-k_-s-k-i-n/index.html">ROCK_SKIN</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-59199163%2FClasslikes%2F-251573632" anchor-label="SUPERHUMAN_STRENGTH" id="-59199163%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-u-p-e-r-h-u-m-a-n_-s-t-r-e-n-g-t-h/index.html">SUPERHUMAN_STRENGTH</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-59199163%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-s-u-p-e-r-h-u-m-a-n_-s-t-r-e-n-g-t-h/index.html">SUPERHUMAN_STRENGTH</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="83475396%2FClasslikes%2F-251573632" anchor-label="IMPROVED_REFLEXES" id="83475396%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-m-p-r-o-v-e-d_-r-e-f-l-e-x-e-s/index.html">IMPROVED_REFLEXES</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="83475396%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-i-m-p-r-o-v-e-d_-r-e-f-l-e-x-e-s/index.html">IMPROVED_REFLEXES</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="447209858%2FClasslikes%2F-251573632" anchor-label="RAPID_RESTORE" id="447209858%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-a-p-i-d_-r-e-s-t-o-r-e/index.html">RAPID_RESTORE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="447209858%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-r-a-p-i-d_-r-e-s-t-o-r-e/index.html">RAPID_RESTORE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-107315332%2FClasslikes%2F-251573632" anchor-label="RAPID_HEAL" id="-107315332%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-a-p-i-d_-h-e-a-l/index.html">RAPID_HEAL</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-107315332%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-r-a-p-i-d_-h-e-a-l/index.html">RAPID_HEAL</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="683192692%2FClasslikes%2F-251573632" anchor-label="PROTECT_ITEM" id="683192692%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-r-o-t-e-c-t_-i-t-e-m/index.html">PROTECT_ITEM</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="683192692%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-p-r-o-t-e-c-t_-i-t-e-m/index.html">PROTECT_ITEM</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-995934032%2FClasslikes%2F-251573632" anchor-label="HAWK_EYE" id="-995934032%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-h-a-w-k_-e-y-e/index.html">HAWK_EYE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-995934032%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-h-a-w-k_-e-y-e/index.html">HAWK_EYE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1979335099%2FClasslikes%2F-251573632" anchor-label="MYSTIC_LORE" id="-1979335099%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-m-y-s-t-i-c_-l-o-r-e/index.html">MYSTIC_LORE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1979335099%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-m-y-s-t-i-c_-l-o-r-e/index.html">MYSTIC_LORE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-663248606%2FClasslikes%2F-251573632" anchor-label="STEEL_SKIN" id="-663248606%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-t-e-e-l_-s-k-i-n/index.html">STEEL_SKIN</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-663248606%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-s-t-e-e-l_-s-k-i-n/index.html">STEEL_SKIN</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-445028506%2FClasslikes%2F-251573632" anchor-label="ULTIMATE_STRENGTH" id="-445028506%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-u-l-t-i-m-a-t-e_-s-t-r-e-n-g-t-h/index.html">ULTIMATE_STRENGTH</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-445028506%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-u-l-t-i-m-a-t-e_-s-t-r-e-n-g-t-h/index.html">ULTIMATE_STRENGTH</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="235808267%2FClasslikes%2F-251573632" anchor-label="INCREDIBLE_REFLEXES" id="235808267%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-n-c-r-e-d-i-b-l-e_-r-e-f-l-e-x-e-s/index.html">INCREDIBLE_REFLEXES</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="235808267%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-i-n-c-r-e-d-i-b-l-e_-r-e-f-l-e-x-e-s/index.html">INCREDIBLE_REFLEXES</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1295688716%2FClasslikes%2F-251573632" anchor-label="PROTECT_MAGIC" id="-1295688716%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-r-o-t-e-c-t_-m-a-g-i-c/index.html">PROTECT_MAGIC</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1295688716%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-p-r-o-t-e-c-t_-m-a-g-i-c/index.html">PROTECT_MAGIC</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1530818684%2FClasslikes%2F-251573632" anchor-label="PROTECT_RANGE" id="-1530818684%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-r-o-t-e-c-t_-r-a-n-g-e/index.html">PROTECT_RANGE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1530818684%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-p-r-o-t-e-c-t_-r-a-n-g-e/index.html">PROTECT_RANGE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1580460677%2FClasslikes%2F-251573632" anchor-label="PROTECT_MELEE" id="-1580460677%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-r-o-t-e-c-t_-m-e-l-e-e/index.html">PROTECT_MELEE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1580460677%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-p-r-o-t-e-c-t_-m-e-l-e-e/index.html">PROTECT_MELEE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1804601107%2FClasslikes%2F-251573632" anchor-label="EAGLE_EYE" id="-1804601107%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-e-a-g-l-e_-e-y-e/index.html">EAGLE_EYE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1804601107%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-e-a-g-l-e_-e-y-e/index.html">EAGLE_EYE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1695920583%2FClasslikes%2F-251573632" anchor-label="DEAD_EYE" id="1695920583%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-e-a-d_-e-y-e/index.html">DEAD_EYE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1695920583%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-d-e-a-d_-e-y-e/index.html">DEAD_EYE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-896449808%2FClasslikes%2F-251573632" anchor-label="MYSTIC_MIGHT" id="-896449808%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-m-y-s-t-i-c_-m-i-g-h-t/index.html">MYSTIC_MIGHT</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-896449808%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-m-y-s-t-i-c_-m-i-g-h-t/index.html">MYSTIC_MIGHT</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1307363385%2FClasslikes%2F-251573632" anchor-label="MYSTIC_VIGOUR" id="-1307363385%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-m-y-s-t-i-c_-v-i-g-o-u-r/index.html">MYSTIC_VIGOUR</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1307363385%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-m-y-s-t-i-c_-v-i-g-o-u-r/index.html">MYSTIC_VIGOUR</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-915520618%2FClasslikes%2F-251573632" anchor-label="RETRIBUTION" id="-915520618%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-e-t-r-i-b-u-t-i-o-n/index.html">RETRIBUTION</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-915520618%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-r-e-t-r-i-b-u-t-i-o-n/index.html">RETRIBUTION</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1796580924%2FClasslikes%2F-251573632" anchor-label="REDEMPTION" id="1796580924%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-e-d-e-m-p-t-i-o-n/index.html">REDEMPTION</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1796580924%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-r-e-d-e-m-p-t-i-o-n/index.html">REDEMPTION</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1762992233%2FClasslikes%2F-251573632" anchor-label="SMITE" id="-1762992233%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-m-i-t-e/index.html">SMITE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1762992233%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-s-m-i-t-e/index.html">SMITE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1742520867%2FClasslikes%2F-251573632" anchor-label="PRESERVE" id="-1742520867%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-r-e-s-e-r-v-e/index.html">PRESERVE</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1742520867%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-p-r-e-s-e-r-v-e/index.html">PRESERVE</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1410288491%2FClasslikes%2F-251573632" anchor-label="CHIVALRY" id="-1410288491%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c-h-i-v-a-l-r-y/index.html">CHIVALRY</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1410288491%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-c-h-i-v-a-l-r-y/index.html">CHIVALRY</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-449988376%2FClasslikes%2F-251573632" anchor-label="PIETY" id="-449988376%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-i-e-t-y/index.html">PIETY</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-449988376%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-p-i-e-t-y/index.html">PIETY</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2127362291%2FClasslikes%2F-251573632" anchor-label="RIGOUR" id="-2127362291%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-i-g-o-u-r/index.html">RIGOUR</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2127362291%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-r-i-g-o-u-r/index.html">RIGOUR</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-601912326%2FClasslikes%2F-251573632" anchor-label="AUGURY" id="-601912326%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="ENTRY" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-u-g-u-r-y/index.html">AUGURY</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-601912326%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-a-u-g-u-r-y/index.html">AUGURY</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Companion functions</h2>
+        <div class="table"><a data-name="1318795412%2FFunctions%2F-251573632" anchor-label="disableAllPrayers" id="1318795412%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="disable-all-prayers.html"><span>disable</span><wbr></wbr><span>All</span><wbr></wbr><span><span>Prayers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1318795412%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="disable-all-prayers.html"><span class="token function">disableAllPrayers</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="disable-all-prayers.html"><span class="token function">disableAllPrayers</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean withMouse</span></span><span class="token punctuation">)</span></div><div class="brief ">Disables all active prayers.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1406214159%2FFunctions%2F-251573632" anchor-label="disableAllPrayersExcept" id="-1406214159%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="disable-all-prayers-except.html"><span>disable</span><wbr></wbr><span>All</span><wbr></wbr><span>Prayers</span><wbr></wbr><span><span>Except</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1406214159%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="disable-all-prayers-except.html"><span class="token function">disableAllPrayersExcept</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">Prayers</a><span class="token operator">&gt;</span> prayersToKeep</span></span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="disable-all-prayers-except.html"><span class="token function">disableAllPrayersExcept</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">Prayers</a><span class="token operator">&gt;</span> prayersToKeep<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean withMouse</span></span><span class="token punctuation">)</span></div><div class="brief ">Disables all active prayers except the ones specified in the array.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-235032943%2FFunctions%2F-251573632" anchor-label="enablePrayers" id="-235032943%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enable-prayers.html"><span>enable</span><wbr></wbr><span><span>Prayers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-235032943%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="enable-prayers.html"><span class="token function">enablePrayers</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">Prayers</a><span class="token operator">&gt;</span> prayers</span></span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="enable-prayers.html"><span class="token function">enablePrayers</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">Prayers</a><span class="token operator">&gt;</span> prayers<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean withMouse</span></span><span class="token punctuation">)</span></div><div class="brief ">Enables the specified prayers.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="644421313%2FFunctions%2F-251573632" anchor-label="flick" id="644421313%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="flick.html"><span><span>flick</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="644421313%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="flick.html"><span class="token function">flick</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="index.html">Prayers</a> prayer</span></span><span class="token punctuation">)</span></div><div class="brief ">One tick of 1-tick flicking with a single prayer: off and straight back on (just on, if it is off).</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-85077735%2FFunctions%2F-251573632" anchor-label="flickQuickPrayer" id="-85077735%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="flick-quick-prayer.html"><span>flick</span><wbr></wbr><span>Quick</span><wbr></wbr><span><span>Prayer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-85077735%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="flick-quick-prayer.html"><span class="token function">flickQuickPrayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">One tick of 1-tick flicking with quick prayers: off and straight back on (just on, if they are off), both clicks sent at once and not waited on.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="401456738%2FFunctions%2F-251573632" anchor-label="getActiveProtectionPrayer" id="401456738%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-active-protection-prayer.html"><span>get</span><wbr></wbr><span>Active</span><wbr></wbr><span>Protection</span><wbr></wbr><span><span>Prayer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="401456738%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="index.html">Prayers</a> <a href="get-active-protection-prayer.html"><span class="token function">getActiveProtectionPrayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="105722187%2FFunctions%2F-251573632" anchor-label="getBestMagePrayer" id="105722187%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-best-mage-prayer.html"><span>get</span><wbr></wbr><span>Best</span><wbr></wbr><span>Mage</span><wbr></wbr><span><span>Prayer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="105722187%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="index.html">Prayers</a> <a href="get-best-mage-prayer.html"><span class="token function">getBestMagePrayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1473574145%2FFunctions%2F-251573632" anchor-label="getBestMeleePrayer" id="1473574145%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-best-melee-prayer.html"><span>get</span><wbr></wbr><span>Best</span><wbr></wbr><span>Melee</span><wbr></wbr><span><span>Prayer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1473574145%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="index.html">Prayers</a> <a href="get-best-melee-prayer.html"><span class="token function">getBestMeleePrayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-586981544%2FFunctions%2F-251573632" anchor-label="getBestRangePrayer" id="-586981544%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-best-range-prayer.html"><span>get</span><wbr></wbr><span>Best</span><wbr></wbr><span>Range</span><wbr></wbr><span><span>Prayer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-586981544%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="index.html">Prayers</a> <a href="get-best-range-prayer.html"><span class="token function">getBestRangePrayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2130729602%2FFunctions%2F-251573632" anchor-label="getPrayerPoints" id="-2130729602%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-prayer-points.html"><span>get</span><wbr></wbr><span>Prayer</span><wbr></wbr><span><span>Points</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2130729602%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-prayer-points.html"><span class="token function">getPrayerPoints</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="606651889%2FFunctions%2F-251573632" anchor-label="hasAnyQuickPrayers" id="606651889%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-any-quick-prayers.html"><span>has</span><wbr></wbr><span>Any</span><wbr></wbr><span>Quick</span><wbr></wbr><span><span>Prayers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="606651889%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-any-quick-prayers.html"><span class="token function">hasAnyQuickPrayers</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player has any quick prayers configured.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-292789908%2FFunctions%2F-251573632" anchor-label="isAuguryUnlocked" id="-292789908%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-augury-unlocked.html"><span>is</span><wbr></wbr><span>Augury</span><wbr></wbr><span><span>Unlocked</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-292789908%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-augury-unlocked.html"><span class="token function">isAuguryUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1031189361%2FFunctions%2F-251573632" anchor-label="isChivalryUnlocked" id="1031189361%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-chivalry-unlocked.html"><span>is</span><wbr></wbr><span>Chivalry</span><wbr></wbr><span><span>Unlocked</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1031189361%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-chivalry-unlocked.html"><span class="token function">isChivalryUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="264384408%2FFunctions%2F-251573632" anchor-label="isDeadeyeUnlocked" id="264384408%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-deadeye-unlocked.html"><span>is</span><wbr></wbr><span>Deadeye</span><wbr></wbr><span><span>Unlocked</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="264384408%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-deadeye-unlocked.html"><span class="token function">isDeadeyeUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-857018855%2FFunctions%2F-251573632" anchor-label="isMagePrayerActive" id="-857018855%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-mage-prayer-active.html"><span>is</span><wbr></wbr><span>Mage</span><wbr></wbr><span>Prayer</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-857018855%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-mage-prayer-active.html"><span class="token function">isMagePrayerActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="280806375%2FFunctions%2F-251573632" anchor-label="isMeleePrayerActive" id="280806375%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-melee-prayer-active.html"><span>is</span><wbr></wbr><span>Melee</span><wbr></wbr><span>Prayer</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="280806375%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-melee-prayer-active.html"><span class="token function">isMeleePrayerActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-289386730%2FFunctions%2F-251573632" anchor-label="isMysticVigourUnlocked" id="-289386730%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-mystic-vigour-unlocked.html"><span>is</span><wbr></wbr><span>Mystic</span><wbr></wbr><span>Vigour</span><wbr></wbr><span><span>Unlocked</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-289386730%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-mystic-vigour-unlocked.html"><span class="token function">isMysticVigourUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1539111588%2FFunctions%2F-251573632" anchor-label="isOutOfPrayer" id="-1539111588%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-out-of-prayer.html"><span>is</span><wbr></wbr><span>Out</span><wbr></wbr><span>Of</span><wbr></wbr><span><span>Prayer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1539111588%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-out-of-prayer.html"><span class="token function">isOutOfPrayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player has run out of prayer points.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-462015148%2FFunctions%2F-251573632" anchor-label="isPietyUnlocked" id="-462015148%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-piety-unlocked.html"><span>is</span><wbr></wbr><span>Piety</span><wbr></wbr><span><span>Unlocked</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-462015148%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-piety-unlocked.html"><span class="token function">isPietyUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-559431815%2FFunctions%2F-251573632" anchor-label="isPrayerActive" id="-559431815%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-prayer-active.html"><span>is</span><wbr></wbr><span>Prayer</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-559431815%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-prayer-active.html"><span class="token function">isPrayerActive</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="index.html">Prayers</a> prayer</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if a specific prayer is currently active.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-815653079%2FFunctions%2F-251573632" anchor-label="isPreserveUnlocked" id="-815653079%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-preserve-unlocked.html"><span>is</span><wbr></wbr><span>Preserve</span><wbr></wbr><span><span>Unlocked</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-815653079%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-preserve-unlocked.html"><span class="token function">isPreserveUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1402724683%2FFunctions%2F-251573632" anchor-label="isQuickPrayerEnabled" id="1402724683%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-quick-prayer-enabled.html"><span>is</span><wbr></wbr><span>Quick</span><wbr></wbr><span>Prayer</span><wbr></wbr><span><span>Enabled</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1402724683%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-quick-prayer-enabled.html"><span class="token function">isQuickPrayerEnabled</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if quick prayers are currently enabled/active.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1879129624%2FFunctions%2F-251573632" anchor-label="isQuickPrayerSet" id="1879129624%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-quick-prayer-set.html"><span>is</span><wbr></wbr><span>Quick</span><wbr></wbr><span>Prayer</span><wbr></wbr><span><span>Set</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1879129624%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-quick-prayer-set.html"><span class="token function">isQuickPrayerSet</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="index.html">Prayers</a> prayer</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if a specific prayer is set as a quick prayer.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-902704898%2FFunctions%2F-251573632" anchor-label="isRangePrayerActive" id="-902704898%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-range-prayer-active.html"><span>is</span><wbr></wbr><span>Range</span><wbr></wbr><span>Prayer</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-902704898%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-range-prayer-active.html"><span class="token function">isRangePrayerActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1406015801%2FFunctions%2F-251573632" anchor-label="isRigourUnlocked" id="1406015801%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-rigour-unlocked.html"><span>is</span><wbr></wbr><span>Rigour</span><wbr></wbr><span><span>Unlocked</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1406015801%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-rigour-unlocked.html"><span class="token function">isRigourUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1301992553%2FFunctions%2F-251573632" anchor-label="setQuickPrayers" id="1301992553%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-quick-prayers.html"><span>set</span><wbr></wbr><span>Quick</span><wbr></wbr><span><span>Prayers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1301992553%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="set-quick-prayers.html"><span class="token function">setQuickPrayers</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">Prayers</a><span class="token operator">&gt;</span> prayers</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-596019486%2FFunctions%2F-251573632" anchor-label="swapOverHeadPrayer" id="-596019486%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="swap-over-head-prayer.html"><span>swap</span><wbr></wbr><span>Over</span><wbr></wbr><span>Head</span><wbr></wbr><span><span>Prayer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-596019486%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="swap-over-head-prayer.html"><span class="token function">swapOverHeadPrayer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="index.html">Prayers</a> prayer</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1429435219%2FFunctions%2F-251573632" anchor-label="toggle" id="-1429435219%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="toggle.html"><span><span>toggle</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1429435219%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="toggle.html"><span class="token function">toggle</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="index.html">Prayers</a> prayer</span></span><span class="token punctuation">)</span></div><div class="brief ">Toggles a prayer on or off.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="toggle.html"><span class="token function">toggle</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="index.html">Prayers</a> prayer<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean on</span></span><span class="token punctuation">)</span></div><div class="brief ">Toggles a prayer to a specific state (on or off).</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="toggle.html"><span class="token function">toggle</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="index.html">Prayers</a> prayer<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean on<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean withMouse</span></span><span class="token punctuation">)</span></div><div class="brief ">Toggles a prayer to a specific state (on or off) with optional mouse control.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1856244805%2FFunctions%2F-251573632" anchor-label="toggleQuickPrayer" id="1856244805%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="toggle-quick-prayer.html"><span>toggle</span><wbr></wbr><span>Quick</span><wbr></wbr><span><span>Prayer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1856244805%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="toggle-quick-prayer.html"><span class="token function">toggleQuickPrayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Toggles quick prayers on or off Does nothing if the player is out of prayer points or has no quick prayers configured.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="toggle-quick-prayer.html"><span class="token function">toggleQuickPrayer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean on</span></span><span class="token punctuation">)</span></div><div class="brief ">Toggles quick prayers to a specific state</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="toggle-quick-prayer.html"><span class="token function">toggleQuickPrayer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean on<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean withMouse</span></span><span class="token punctuation">)</span></div><div class="brief ">Toggles quick prayers to a specific state with optional mouse control.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1070906447%2FFunctions%2F-251573632" anchor-label="valueOf" id="-1070906447%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="value-of.html"><span>value</span><wbr></wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1070906447%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="index.html">Prayers</a> <a href="value-of.html"><span class="token function">valueOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> name</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Returns the enum constant of this type with the specified name. The string must match exactly an identifier used to declare an enum constant in this type. (Extraneous whitespace characters are not permitted.)</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-634499328%2FFunctions%2F-251573632" anchor-label="values" id="-634499328%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="values.html"><span><span>values</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-634499328%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">Prayers</a><span class="token operator">&gt;</span> <a href="values.html"><span class="token function">values</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Returns an array containing the constants of this enum type, in the order they're declared. This method may be used to iterate over the constants.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="9197929%2FProperties%2F-251573632" anchor-label="index" id="9197929%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#9197929%2FProperties%2F-251573632"><span><span>index</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="9197929%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="net.runelite.api.annotations/Component///PointingToDeclaration/"><span class="token annotation builtin">Component</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span>int <a href="index.html#9197929%2FProperties%2F-251573632">index</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1732637431%2FProperties%2F-251573632" anchor-label="level" id="1732637431%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1732637431%2FProperties%2F-251573632"><span><span>level</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1732637431%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span>int <a href="index.html#1732637431%2FProperties%2F-251573632">level</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1387848300%2FProperties%2F-251573632" anchor-label="name" id="-1387848300%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1387848300%2FProperties%2F-251573632"><span><span>name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1387848300%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> <a href="index.html#-1387848300%2FProperties%2F-251573632">name</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1319425921%2FProperties%2F-251573632" anchor-label="quickPrayerIndex" id="1319425921%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1319425921%2FProperties%2F-251573632"><span>quick</span><wbr></wbr><span>Prayer</span><wbr></wbr><span><span>Index</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1319425921%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span>int <a href="index.html#1319425921%2FProperties%2F-251573632">quickPrayerIndex</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1955844231%2FProperties%2F-251573632" anchor-label="varbit" id="-1955844231%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1955844231%2FProperties%2F-251573632"><span><span>varbit</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1955844231%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="net.runelite.api.annotations/Varbit///PointingToDeclaration/"><span class="token annotation builtin">Varbit</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword"></span>int <a href="index.html#-1955844231%2FProperties%2F-251573632">varbit</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="-1897689821%2FFunctions%2F-251573632" anchor-label="getIndex" id="-1897689821%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-index.html"><span>get</span><wbr></wbr><span><span>Index</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1897689821%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>int <a href="get-index.html"><span class="token function">getIndex</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-174250319%2FFunctions%2F-251573632" anchor-label="getLevel" id="-174250319%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-level.html"><span>get</span><wbr></wbr><span><span>Level</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-174250319%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>int <a href="get-level.html"><span class="token function">getLevel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="767396506%2FFunctions%2F-251573632" anchor-label="getName" id="767396506%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-name.html"><span>get</span><wbr></wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="767396506%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> <a href="get-name.html"><span class="token function">getName</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="787606407%2FFunctions%2F-251573632" anchor-label="getQuickPrayerIndex" id="787606407%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-quick-prayer-index.html"><span>get</span><wbr></wbr><span>Quick</span><wbr></wbr><span>Prayer</span><wbr></wbr><span><span>Index</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="787606407%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>int <a href="get-quick-prayer-index.html"><span class="token function">getQuickPrayerIndex</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-939822337%2FFunctions%2F-251573632" anchor-label="getVarbit" id="-939822337%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-varbit.html"><span>get</span><wbr></wbr><span><span>Varbit</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-939822337%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>int <a href="get-varbit.html"><span class="token function">getVarbit</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Project X Script API 3.0.1 · client 2.12.0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

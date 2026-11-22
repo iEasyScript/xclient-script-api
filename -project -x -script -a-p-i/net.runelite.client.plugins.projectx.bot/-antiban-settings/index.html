@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>AntibanSettings</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="../../../styles/theme.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    Project X Script API
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+3.0.1        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
+                        data-filter=":/main">jvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/main"
+                                       data-filter=":/main"/>
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+                <a class="navigation-controls--btn navigation-controls--btn_homepage" id="homepage-link"
+                   href="https://github.com/iEasyScript/xclient-script-api"></a>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    Project X Script API
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="Project X Script API::net.runelite.client.plugins.projectx.bot/AntibanSettings///PointingToDeclaration//-251573632">
+  <div class="breadcrumbs"><a href="../../../index.html">Project X Script API</a><span class="delimiter">/</span><a href="../index.html">net.runelite.client.plugins.projectx.bot</a><span class="delimiter">/</span><span class="current">AntibanSettings</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Antiban</span><wbr></wbr><span><span>Settings</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="index.html">AntibanSettings</a></div><p class="paragraph">The antiban switches. </p><p class="paragraph">Scripts assign the public fields directly (old script jars do so with putstatic), so the live values are often a script's rather than the user's. Next to them this class keeps the <em>user's</em> settings: the values the user chose on the panel, saved in the profile. Scripts can be overruled by the user's override switch, and get the user's values back when they stop.</p><p class="paragraph">The fields are plain statics written by any thread without locking. Every method that touches the user layer locks on this class.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="414465063%2FConstructors%2F-251573632" anchor-label="AntibanSettings" id="414465063%2FConstructors%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-antiban-settings.html"><span>Antiban</span><wbr></wbr><span><span>Settings</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="414465063%2FConstructors%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">protected </span><span class="token keyword"></span>void <a href="-antiban-settings.html"><span class="token function">AntibanSettings</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Companion properties</h2>
+        <div class="table"><a data-name="-876891489%2FProperties%2F-251573632" anchor-label="actionCooldownActive" id="-876891489%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-876891489%2FProperties%2F-251573632"><span>action</span><wbr></wbr><span>Cooldown</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-876891489%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#-876891489%2FProperties%2F-251573632">actionCooldownActive</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="514310065%2FProperties%2F-251573632" anchor-label="actionCooldownChance" id="514310065%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#514310065%2FProperties%2F-251573632"><span>action</span><wbr></wbr><span>Cooldown</span><wbr></wbr><span><span>Chance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="514310065%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>double <a href="index.html#514310065%2FProperties%2F-251573632">actionCooldownChance</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="461988114%2FProperties%2F-251573632" anchor-label="antibanEnabled" id="461988114%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#461988114%2FProperties%2F-251573632"><span>antiban</span><wbr></wbr><span><span>Enabled</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="461988114%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#461988114%2FProperties%2F-251573632">antibanEnabled</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="163749103%2FProperties%2F-251573632" anchor-label="behavioralVariability" id="163749103%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#163749103%2FProperties%2F-251573632"><span>behavioral</span><wbr></wbr><span><span>Variability</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="163749103%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#163749103%2FProperties%2F-251573632">behavioralVariability</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1626731331%2FProperties%2F-251573632" anchor-label="contextualVariability" id="1626731331%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1626731331%2FProperties%2F-251573632"><span>contextual</span><wbr></wbr><span><span>Variability</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1626731331%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#1626731331%2FProperties%2F-251573632">contextualVariability</a></div><div class="brief ">Read by nothing; kept so scripts that write it still link.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="530407208%2FProperties%2F-251573632" anchor-label="devDebug" id="530407208%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#530407208%2FProperties%2F-251573632"><span>dev</span><wbr></wbr><span><span>Debug</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="530407208%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#530407208%2FProperties%2F-251573632">devDebug</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="542738348%2FProperties%2F-251573632" anchor-label="dynamicActivity" id="542738348%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#542738348%2FProperties%2F-251573632"><span>dynamic</span><wbr></wbr><span><span>Activity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="542738348%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#542738348%2FProperties%2F-251573632">dynamicActivity</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1225362930%2FProperties%2F-251573632" anchor-label="dynamicIntensity" id="1225362930%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1225362930%2FProperties%2F-251573632"><span>dynamic</span><wbr></wbr><span><span>Intensity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1225362930%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#1225362930%2FProperties%2F-251573632">dynamicIntensity</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2065667310%2FProperties%2F-251573632" anchor-label="FATIGUE_MAX_SLOWDOWN_DEFAULT" id="2065667310%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#2065667310%2FProperties%2F-251573632"><span>FATIGUE_</span><wbr></wbr><span>MAX_</span><wbr></wbr><span>SLOWDOWN_</span><wbr></wbr><span>DEFAULT</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2065667310%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span>int <a href="index.html#2065667310%2FProperties%2F-251573632">FATIGUE_MAX_SLOWDOWN_DEFAULT</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1702232846%2FProperties%2F-251573632" anchor-label="FATIGUE_SLOWDOWN_PER_HOUR_DEFAULT" id="1702232846%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1702232846%2FProperties%2F-251573632"><span>FATIGUE_</span><wbr></wbr><span>SLOWDOWN_</span><wbr></wbr><span>PER_</span><wbr></wbr><span>HOUR_</span><wbr></wbr><span>DEFAULT</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1702232846%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span>int <a href="index.html#1702232846%2FProperties%2F-251573632">FATIGUE_SLOWDOWN_PER_HOUR_DEFAULT</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1613642426%2FProperties%2F-251573632" anchor-label="fatigueMaxSlowdown" id="-1613642426%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1613642426%2FProperties%2F-251573632"><span>fatigue</span><wbr></wbr><span>Max</span><wbr></wbr><span><span>Slowdown</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1613642426%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="index.html#-1613642426%2FProperties%2F-251573632">fatigueMaxSlowdown</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="110723599%2FProperties%2F-251573632" anchor-label="fatigueSlowdownPerHour" id="110723599%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#110723599%2FProperties%2F-251573632"><span>fatigue</span><wbr></wbr><span>Slowdown</span><wbr></wbr><span>Per</span><wbr></wbr><span><span>Hour</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="110723599%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="index.html#110723599%2FProperties%2F-251573632">fatigueSlowdownPerHour</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-460172795%2FProperties%2F-251573632" anchor-label="microBreakActive" id="-460172795%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-460172795%2FProperties%2F-251573632"><span>micro</span><wbr></wbr><span>Break</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-460172795%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#-460172795%2FProperties%2F-251573632">microBreakActive</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="931028759%2FProperties%2F-251573632" anchor-label="microBreakChance" id="931028759%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#931028759%2FProperties%2F-251573632"><span>micro</span><wbr></wbr><span>Break</span><wbr></wbr><span><span>Chance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="931028759%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>double <a href="index.html#931028759%2FProperties%2F-251573632">microBreakChance</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1662664053%2FProperties%2F-251573632" anchor-label="microBreakDurationHigh" id="1662664053%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1662664053%2FProperties%2F-251573632"><span>micro</span><wbr></wbr><span>Break</span><wbr></wbr><span>Duration</span><wbr></wbr><span><span>High</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1662664053%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="index.html#1662664053%2FProperties%2F-251573632">microBreakDurationHigh</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="96613301%2FProperties%2F-251573632" anchor-label="microBreakDurationLow" id="96613301%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#96613301%2FProperties%2F-251573632"><span>micro</span><wbr></wbr><span>Break</span><wbr></wbr><span>Duration</span><wbr></wbr><span><span>Low</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="96613301%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="index.html#96613301%2FProperties%2F-251573632">microBreakDurationLow</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-123087745%2FProperties%2F-251573632" anchor-label="moveMouseOffScreen" id="-123087745%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-123087745%2FProperties%2F-251573632"><span>move</span><wbr></wbr><span>Mouse</span><wbr></wbr><span>Off</span><wbr></wbr><span><span>Screen</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-123087745%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#-123087745%2FProperties%2F-251573632">moveMouseOffScreen</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="513417579%2FProperties%2F-251573632" anchor-label="moveMouseOffScreenChance" id="513417579%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#513417579%2FProperties%2F-251573632"><span>move</span><wbr></wbr><span>Mouse</span><wbr></wbr><span>Off</span><wbr></wbr><span>Screen</span><wbr></wbr><span><span>Chance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="513417579%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>double <a href="index.html#513417579%2FProperties%2F-251573632">moveMouseOffScreenChance</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-465864490%2FProperties%2F-251573632" anchor-label="moveMouseRandomly" id="-465864490%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-465864490%2FProperties%2F-251573632"><span>move</span><wbr></wbr><span>Mouse</span><wbr></wbr><span><span>Randomly</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-465864490%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#-465864490%2FProperties%2F-251573632">moveMouseRandomly</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-778114942%2FProperties%2F-251573632" anchor-label="moveMouseRandomlyChance" id="-778114942%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-778114942%2FProperties%2F-251573632"><span>move</span><wbr></wbr><span>Mouse</span><wbr></wbr><span>Randomly</span><wbr></wbr><span><span>Chance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-778114942%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>double <a href="index.html#-778114942%2FProperties%2F-251573632">moveMouseRandomlyChance</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1201527638%2FProperties%2F-251573632" anchor-label="naturalMouse" id="-1201527638%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1201527638%2FProperties%2F-251573632"><span>natural</span><wbr></wbr><span><span>Mouse</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1201527638%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#-1201527638%2FProperties%2F-251573632">naturalMouse</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1828090378%2FProperties%2F-251573632" anchor-label="nonLinearIntervals" id="1828090378%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1828090378%2FProperties%2F-251573632"><span>non</span><wbr></wbr><span>Linear</span><wbr></wbr><span><span>Intervals</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1828090378%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#1828090378%2FProperties%2F-251573632">nonLinearIntervals</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-685936703%2FProperties%2F-251573632" anchor-label="overwriteScriptSettings" id="-685936703%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-685936703%2FProperties%2F-251573632"><span>overwrite</span><wbr></wbr><span>Script</span><wbr></wbr><span><span>Settings</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-685936703%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#-685936703%2FProperties%2F-251573632">overwriteScriptSettings</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1153908315%2FProperties%2F-251573632" anchor-label="playSchedule" id="1153908315%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1153908315%2FProperties%2F-251573632"><span>play</span><wbr></wbr><span><span>Schedule</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1153908315%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#1153908315%2FProperties%2F-251573632">playSchedule</a></div><div class="brief ">Read by nothing; the break handlers own the play schedule.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="929842612%2FProperties%2F-251573632" anchor-label="preferredIntensity" id="929842612%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#929842612%2FProperties%2F-251573632"><span>preferred</span><wbr></wbr><span><span>Intensity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="929842612%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="../../net.runelite.client.plugins.projectx.util.antiban.enums/-activity-intensity/index.html">ActivityIntensity</a> <a href="index.html#929842612%2FProperties%2F-251573632">preferredIntensity</a></div><div class="brief ">The intensity picked by hand on the Mouse tab; null lets the activity decide.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="419895937%2FProperties%2F-251573632" anchor-label="profileSwitching" id="419895937%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#419895937%2FProperties%2F-251573632"><span>profile</span><wbr></wbr><span><span>Switching</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="419895937%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#419895937%2FProperties%2F-251573632">profileSwitching</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="271396911%2FProperties%2F-251573632" anchor-label="randomIntervals" id="271396911%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#271396911%2FProperties%2F-251573632"><span>random</span><wbr></wbr><span><span>Intervals</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="271396911%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#271396911%2FProperties%2F-251573632">randomIntervals</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="877889302%2FProperties%2F-251573632" anchor-label="simulateAttentionSpan" id="877889302%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#877889302%2FProperties%2F-251573632"><span>simulate</span><wbr></wbr><span>Attention</span><wbr></wbr><span><span>Span</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="877889302%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#877889302%2FProperties%2F-251573632">simulateAttentionSpan</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1674491895%2FProperties%2F-251573632" anchor-label="simulateFatigue" id="1674491895%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1674491895%2FProperties%2F-251573632"><span>simulate</span><wbr></wbr><span><span>Fatigue</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1674491895%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#1674491895%2FProperties%2F-251573632">simulateFatigue</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1708956819%2FProperties%2F-251573632" anchor-label="simulateMistakes" id="-1708956819%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1708956819%2FProperties%2F-251573632"><span>simulate</span><wbr></wbr><span><span>Mistakes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1708956819%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#-1708956819%2FProperties%2F-251573632">simulateMistakes</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1151805705%2FProperties%2F-251573632" anchor-label="takeMicroBreaks" id="1151805705%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1151805705%2FProperties%2F-251573632"><span>take</span><wbr></wbr><span>Micro</span><wbr></wbr><span><span>Breaks</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1151805705%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#1151805705%2FProperties%2F-251573632">takeMicroBreaks</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="373593171%2FProperties%2F-251573632" anchor-label="timeOfDayAdjust" id="373593171%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#373593171%2FProperties%2F-251573632"><span>time</span><wbr></wbr><span>Of</span><wbr></wbr><span>Day</span><wbr></wbr><span><span>Adjust</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="373593171%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#373593171%2FProperties%2F-251573632">timeOfDayAdjust</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1380638396%2FProperties%2F-251573632" anchor-label="universalAntiban" id="-1380638396%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1380638396%2FProperties%2F-251573632"><span>universal</span><wbr></wbr><span><span>Antiban</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1380638396%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#-1380638396%2FProperties%2F-251573632">universalAntiban</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1972387664%2FProperties%2F-251573632" anchor-label="usePlayStyle" id="1972387664%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1972387664%2FProperties%2F-251573632"><span>use</span><wbr></wbr><span>Play</span><wbr></wbr><span><span>Style</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1972387664%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#1972387664%2FProperties%2F-251573632">usePlayStyle</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Companion functions</h2>
+        <div class="table"><a data-name="-1816135068%2FFunctions%2F-251573632" anchor-label="enforceUserSettingsIfOverriding" id="-1816135068%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enforce-user-settings-if-overriding.html"><span>enforce</span><wbr></wbr><span>User</span><wbr></wbr><span>Settings</span><wbr></wbr><span>If</span><wbr></wbr><span><span>Overriding</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1816135068%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="enforce-user-settings-if-overriding.html"><span class="token function">enforceUserSettingsIfOverriding</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Under the override, undoes whatever a script has written since.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-523091725%2FFunctions%2F-251573632" anchor-label="isOverriding" id="-523091725%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-overriding.html"><span>is</span><wbr></wbr><span><span>Overriding</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-523091725%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-overriding.html"><span class="token function">isOverriding</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Whether the user's settings overrule scripts.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1230625987%2FFunctions%2F-251573632" anchor-label="isScriptControlled" id="1230625987%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-script-controlled.html"><span>is</span><wbr></wbr><span>Script</span><wbr></wbr><span><span>Controlled</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1230625987%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-script-controlled.html"><span class="token function">isScriptControlled</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">True when the live values are not the user's, which means a script has written them.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-18804127%2FFunctions%2F-251573632" anchor-label="loadFromProfile" id="-18804127%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="load-from-profile.html"><span>load</span><wbr></wbr><span>From</span><wbr></wbr><span><span>Profile</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-18804127%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="load-from-profile.html"><span class="token function">loadFromProfile</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Loads the user's settings from the profile.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1209757611%2FFunctions%2F-251573632" anchor-label="reset" id="1209757611%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="reset.html"><span><span>reset</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1209757611%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="reset.html"><span class="token function">reset</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Back to the defaults for a script: the runtime flags are cleared and the override is left as it is.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1408164296%2FFunctions%2F-251573632" anchor-label="resetEverything" id="-1408164296%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="reset-everything.html"><span>reset</span><wbr></wbr><span><span>Everything</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1408164296%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="reset-everything.html"><span class="token function">resetEverything</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Every saved setting back to its default, the override included.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1338384994%2FFunctions%2F-251573632" anchor-label="restoreUserSettings" id="-1338384994%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="restore-user-settings.html"><span>restore</span><wbr></wbr><span>User</span><wbr></wbr><span><span>Settings</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1338384994%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="restore-user-settings.html"><span class="token function">restoreUserSettings</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Puts the user's settings back live, for example after a script stops.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1665526281%2FFunctions%2F-251573632" anchor-label="saveToProfile" id="1665526281%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="save-to-profile.html"><span>save</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Profile</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1665526281%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="save-to-profile.html"><span class="token function">saveToProfile</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Makes the live values the user's and saves them.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2081589670%2FFunctions%2F-251573632" anchor-label="userChange" id="-2081589670%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="user-change.html"><span>user</span><wbr></wbr><span><span>Change</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2081589670%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="user-change.html"><span class="token function">userChange</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html">Runnable</a> edit</span></span><span class="token punctuation">)</span></div><div class="brief ">Applies one change the user made on the panel.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Project X Script API 3.0.1 · client 2.12.0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

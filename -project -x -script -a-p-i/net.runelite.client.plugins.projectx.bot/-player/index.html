@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Player</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="../../../styles/theme.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    Project X Script API
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+3.0.1        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
+                        data-filter=":/main">jvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/main"
+                                       data-filter=":/main"/>
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+                <a class="navigation-controls--btn navigation-controls--btn_homepage" id="homepage-link"
+                   href="https://github.com/iEasyScript/xclient-script-api"></a>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    Project X Script API
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="Project X Script API::net.runelite.client.plugins.projectx.bot/Player///PointingToDeclaration//-251573632">
+  <div class="breadcrumbs"><a href="../../../index.html">Project X Script API</a><span class="delimiter">/</span><a href="../index.html">net.runelite.client.plugins.projectx.bot</a><span class="delimiter">/</span><span class="current">Player</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Player</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="index.html">Player</a></div><p class="paragraph">Your own character: position, health, run energy, animation, eating. </p><div class="sample-container"><pre><code class="block lang-java" theme="idea">
+if (Player.isAnimating()) {
+    return;
+}
+</code></pre><span class="copy-tooltip"><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div><span class="copy-icon"></span></span></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="-1361883671%2FConstructors%2F-251573632" anchor-label="Player" id="-1361883671%2FConstructors%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-player.html"><span><span>Player</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1361883671%2FConstructors%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>void <a href="-player.html"><span class="token function">Player</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Companion properties</h2>
+        <div class="table"><a data-name="1750813398%2FProperties%2F-251573632" anchor-label="antiPoisonTime" id="1750813398%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1750813398%2FProperties%2F-251573632"><span>anti</span><wbr></wbr><span>Poison</span><wbr></wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1750813398%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="index.html#1750813398%2FProperties%2F-251573632">antiPoisonTime</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="173256715%2FProperties%2F-251573632" anchor-label="antiVenomTime" id="173256715%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#173256715%2FProperties%2F-251573632"><span>anti</span><wbr></wbr><span>Venom</span><wbr></wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="173256715%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="index.html#173256715%2FProperties%2F-251573632">antiVenomTime</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1919143887%2FProperties%2F-251573632" anchor-label="goadingTime" id="1919143887%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1919143887%2FProperties%2F-251573632"><span>goading</span><wbr></wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1919143887%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="index.html#1919143887%2FProperties%2F-251573632">goadingTime</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-26038934%2FProperties%2F-251573632" anchor-label="lastAnimationID" id="-26038934%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-26038934%2FProperties%2F-251573632"><span>last</span><wbr></wbr><span>Animation</span><wbr></wbr><span><span>ID</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-26038934%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="index.html#-26038934%2FProperties%2F-251573632">lastAnimationID</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-958848744%2FProperties%2F-251573632" anchor-label="lastAnimationTime" id="-958848744%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-958848744%2FProperties%2F-251573632"><span>last</span><wbr></wbr><span>Animation</span><wbr></wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-958848744%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Instant.html">Instant</a> <a href="index.html#-958848744%2FProperties%2F-251573632">lastAnimationTime</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1176384401%2FProperties%2F-251573632" anchor-label="moonlightTime" id="1176384401%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#1176384401%2FProperties%2F-251573632"><span>moonlight</span><wbr></wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1176384401%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="index.html#1176384401%2FProperties%2F-251573632">moonlightTime</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="802704772%2FProperties%2F-251573632" anchor-label="staminaBuffTime" id="802704772%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#802704772%2FProperties%2F-251573632"><span>stamina</span><wbr></wbr><span>Buff</span><wbr></wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="802704772%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="index.html#802704772%2FProperties%2F-251573632">staminaBuffTime</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-926154877%2FProperties%2F-251573632" anchor-label="teleBlockTime" id="-926154877%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-926154877%2FProperties%2F-251573632"><span>tele</span><wbr></wbr><span>Block</span><wbr></wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-926154877%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="index.html#-926154877%2FProperties%2F-251573632">teleBlockTime</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Companion functions</h2>
+        <div class="table"><a data-name="-1543574753%2FFunctions%2F-251573632" anchor-label="attack" id="-1543574753%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="attack.html"><span><span>attack</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1543574753%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="attack.html"><span class="token function">attack</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a> rs2Player</span></span><span class="token punctuation">)</span></div><div class="brief ">Invokes the &quot;attack&quot; action on the specified player.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-650575123%2FFunctions%2F-251573632" anchor-label="calculateHealthPercentage" id="-650575123%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="calculate-health-percentage.html"><span>calculate</span><wbr></wbr><span>Health</span><wbr></wbr><span><span>Percentage</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-650575123%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="calculate-health-percentage.html"><span class="token function">calculateHealthPercentage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a> rs2Player</span></span><span class="token punctuation">)</span></div><div class="brief ">Calculates the player's health as a percentage.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1454408662%2FFunctions%2F-251573632" anchor-label="cast" id="1454408662%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="cast.html"><span><span>cast</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1454408662%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="cast.html"><span class="token function">cast</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a> rs2Player</span></span><span class="token punctuation">)</span></div><div class="brief ">Invokes the &quot;cast&quot; action on the specified player.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1135121076%2FFunctions%2F-251573632" anchor-label="challenge" id="1135121076%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="challenge.html"><span><span>challenge</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1135121076%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="challenge.html"><span class="token function">challenge</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a> rs2Player</span></span><span class="token punctuation">)</span></div><div class="brief ">Selects the &quot;CHALLENGE&quot; option on a player for Soul Wars.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1222042031%2FFunctions%2F-251573632" anchor-label="checkIdleLogout" id="-1222042031%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="check-idle-logout.html"><span>check</span><wbr></wbr><span>Idle</span><wbr></wbr><span><span>Logout</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1222042031%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="check-idle-logout.html"><span class="token function">checkIdleLogout</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>long randomDelay</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player is at risk of logging out due to inactivity.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="891140248%2FFunctions%2F-251573632" anchor-label="distanceTo" id="891140248%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="distance-to.html"><span>distance</span><wbr></wbr><span><span>To</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="891140248%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="distance-to.html"><span class="token function">distanceTo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> endpoint</span></span><span class="token punctuation">)</span></div><div class="brief ">Calculates the distance from the player's current location to a specified endpoint.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="668226992%2FFunctions%2F-251573632" anchor-label="drinkAntiFirePotion" id="668226992%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="drink-anti-fire-potion.html"><span>drink</span><wbr></wbr><span>Anti</span><wbr></wbr><span>Fire</span><wbr></wbr><span><span>Potion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="668226992%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="drink-anti-fire-potion.html"><span class="token function">drinkAntiFirePotion</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Drinks an anti-fire potion if the player does not have an active anti-fire effect.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-688554274%2FFunctions%2F-251573632" anchor-label="drinkAntiPoisonPotion" id="-688554274%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="drink-anti-poison-potion.html"><span>drink</span><wbr></wbr><span>Anti</span><wbr></wbr><span>Poison</span><wbr></wbr><span><span>Potion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-688554274%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="drink-anti-poison-potion.html"><span class="token function">drinkAntiPoisonPotion</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Drinks an anti-poison potion if the player does not have an active anti-poison effect.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1689827487%2FFunctions%2F-251573632" anchor-label="drinkCombatPotionAt" id="-1689827487%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="drink-combat-potion-at.html"><span>drink</span><wbr></wbr><span>Combat</span><wbr></wbr><span>Potion</span><wbr></wbr><span><span>At</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1689827487%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="drink-combat-potion-at.html"><span class="token function">drinkCombatPotionAt</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Skill///PointingToDeclaration/">Skill</span> skill</span></span><span class="token punctuation">)</span></div><div class="brief ">Drinks a combat-related potion for the specified skill.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="drink-combat-potion-at.html"><span class="token function">drinkCombatPotionAt</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Skill///PointingToDeclaration/">Skill</span> skill<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean superCombat</span></span><span class="token punctuation">)</span></div><div class="brief ">Drinks a combat-related potion to boost the specified skill.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-311385669%2FFunctions%2F-251573632" anchor-label="drinkGoadingPotion" id="-311385669%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="drink-goading-potion.html"><span>drink</span><wbr></wbr><span>Goading</span><wbr></wbr><span><span>Potion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-311385669%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="drink-goading-potion.html"><span class="token function">drinkGoadingPotion</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Drinks a goading potion if the player does not already have an active goading effect.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="710125089%2FFunctions%2F-251573632" anchor-label="drinkPrayerPotion" id="710125089%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="drink-prayer-potion.html"><span>drink</span><wbr></wbr><span>Prayer</span><wbr></wbr><span><span>Potion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="710125089%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="drink-prayer-potion.html"><span class="token function">drinkPrayerPotion</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1252268437%2FFunctions%2F-251573632" anchor-label="drinkPrayerPotionAt" id="-1252268437%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="drink-prayer-potion-at.html"><span>drink</span><wbr></wbr><span>Prayer</span><wbr></wbr><span>Potion</span><wbr></wbr><span><span>At</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1252268437%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="drink-prayer-potion-at.html"><span class="token function">drinkPrayerPotionAt</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int prayerPoints</span></span><span class="token punctuation">)</span></div><div class="brief ">Drinks a prayer potion when the player's prayer points fall below the specified threshold.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1917956975%2FFunctions%2F-251573632" anchor-label="eatAt" id="-1917956975%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="eat-at.html"><span>eat</span><wbr></wbr><span><span>At</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1917956975%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="eat-at.html"><span class="token function">eatAt</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int percentage</span></span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="eat-at.html"><span class="token function">eatAt</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int percentage<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean fastFood</span></span><span class="token punctuation">)</span></div><div class="brief ">Consumes food when the player's health percentage falls below the specified threshold.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1286473096%2FFunctions%2F-251573632" anchor-label="follow" id="1286473096%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="follow.html"><span><span>follow</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1286473096%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="follow.html"><span class="token function">follow</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a> rs2Player</span></span><span class="token punctuation">)</span></div><div class="brief ">Invokes the &quot;follow&quot; action on the specified player.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1869251807%2FFunctions%2F-251573632" anchor-label="getAnimation" id="1869251807%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-animation.html"><span>get</span><wbr></wbr><span><span>Animation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1869251807%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-animation.html"><span class="token function">getAnimation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the player's current animation ID.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="264708774%2FFunctions%2F-251573632" anchor-label="getBoostedSkillLevel" id="264708774%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-boosted-skill-level.html"><span>get</span><wbr></wbr><span>Boosted</span><wbr></wbr><span>Skill</span><wbr></wbr><span><span>Level</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="264708774%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-boosted-skill-level.html"><span class="token function">getBoostedSkillLevel</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Skill///PointingToDeclaration/">Skill</span> skill</span></span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the player's current boosted level for a given skill.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1196576563%2FFunctions%2F-251573632" anchor-label="getCombatLevel" id="1196576563%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-combat-level.html"><span>get</span><wbr></wbr><span>Combat</span><wbr></wbr><span><span>Level</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1196576563%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-combat-level.html"><span class="token function">getCombatLevel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the combat level of the local player.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-320464443%2FFunctions%2F-251573632" anchor-label="getCoordinate" id="-320464443%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-coordinate.html"><span>get</span><wbr></wbr><span><span>Coordinate</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-320464443%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="../-coordinate/index.html">Coordinate</a> <a href="get-coordinate.html"><span class="token function">getCoordinate</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the player's current location as an <a href="../-coordinate/index.html">Coordinate</a>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="36127200%2FFunctions%2F-251573632" anchor-label="getGraphicId" id="36127200%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-graphic-id.html"><span>get</span><wbr></wbr><span>Graphic</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="36127200%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-graphic-id.html"><span class="token function">getGraphicId</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the current graphic ID of the local player.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1178258777%2FFunctions%2F-251573632" anchor-label="getHealthPercentage" id="-1178258777%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-health-percentage.html"><span>get</span><wbr></wbr><span>Health</span><wbr></wbr><span><span>Percentage</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1178258777%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>double <a href="get-health-percentage.html"><span class="token function">getHealthPercentage</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Calculates the player's current health as a percentage of their real (base) health.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="751232183%2FFunctions%2F-251573632" anchor-label="getInteracting" id="751232183%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-interacting.html"><span>get</span><wbr></wbr><span><span>Interacting</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="751232183%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api/Actor///PointingToDeclaration/">Actor</span> <a href="get-interacting.html"><span class="token function">getInteracting</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the actor that the local player is currently interacting with.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-801056550%2FFunctions%2F-251573632" anchor-label="getLastAnimationID" id="-801056550%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-last-animation-i-d.html"><span>get</span><wbr></wbr><span>Last</span><wbr></wbr><span>Animation</span><wbr></wbr><span><span>ID</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-801056550%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-last-animation-i-d.html"><span class="token function">getLastAnimationID</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="64963875%2FFunctions%2F-251573632" anchor-label="getLocalLocation" id="64963875%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-local-location.html"><span>get</span><wbr></wbr><span>Local</span><wbr></wbr><span><span>Location</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="64963875%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.coords/LocalPoint///PointingToDeclaration/">LocalPoint</span> <a href="get-local-location.html"><span class="token function">getLocalLocation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the player's current <span data-unresolved-link="net.runelite.api.coords/LocalPoint///PointingToDeclaration/">LocalPoint</span> location.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1913217143%2FFunctions%2F-251573632" anchor-label="getLocalPlayer" id="1913217143%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-local-player.html"><span>get</span><wbr></wbr><span>Local</span><wbr></wbr><span><span>Player</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1913217143%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="../-legacy-player/index.html">LegacyPlayer</a> <a href="get-local-player.html"><span class="token function">getLocalPlayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Get the local player as an <a href="../-legacy-player/index.html">LegacyPlayer</a>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="190598802%2FFunctions%2F-251573632" anchor-label="getPlayerEquipmentIds" id="190598802%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-player-equipment-ids.html"><span>get</span><wbr></wbr><span>Player</span><wbr></wbr><span>Equipment</span><wbr></wbr><span><span>Ids</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="190598802%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.kit/KitType///PointingToDeclaration/">KitType</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> <a href="get-player-equipment-ids.html"><span class="token function">getPlayerEquipmentIds</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a> rs2Player</span></span><span class="token punctuation">)</span></div><div class="brief ">Retrieves a map of the player's equipped items, mapping <span data-unresolved-link="net.runelite.api.kit/KitType///PointingToDeclaration/">KitType</span> to their corresponding item IDs.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1196236382%2FFunctions%2F-251573632" anchor-label="getPlayerEquipmentNames" id="-1196236382%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-player-equipment-names.html"><span>get</span><wbr></wbr><span>Player</span><wbr></wbr><span>Equipment</span><wbr></wbr><span><span>Names</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1196236382%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.kit/KitType///PointingToDeclaration/">KitType</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span> <a href="get-player-equipment-names.html"><span class="token function">getPlayerEquipmentNames</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a> rs2Player</span></span><span class="token punctuation">)</span></div><div class="brief ">Retrieves a map of the player's equipped items, mapping <span data-unresolved-link="net.runelite.api.kit/KitType///PointingToDeclaration/">KitType</span> to their corresponding item names.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1360190367%2FFunctions%2F-251573632" anchor-label="getPlayersInCombatLevelRange" id="1360190367%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-players-in-combat-level-range.html"><span>get</span><wbr></wbr><span>Players</span><wbr></wbr><span>In</span><wbr></wbr><span>Combat</span><wbr></wbr><span>Level</span><wbr></wbr><span><span>Range</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1360190367%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a><span class="token operator">&gt;</span> <a href="get-players-in-combat-level-range.html"><span class="token function">getPlayersInCombatLevelRange</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Gets a list of LegacyPlayer objects representing players around the local player within the combat level range and wilderness level where they can attack and be attacked.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-203218288%2FFunctions%2F-251573632" anchor-label="getPoseAnimation" id="-203218288%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-pose-animation.html"><span>get</span><wbr></wbr><span>Pose</span><wbr></wbr><span><span>Animation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-203218288%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-pose-animation.html"><span class="token function">getPoseAnimation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the player's current pose animation ID.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1737036540%2FFunctions%2F-251573632" anchor-label="getPrayerPercentage" id="1737036540%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-prayer-percentage.html"><span>get</span><wbr></wbr><span>Prayer</span><wbr></wbr><span><span>Percentage</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1737036540%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-prayer-percentage.html"><span class="token function">getPrayerPercentage</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Calculates the player's current prayer level as a percentage of their base prayer level.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-348918187%2FFunctions%2F-251573632" anchor-label="getQuestState" id="-348918187%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-quest-state.html"><span>get</span><wbr></wbr><span>Quest</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-348918187%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api/QuestState///PointingToDeclaration/">QuestState</span> <a href="get-quest-state.html"><span class="token function">getQuestState</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Quest///PointingToDeclaration/">Quest</span> quest</span></span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the current state of a specified quest.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="528320356%2FFunctions%2F-251573632" anchor-label="getRealSkillLevel" id="528320356%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-real-skill-level.html"><span>get</span><wbr></wbr><span>Real</span><wbr></wbr><span>Skill</span><wbr></wbr><span><span>Level</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="528320356%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-real-skill-level.html"><span class="token function">getRealSkillLevel</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Skill///PointingToDeclaration/">Skill</span> skill</span></span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the player's real (unboosted) level for a given skill.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1152511248%2FFunctions%2F-251573632" anchor-label="getRunEnergy" id="1152511248%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-run-energy.html"><span>get</span><wbr></wbr><span>Run</span><wbr></wbr><span><span>Energy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1152511248%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-run-energy.html"><span class="token function">getRunEnergy</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the player's current run energy as a percentage.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="868122141%2FFunctions%2F-251573632" anchor-label="getSkillRequirement" id="868122141%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-skill-requirement.html"><span>get</span><wbr></wbr><span>Skill</span><wbr></wbr><span><span>Requirement</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="868122141%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="get-skill-requirement.html"><span class="token function">getSkillRequirement</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Skill///PointingToDeclaration/">Skill</span> skill<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int levelRequired</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player meets the required real level for a given skill.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="get-skill-requirement.html"><span class="token function">getSkillRequirement</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Skill///PointingToDeclaration/">Skill</span> skill<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int levelRequired<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean isBoosted</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player meets the required level for a given skill.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-767863919%2FFunctions%2F-251573632" anchor-label="getWorld" id="-767863919%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-world.html"><span>get</span><wbr></wbr><span><span>World</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-767863919%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-world.html"><span class="token function">getWorld</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the player's current world.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-350579044%2FFunctions%2F-251573632" anchor-label="getWorldLocation" id="-350579044%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-world-location.html"><span>get</span><wbr></wbr><span>World</span><wbr></wbr><span><span>Location</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-350579044%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> <a href="get-world-location.html"><span class="token function">getWorldLocation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the player's current world location as a <span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1870600216%2FFunctions%2F-251573632" anchor-label="getWorldLocation_Internal" id="-1870600216%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-world-location_-internal.html"><span>get</span><wbr></wbr><span>World</span><wbr></wbr><span>Location_</span><wbr></wbr><span>Internal</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1870600216%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> <a href="get-world-location_-internal.html"><span class="token function">getWorldLocation_Internal</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the player's current world location as a <span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> from the client thread.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1814870484%2FFunctions%2F-251573632" anchor-label="getWorldView" id="-1814870484%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-world-view.html"><span>get</span><wbr></wbr><span>World</span><wbr></wbr><span><span>View</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1814870484%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api/WorldView///PointingToDeclaration/">WorldView</span> <a href="get-world-view.html"><span class="token function">getWorldView</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the player's current <span data-unresolved-link="net.runelite.api/WorldView///PointingToDeclaration/">WorldView</span>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-731071912%2FFunctions%2F-251573632" anchor-label="getWorldView_Internal" id="-731071912%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-world-view_-internal.html"><span>get</span><wbr></wbr><span>World</span><wbr></wbr><span>View_</span><wbr></wbr><span>Internal</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-731071912%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api/WorldView///PointingToDeclaration/">WorldView</span> <a href="get-world-view_-internal.html"><span class="token function">getWorldView_Internal</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the player's current <span data-unresolved-link="net.runelite.api/WorldView///PointingToDeclaration/">WorldView</span> from the client thread.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-521893863%2FFunctions%2F-251573632" anchor-label="handleAnimationChanged" id="-521893863%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="handle-animation-changed.html"><span>handle</span><wbr></wbr><span>Animation</span><wbr></wbr><span><span>Changed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-521893863%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="handle-animation-changed.html"><span class="token function">handleAnimationChanged</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.events/AnimationChanged///PointingToDeclaration/">AnimationChanged</span> event</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1797284734%2FFunctions%2F-251573632" anchor-label="handlePotionTimers" id="-1797284734%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="handle-potion-timers.html"><span>handle</span><wbr></wbr><span>Potion</span><wbr></wbr><span><span>Timers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1797284734%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="handle-potion-timers.html"><span class="token function">handlePotionTimers</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.events/VarbitChanged///PointingToDeclaration/">VarbitChanged</span> event</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-343194269%2FFunctions%2F-251573632" anchor-label="handleTeleblockTimer" id="-343194269%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="handle-teleblock-timer.html"><span>handle</span><wbr></wbr><span>Teleblock</span><wbr></wbr><span><span>Timer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-343194269%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="handle-teleblock-timer.html"><span class="token function">handleTeleblockTimer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.events/VarbitChanged///PointingToDeclaration/">VarbitChanged</span> event</span></span><span class="token punctuation">)</span></div><div class="brief ">Handles updates to the teleblock timer based on changes to the <span data-unresolved-link="net.runelite.api/Varbits/TELEBLOCK/#/companion/PointingToDeclaration/">TELEBLOCK</span> varbit.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2135596635%2FFunctions%2F-251573632" anchor-label="hasAntiFireActive" id="2135596635%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-anti-fire-active.html"><span>has</span><wbr></wbr><span>Anti</span><wbr></wbr><span>Fire</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2135596635%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-anti-fire-active.html"><span class="token function">hasAntiFireActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-16449527%2FFunctions%2F-251573632" anchor-label="hasAntiPoisonActive" id="-16449527%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-anti-poison-active.html"><span>has</span><wbr></wbr><span>Anti</span><wbr></wbr><span>Poison</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-16449527%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-anti-poison-active.html"><span class="token function">hasAntiPoisonActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1229250790%2FFunctions%2F-251573632" anchor-label="hasAntiVenomActive" id="1229250790%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-anti-venom-active.html"><span>has</span><wbr></wbr><span>Anti</span><wbr></wbr><span>Venom</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1229250790%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-anti-venom-active.html"><span class="token function">hasAntiVenomActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1961233170%2FFunctions%2F-251573632" anchor-label="hasAttackActive" id="-1961233170%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-attack-active.html"><span>has</span><wbr></wbr><span>Attack</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1961233170%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-attack-active.html"><span class="token function">hasAttackActive</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int threshold</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1560601833%2FFunctions%2F-251573632" anchor-label="hasCompletedTutorialIsland" id="1560601833%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-completed-tutorial-island.html"><span>has</span><wbr></wbr><span>Completed</span><wbr></wbr><span>Tutorial</span><wbr></wbr><span><span>Island</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1560601833%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-completed-tutorial-island.html"><span class="token function">hasCompletedTutorialIsland</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player has finished Tutorial Island.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1187193672%2FFunctions%2F-251573632" anchor-label="hasDefenseActive" id="-1187193672%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-defense-active.html"><span>has</span><wbr></wbr><span>Defense</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1187193672%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-defense-active.html"><span class="token function">hasDefenseActive</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int threshold</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1581469144%2FFunctions%2F-251573632" anchor-label="hasDivineBastionActive" id="-1581469144%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-divine-bastion-active.html"><span>has</span><wbr></wbr><span>Divine</span><wbr></wbr><span>Bastion</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1581469144%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-divine-bastion-active.html"><span class="token function">hasDivineBastionActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1057607024%2FFunctions%2F-251573632" anchor-label="hasDivineCombatActive" id="1057607024%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-divine-combat-active.html"><span>has</span><wbr></wbr><span>Divine</span><wbr></wbr><span>Combat</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1057607024%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-divine-combat-active.html"><span class="token function">hasDivineCombatActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-249330493%2FFunctions%2F-251573632" anchor-label="hasDivineMagicActive" id="-249330493%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-divine-magic-active.html"><span>has</span><wbr></wbr><span>Divine</span><wbr></wbr><span>Magic</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-249330493%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-divine-magic-active.html"><span class="token function">hasDivineMagicActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2070313219%2FFunctions%2F-251573632" anchor-label="hasDivineRangedActive" id="-2070313219%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-divine-ranged-active.html"><span>has</span><wbr></wbr><span>Divine</span><wbr></wbr><span>Ranged</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2070313219%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-divine-ranged-active.html"><span class="token function">hasDivineRangedActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="541981866%2FFunctions%2F-251573632" anchor-label="hasGoadingActive" id="541981866%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-goading-active.html"><span>has</span><wbr></wbr><span>Goading</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="541981866%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-goading-active.html"><span class="token function">hasGoadingActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1460603621%2FFunctions%2F-251573632" anchor-label="hasMagicActive" id="1460603621%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-magic-active.html"><span>has</span><wbr></wbr><span>Magic</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1460603621%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-magic-active.html"><span class="token function">hasMagicActive</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int threshold</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1132684564%2FFunctions%2F-251573632" anchor-label="hasMoonlightActive" id="-1132684564%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-moonlight-active.html"><span>has</span><wbr></wbr><span>Moonlight</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1132684564%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-moonlight-active.html"><span class="token function">hasMoonlightActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-783586784%2FFunctions%2F-251573632" anchor-label="hasPlayerEquippedItem" id="-783586784%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-player-equipped-item.html"><span>has</span><wbr></wbr><span>Player</span><wbr></wbr><span>Equipped</span><wbr></wbr><span><span>Item</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-783586784%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-player-equipped-item.html"><span class="token function">hasPlayerEquippedItem</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a> rs2Player<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int itemId</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if a player has a specific item equipped by its item ID.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-player-equipped-item.html"><span class="token function">hasPlayerEquippedItem</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a> rs2Player<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span>int<span class="token operator">&gt;</span> itemIds</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if a player has any of the specified items equipped by their item IDs.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-player-equipped-item.html"><span class="token function">hasPlayerEquippedItem</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a> rs2Player<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> itemName</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if a player has a specific item equipped by its name.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-player-equipped-item.html"><span class="token function">hasPlayerEquippedItem</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a> rs2Player<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span> itemNames</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if a player has any of the specified items equipped by their names.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="230572879%2FFunctions%2F-251573632" anchor-label="hasPrayerPoints" id="230572879%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-prayer-points.html"><span>has</span><wbr></wbr><span>Prayer</span><wbr></wbr><span><span>Points</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="230572879%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-prayer-points.html"><span class="token function">hasPrayerPoints</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player has any remaining prayer points.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1501896705%2FFunctions%2F-251573632" anchor-label="hasPrayerRegenerationActive" id="1501896705%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-prayer-regeneration-active.html"><span>has</span><wbr></wbr><span>Prayer</span><wbr></wbr><span>Regeneration</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1501896705%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-prayer-regeneration-active.html"><span class="token function">hasPrayerRegenerationActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1385469221%2FFunctions%2F-251573632" anchor-label="hasRangingPotionActive" id="1385469221%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-ranging-potion-active.html"><span>has</span><wbr></wbr><span>Ranging</span><wbr></wbr><span>Potion</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1385469221%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-ranging-potion-active.html"><span class="token function">hasRangingPotionActive</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int threshold</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-110195980%2FFunctions%2F-251573632" anchor-label="hasSpotAnimation" id="-110195980%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-spot-animation.html"><span>has</span><wbr></wbr><span>Spot</span><wbr></wbr><span><span>Animation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-110195980%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-spot-animation.html"><span class="token function">hasSpotAnimation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int graphicId</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if the local player has a specific spot animation active.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1685580338%2FFunctions%2F-251573632" anchor-label="hasStaminaActive" id="1685580338%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-stamina-active.html"><span>has</span><wbr></wbr><span>Stamina</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1685580338%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-stamina-active.html"><span class="token function">hasStaminaActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player has an active stamina effect.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2036766945%2FFunctions%2F-251573632" anchor-label="hasStaminaBuffActive" id="-2036766945%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-stamina-buff-active.html"><span>has</span><wbr></wbr><span>Stamina</span><wbr></wbr><span>Buff</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2036766945%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-stamina-buff-active.html"><span class="token function">hasStaminaBuffActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="219905959%2FFunctions%2F-251573632" anchor-label="hasStrengthActive" id="219905959%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-strength-active.html"><span>has</span><wbr></wbr><span>Strength</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="219905959%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-strength-active.html"><span class="token function">hasStrengthActive</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int threshold</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1968052594%2FFunctions%2F-251573632" anchor-label="hasSuperAntiFireActive" id="-1968052594%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-super-anti-fire-active.html"><span>has</span><wbr></wbr><span>Super</span><wbr></wbr><span>Anti</span><wbr></wbr><span>Fire</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1968052594%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-super-anti-fire-active.html"><span class="token function">hasSuperAntiFireActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-139547625%2FFunctions%2F-251573632" anchor-label="hopIfPlayerDetected" id="-139547625%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hop-if-player-detected.html"><span>hop</span><wbr></wbr><span>If</span><wbr></wbr><span>Player</span><wbr></wbr><span><span>Detected</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-139547625%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="hop-if-player-detected.html"><span class="token function">hopIfPlayerDetected</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int amountOfPlayers<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int time<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int distance</span></span><span class="token punctuation">)</span></div><div class="brief ">Hops to a random world if a specified number of players are detected within a given distance and time.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1949589607%2FFunctions%2F-251573632" anchor-label="isAnimating" id="1949589607%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-animating.html"><span>is</span><wbr></wbr><span><span>Animating</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1949589607%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-animating.html"><span class="token function">isAnimating</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player has been animating within the past 600 milliseconds.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-animating.html"><span class="token function">isAnimating</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int ms</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player has been animating within the past specified milliseconds.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2068144712%2FFunctions%2F-251573632" anchor-label="isFullHealth" id="-2068144712%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-full-health.html"><span>is</span><wbr></wbr><span>Full</span><wbr></wbr><span><span>Health</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2068144712%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-full-health.html"><span class="token function">isFullHealth</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player is at full health.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-733549136%2FFunctions%2F-251573632" anchor-label="isGroupIronman" id="-733549136%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-group-ironman.html"><span>is</span><wbr></wbr><span>Group</span><wbr></wbr><span><span>Ironman</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-733549136%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-group-ironman.html"><span class="token function">isGroupIronman</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player is a Group Ironman.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1734179336%2FFunctions%2F-251573632" anchor-label="isInArea" id="-1734179336%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-in-area.html"><span>is</span><wbr></wbr><span>In</span><wbr></wbr><span><span>Area</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1734179336%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-in-area.html"><span class="token function">isInArea</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> worldPoint<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int radius</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player is within a specified distance of a given <span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span>.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-in-area.html"><span class="token function">isInArea</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> worldPoint<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int xRadius<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int yRadius</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player is within a specified area around a given <span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1865881937%2FFunctions%2F-251573632" anchor-label="isInCave" id="1865881937%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-in-cave.html"><span>is</span><wbr></wbr><span>In</span><wbr></wbr><span><span>Cave</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1865881937%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-in-cave.html"><span class="token function">isInCave</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks whether the player is in a cave.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-693111542%2FFunctions%2F-251573632" anchor-label="isInCombat" id="-693111542%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-in-combat.html"><span>is</span><wbr></wbr><span>In</span><wbr></wbr><span><span>Combat</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-693111542%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-in-combat.html"><span class="token function">isInCombat</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player is in combat based on recent activity.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-651928535%2FFunctions%2F-251573632" anchor-label="IsInInstance" id="-651928535%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-is-in-instance.html"><span>Is</span><wbr></wbr><span>In</span><wbr></wbr><span><span>Instance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-651928535%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="-is-in-instance.html"><span class="token function">IsInInstance</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks whether the player is currently in an instanced world.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-96877846%2FFunctions%2F-251573632" anchor-label="isInMemberWorld" id="-96877846%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-in-member-world.html"><span>is</span><wbr></wbr><span>In</span><wbr></wbr><span>Member</span><wbr></wbr><span><span>World</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-96877846%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-in-member-world.html"><span class="token function">isInMemberWorld</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player is currently in a members-only world.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1211366231%2FFunctions%2F-251573632" anchor-label="isInMulti" id="-1211366231%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-in-multi.html"><span>is</span><wbr></wbr><span>In</span><wbr></wbr><span><span>Multi</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1211366231%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-in-multi.html"><span class="token function">isInMulti</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player is in a multi-combat area.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1120653799%2FFunctions%2F-251573632" anchor-label="isInPoh" id="-1120653799%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-in-poh.html"><span>is</span><wbr></wbr><span>In</span><wbr></wbr><span><span>Poh</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1120653799%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-in-poh.html"><span class="token function">isInPoh</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player is currently inside their Player Owned House (POH).</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-71624623%2FFunctions%2F-251573632" anchor-label="isInteracting" id="-71624623%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-interacting.html"><span>is</span><wbr></wbr><span><span>Interacting</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-71624623%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-interacting.html"><span class="token function">isInteracting</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player is currently interacting with another entity (NPC, player, or object).</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="777645931%2FFunctions%2F-251573632" anchor-label="isIronman" id="777645931%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-ironman.html"><span>is</span><wbr></wbr><span><span>Ironman</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="777645931%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-ironman.html"><span class="token function">isIronman</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player is an Ironman or Hardcore Ironman.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2043261943%2FFunctions%2F-251573632" anchor-label="isMember" id="-2043261943%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-member.html"><span>is</span><wbr></wbr><span><span>Member</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2043261943%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-member.html"><span class="token function">isMember</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player has an active membership.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-134893000%2FFunctions%2F-251573632" anchor-label="isMoving" id="-134893000%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-moving.html"><span>is</span><wbr></wbr><span><span>Moving</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-134893000%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-moving.html"><span class="token function">isMoving</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player is currently moving based on their pose animation.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-moving.html"><span class="token function">isMoving</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a> playerModel</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if the specified LegacyPlayer is currently moving based on its pose animation.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-795609091%2FFunctions%2F-251573632" anchor-label="isPlayerAreaIntersecting" id="-795609091%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-player-area-intersecting.html"><span>is</span><wbr></wbr><span>Player</span><wbr></wbr><span>Area</span><wbr></wbr><span><span>Intersecting</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-795609091%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-player-area-intersecting.html"><span class="token function">isPlayerAreaIntersecting</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> targetPoint<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int targetXSpan<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int targetYSpan<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int playerXSpan<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int playerYSpan</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if two areas intersect - one centered on the player and another on a target <span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1025978003%2FFunctions%2F-251573632" anchor-label="isRunEnabled" id="-1025978003%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-run-enabled.html"><span>is</span><wbr></wbr><span>Run</span><wbr></wbr><span><span>Enabled</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1025978003%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-run-enabled.html"><span class="token function">isRunEnabled</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player's run energy is currently enabled.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="724139687%2FFunctions%2F-251573632" anchor-label="isStandingOnGameObject" id="724139687%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-standing-on-game-object.html"><span>is</span><wbr></wbr><span>Standing</span><wbr></wbr><span>On</span><wbr></wbr><span>Game</span><wbr></wbr><span><span>Object</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="724139687%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-standing-on-game-object.html"><span class="token function">isStandingOnGameObject</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player is currently standing on a game object.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-677368162%2FFunctions%2F-251573632" anchor-label="isStandingOnGroundItem" id="-677368162%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-standing-on-ground-item.html"><span>is</span><wbr></wbr><span>Standing</span><wbr></wbr><span>On</span><wbr></wbr><span>Ground</span><wbr></wbr><span><span>Item</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-677368162%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-standing-on-ground-item.html"><span class="token function">isStandingOnGroundItem</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player is currently standing on a ground item.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1044663094%2FFunctions%2F-251573632" anchor-label="isStunned" id="-1044663094%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-stunned.html"><span>is</span><wbr></wbr><span><span>Stunned</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1044663094%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-stunned.html"><span class="token function">isStunned</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the local player is currently stunned.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2045513829%2FFunctions%2F-251573632" anchor-label="isTeleBlocked" id="-2045513829%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-tele-blocked.html"><span>is</span><wbr></wbr><span>Tele</span><wbr></wbr><span><span>Blocked</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2045513829%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-tele-blocked.html"><span class="token function">isTeleBlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-868306845%2FFunctions%2F-251573632" anchor-label="logout" id="-868306845%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="logout.html"><span><span>logout</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-868306845%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="logout.html"><span class="token function">logout</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Logs the player out of the game</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1653782598%2FFunctions%2F-251573632" anchor-label="logoutIfPlayerDetected" id="1653782598%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="logout-if-player-detected.html"><span>logout</span><wbr></wbr><span>If</span><wbr></wbr><span>Player</span><wbr></wbr><span><span>Detected</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1653782598%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="logout-if-player-detected.html"><span class="token function">logoutIfPlayerDetected</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int amountOfPlayers</span></span><span class="token punctuation">)</span></div><div class="brief ">Logs out the player if a specified number of players are detected, triggering an immediate logout upon detection.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="logout-if-player-detected.html"><span class="token function">logoutIfPlayerDetected</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int amountOfPlayers<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int time</span></span><span class="token punctuation">)</span></div><div class="brief ">Logs out the player if a specified number of players are detected within a given time, checking all players regardless of distance.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="logout-if-player-detected.html"><span class="token function">logoutIfPlayerDetected</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int amountOfPlayers<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int time<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int distance</span></span><span class="token punctuation">)</span></div><div class="brief ">Logs out the player if a specified number of players are detected within a given distance and time.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-462448788%2FFunctions%2F-251573632" anchor-label="toggleRunEnergy" id="-462448788%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="toggle-run-energy.html"><span>toggle</span><wbr></wbr><span>Run</span><wbr></wbr><span><span>Energy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-462448788%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="toggle-run-energy.html"><span class="token function">toggleRunEnergy</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean toggle</span></span><span class="token punctuation">)</span></div><div class="brief ">Requests the desired run state.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-14927051%2FFunctions%2F-251573632" anchor-label="trade" id="-14927051%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="trade.html"><span><span>trade</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-14927051%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="trade.html"><span class="token function">trade</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a> rs2Player</span></span><span class="token punctuation">)</span></div><div class="brief ">Invokes the &quot;trade with&quot; action on the specified player.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-223899613%2FFunctions%2F-251573632" anchor-label="updateCombatTime" id="-223899613%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="update-combat-time.html"><span>update</span><wbr></wbr><span>Combat</span><wbr></wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-223899613%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="update-combat-time.html"><span class="token function">updateCombatTime</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Updates the last combat time when the player engages in or is hit during combat.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2110722664%2FFunctions%2F-251573632" anchor-label="use" id="-2110722664%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="use.html"><span><span>use</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2110722664%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="use.html"><span class="token function">use</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a> rs2Player</span></span><span class="token punctuation">)</span></div><div class="brief ">Selects the &quot;USE&quot; option on a player for an item that is already selected via <code class="lang-java">Inventory.use(item)</code>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="484852114%2FFunctions%2F-251573632" anchor-label="useFastFood" id="484852114%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="use-fast-food.html"><span>use</span><wbr></wbr><span>Fast</span><wbr></wbr><span><span>Food</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="484852114%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="use-fast-food.html"><span class="token function">useFastFood</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Consumes the first available high-priority food item from the player's inventory.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="756447118%2FFunctions%2F-251573632" anchor-label="useFood" id="756447118%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="use-food.html"><span>use</span><wbr></wbr><span><span>Food</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="756447118%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="use-food.html"><span class="token function">useFood</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Finds and consumes the best available food item from the player's inventory.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="799767085%2FFunctions%2F-251573632" anchor-label="waitForAnimation" id="799767085%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="wait-for-animation.html"><span>wait</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Animation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="799767085%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="wait-for-animation.html"><span class="token function">waitForAnimation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Wait for animation</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="wait-for-animation.html"><span class="token function">waitForAnimation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int time</span></span><span class="token punctuation">)</span></div><div class="brief ">Waits for the player to start animating within a given time limit.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1868241331%2FFunctions%2F-251573632" anchor-label="waitForWalking" id="-1868241331%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="wait-for-walking.html"><span>wait</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Walking</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1868241331%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="wait-for-walking.html"><span class="token function">waitForWalking</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Wait for walking</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="wait-for-walking.html"><span class="token function">waitForWalking</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int time</span></span><span class="token punctuation">)</span></div><div class="brief ">Waits for the player to start walking within the specified time limit.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1262231494%2FFunctions%2F-251573632" anchor-label="waitForXpDrop" id="-1262231494%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="wait-for-xp-drop.html"><span>wait</span><wbr></wbr><span>For</span><wbr></wbr><span>Xp</span><wbr></wbr><span><span>Drop</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1262231494%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="wait-for-xp-drop.html"><span class="token function">waitForXpDrop</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Skill///PointingToDeclaration/">Skill</span> skill</span></span><span class="token punctuation">)</span></div><div class="brief ">Waits for an XP drop in the specified skill within a default timeout of 5000 milliseconds.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="wait-for-xp-drop.html"><span class="token function">waitForXpDrop</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Skill///PointingToDeclaration/">Skill</span> skill<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean inventoryFullCheck</span></span><span class="token punctuation">)</span></div><div class="brief ">Waits for an XP drop in the specified skill or stops if the inventory is full.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="wait-for-xp-drop.html"><span class="token function">waitForXpDrop</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Skill///PointingToDeclaration/">Skill</span> skill<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int time</span></span><span class="token punctuation">)</span></div><div class="brief ">Waits for an XP drop in the specified skill within a given timeout.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="wait-for-xp-drop.html"><span class="token function">waitForXpDrop</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Skill///PointingToDeclaration/">Skill</span> skill<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int time<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean inventoryFullCheck</span></span><span class="token punctuation">)</span></div><div class="brief ">Waits for an XP drop in the specified skill within a given timeout or stops if the inventory is full.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1014994720%2FFunctions%2F-251573632" anchor-label="walkUnder" id="-1014994720%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="walk-under.html"><span>walk</span><wbr></wbr><span><span>Under</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1014994720%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="walk-under.html"><span class="token function">walkUnder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-legacy-player/index.html">LegacyPlayer</a> rs2Player</span></span><span class="token punctuation">)</span></div><div class="brief ">Invokes the &quot;walk here&quot; action to move to the same location as the specified player.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Project X Script API 3.0.1 · client 2.12.0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>BreakHandlerScript</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="../../../styles/theme.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    Project X Script API
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+3.0.1        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
+                        data-filter=":/main">jvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/main"
+                                       data-filter=":/main"/>
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+                <a class="navigation-controls--btn navigation-controls--btn_homepage" id="homepage-link"
+                   href="https://github.com/iEasyScript/xclient-script-api"></a>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    Project X Script API
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="Project X Script API::net.runelite.client.plugins.projectx.breakhandler/BreakHandlerScript///PointingToDeclaration//-251573632">
+  <div class="breadcrumbs"><a href="../../../index.html">Project X Script API</a><span class="delimiter">/</span><a href="../index.html">net.runelite.client.plugins.projectx.breakhandler</a><span class="delimiter">/</span><span class="current">BreakHandlerScript</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Break</span><wbr></wbr><span>Handler</span><wbr></wbr><span><span>Script</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="index.html">BreakHandlerScript</a><span class="token keyword"> extends </span><a href="../../net.runelite.client.plugins.projectx/-script/index.html">Script</a></div><p class="paragraph">Version 1 break handler: a once-a-second state machine that pauses every script, optionally logs out, waits out the break, logs back in and resumes. </p><p class="paragraph">Each state has a handler that does its work and answers the state to move to next, or <code class="lang-java">null</code> to stay. All moves then go through <span data-unresolved-link="net.runelite.client.plugins.projectx.breakhandler/BreakHandlerScript/enter/#net.runelite.client.plugins.projectx.breakhandler.BreakHandlerState/companion/PointingToDeclaration/">enter</span>, which owns the bookkeeping that comes with a state change. </p><p class="paragraph">Threading: the loop runs only on this script's own scheduler thread, never the client thread. It hops to the client thread in exactly two places (the ban-screen read and the pre-break world read), and both hops only read state. Window-title writes are always posted to the Swing thread. The public static accessors are plain volatile or atomic reads and are safe from any thread.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="1434204063%2FConstructors%2F-251573632" anchor-label="BreakHandlerScript" id="1434204063%2FConstructors%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-break-handler-script.html"><span>Break</span><wbr></wbr><span>Handler</span><wbr></wbr><span><span>Script</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1434204063%2FConstructors%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>void <a href="-break-handler-script.html"><span class="token function">BreakHandlerScript</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="tableheader">Types</h2>
+        <div class="table"><a data-name="1953018839%2FClasslikes%2F-251573632" anchor-label="SessionTimings" id="1953018839%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-session-timings/index.html"><span>Session</span><wbr></wbr><span><span>Timings</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1953018839%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">class </span><a href="-session-timings/index.html">SessionTimings</a></div><div class="brief ">Play and break ranges in minutes that replace the saved ones for one session.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Companion properties</h2>
+        <div class="table"><a data-name="-241543787%2FProperties%2F-251573632" anchor-label="breakDuration" id="-241543787%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-241543787%2FProperties%2F-251573632"><span>break</span><wbr></wbr><span><span>Duration</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-241543787%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static volatile </span>int <a href="index.html#-241543787%2FProperties%2F-251573632">breakDuration</a></div><div class="brief ">Seconds left in the running break, or -1 when there is no break.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1680240860%2FProperties%2F-251573632" anchor-label="breakIn" id="-1680240860%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1680240860%2FProperties%2F-251573632"><span>break</span><wbr></wbr><span><span>In</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1680240860%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static volatile </span>int <a href="index.html#-1680240860%2FProperties%2F-251573632">breakIn</a></div><div class="brief ">Seconds until the next normal break, or -1 when no countdown is set.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1280049514%2FProperties%2F-251573632" anchor-label="initialPlayerLocation" id="-1280049514%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1280049514%2FProperties%2F-251573632"><span>initial</span><wbr></wbr><span>Player</span><wbr></wbr><span><span>Location</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1280049514%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">protected </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1280049514%2FProperties%2F-251573632">initialPlayerLocation</a></div><div class="brief ">Shared by all scripts; cleared when a running script stops.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="850961328%2FProperties%2F-251573632" anchor-label="isBanned" id="850961328%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#850961328%2FProperties%2F-251573632"><span>is</span><wbr></wbr><span><span>Banned</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="850961328%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="index.html#850961328%2FProperties%2F-251573632">isBanned</a></div><div class="brief ">Set once a ban screen is seen; the state machine then stays idle until the next start.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2143426114%2FProperties%2F-251573632" anchor-label="lockState" id="2143426114%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#2143426114%2FProperties%2F-251573632"><span>lock</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2143426114%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/atomic/AtomicBoolean.html">AtomicBoolean</a> <a href="index.html#2143426114%2FProperties%2F-251573632">lockState</a></div><div class="brief ">Held true by scripts that must not be interrupted by a new break.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1787700027%2FProperties%2F-251573632" anchor-label="sessionTimings" id="-1787700027%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1787700027%2FProperties%2F-251573632"><span>session</span><wbr></wbr><span><span>Timings</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1787700027%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static volatile </span><a href="-session-timings/index.html">BreakHandlerScript.SessionTimings</a> <a href="index.html#-1787700027%2FProperties%2F-251573632">sessionTimings</a></div><div class="brief ">Play and break lengths for this client session only, set by a launch preset; null uses the saved settings.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="799631354%2FProperties%2F-251573632" anchor-label="setBreakDurationTime" id="799631354%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#799631354%2FProperties%2F-251573632"><span>set</span><wbr></wbr><span>Break</span><wbr></wbr><span>Duration</span><wbr></wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="799631354%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static volatile </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html">Duration</a> <a href="index.html#799631354%2FProperties%2F-251573632">setBreakDurationTime</a></div><div class="brief ">The full length chosen for the running break.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="960156016%2FProperties%2F-251573632" anchor-label="totalBreaks" id="960156016%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#960156016%2FProperties%2F-251573632"><span>total</span><wbr></wbr><span><span>Breaks</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="960156016%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static volatile </span>int <a href="index.html#960156016%2FProperties%2F-251573632">totalBreaks</a></div><div class="brief ">Breaks finished since the JVM started.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1032171440%2FProperties%2F-251573632" anchor-label="version" id="-1032171440%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1032171440%2FProperties%2F-251573632"><span><span>version</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1032171440%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> <a href="index.html#-1032171440%2FProperties%2F-251573632">version</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Companion functions</h2>
+        <div class="table"><a data-name="-548366506%2FFunctions%2F-251573632" anchor-label="awaitExecutionUntil" id="-548366506%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-548366506%2FFunctions%2F-251573632"><span>await</span><wbr></wbr><span>Execution</span><wbr></wbr><span><span>Until</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-548366506%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledFuture.html">ScheduledFuture</a><span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">&gt;</span> <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-548366506%2FFunctions%2F-251573632"><span class="token function">awaitExecutionUntil</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html">Runnable</a> callback<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BooleanSupplier.html">BooleanSupplier</a> awaitedCondition<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int time</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="885796948%2FFunctions%2F-251573632" anchor-label="formatDuration" id="885796948%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="format-duration.html"><span>format</span><wbr></wbr><span><span>Duration</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="885796948%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> <a href="format-duration.html"><span class="token function">formatDuration</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html">Duration</a> duration</span></span><span class="token punctuation">)</span></div><div class="brief ">Formats as <code class="lang-java">HH:MM:SS</code> with total (unwrapped) hours.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> <a href="format-duration.html"><span class="token function">formatDuration</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html">Duration</a> duration<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> header</span></span><span class="token punctuation">)</span></div><div class="brief "><code class="lang-java">header + &quot; &quot; + formatDuration(duration)</code>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1156588454%2FFunctions%2F-251573632" anchor-label="getCurrentState" id="-1156588454%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-current-state.html"><span>get</span><wbr></wbr><span>Current</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1156588454%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.client.plugins.projectx.breakhandler/BreakHandlerState///PointingToDeclaration/">BreakHandlerState</span> <a href="get-current-state.html"><span class="token function">getCurrentState</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="931845889%2FFunctions%2F-251573632" anchor-label="getExtendedSleepStartTime" id="931845889%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-extended-sleep-start-time.html"><span>get</span><wbr></wbr><span>Extended</span><wbr></wbr><span>Sleep</span><wbr></wbr><span>Start</span><wbr></wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="931845889%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Instant.html">Instant</a> <a href="get-extended-sleep-start-time.html"><span class="token function">getExtendedSleepStartTime</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">When the extended login sleep began, or null outside one.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1345728748%2FFunctions%2F-251573632" anchor-label="getInitialPlayerLocation" id="1345728748%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx/-script/get-initial-player-location.html"><span>get</span><wbr></wbr><span>Initial</span><wbr></wbr><span>Player</span><wbr></wbr><span><span>Location</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1345728748%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> <a href="../../net.runelite.client.plugins.projectx/-script/get-initial-player-location.html"><span class="token function">getInitialPlayerLocation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="906021535%2FFunctions%2F-251573632" anchor-label="getSessionTimings" id="906021535%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-session-timings.html"><span>get</span><wbr></wbr><span>Session</span><wbr></wbr><span><span>Timings</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="906021535%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="-session-timings/index.html">BreakHandlerScript.SessionTimings</a> <a href="get-session-timings.html"><span class="token function">getSessionTimings</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="953150189%2FFunctions%2F-251573632" anchor-label="isBreakActive" id="953150189%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-break-active.html"><span>is</span><wbr></wbr><span>Break</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="953150189%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-break-active.html"><span class="token function">isBreakActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">True whenever the machine is anywhere other than waiting for the next break.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1630302236%2FFunctions%2F-251573632" anchor-label="isIngameBreakActive" id="-1630302236%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-ingame-break-active.html"><span>is</span><wbr></wbr><span>Ingame</span><wbr></wbr><span>Break</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1630302236%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-ingame-break-active.html"><span class="token function">isIngameBreakActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1825173876%2FFunctions%2F-251573632" anchor-label="isLockState" id="-1825173876%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-lock-state.html"><span>is</span><wbr></wbr><span>Lock</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1825173876%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-lock-state.html"><span class="token function">isLockState</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1898725101%2FFunctions%2F-251573632" anchor-label="isMicroBreakActive" id="1898725101%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-micro-break-active.html"><span>is</span><wbr></wbr><span>Micro</span><wbr></wbr><span>Break</span><wbr></wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1898725101%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-micro-break-active.html"><span class="token function">isMicroBreakActive</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">True while the antiban both allows micro breaks and has one running.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2025778444%2FFunctions%2F-251573632" anchor-label="setLockState" id="2025778444%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-lock-state.html"><span>set</span><wbr></wbr><span>Lock</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2025778444%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="set-lock-state.html"><span class="token function">setLockState</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean state</span></span><span class="token punctuation">)</span></div><div class="brief ">Holds (true) or releases (false) the break lock.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2087703002%2FFunctions%2F-251573632" anchor-label="setSessionTimings" id="2087703002%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-session-timings.html"><span>set</span><wbr></wbr><span>Session</span><wbr></wbr><span><span>Timings</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2087703002%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="set-session-timings.html"><span class="token function">setSessionTimings</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="-session-timings/index.html">BreakHandlerScript.SessionTimings</a> timings</span></span><span class="token punctuation">)</span></div><div class="brief ">Uses these play and break ranges instead of the saved settings until the client closes, or goes back to the settings with null.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-952922882%2FFunctions%2F-251573632" anchor-label="sleep" id="-952922882%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-952922882%2FFunctions%2F-251573632"><span><span>sleep</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-952922882%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-952922882%2FFunctions%2F-251573632"><span class="token function">sleep</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int start</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1814787291%2FFunctions%2F-251573632" anchor-label="sleepFatigued" id="1814787291%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#1814787291%2FFunctions%2F-251573632"><span>sleep</span><wbr></wbr><span><span>Fatigued</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1814787291%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#1814787291%2FFunctions%2F-251573632"><span class="token function">sleepFatigued</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int ms</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1510748179%2FFunctions%2F-251573632" anchor-label="sleepGaussian" id="-1510748179%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1510748179%2FFunctions%2F-251573632"><span>sleep</span><wbr></wbr><span><span>Gaussian</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1510748179%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1510748179%2FFunctions%2F-251573632"><span class="token function">sleepGaussian</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int mean<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int stddev</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1195570762%2FFunctions%2F-251573632" anchor-label="sleepGaussianFatigued" id="1195570762%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#1195570762%2FFunctions%2F-251573632"><span>sleep</span><wbr></wbr><span>Gaussian</span><wbr></wbr><span><span>Fatigued</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1195570762%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#1195570762%2FFunctions%2F-251573632"><span class="token function">sleepGaussianFatigued</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int mean<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int stddev</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1723392761%2FFunctions%2F-251573632" anchor-label="sleepTickJitter" id="-1723392761%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1723392761%2FFunctions%2F-251573632"><span>sleep</span><wbr></wbr><span>Tick</span><wbr></wbr><span><span>Jitter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1723392761%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1723392761%2FFunctions%2F-251573632"><span class="token function">sleepTickJitter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int ticks</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="806808548%2FFunctions%2F-251573632" anchor-label="sleepTickJitterFatigued" id="806808548%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#806808548%2FFunctions%2F-251573632"><span>sleep</span><wbr></wbr><span>Tick</span><wbr></wbr><span>Jitter</span><wbr></wbr><span><span>Fatigued</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="806808548%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#806808548%2FFunctions%2F-251573632"><span class="token function">sleepTickJitterFatigued</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int ticks</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1808313622%2FFunctions%2F-251573632" anchor-label="sleepTicks" id="-1808313622%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1808313622%2FFunctions%2F-251573632"><span>sleep</span><wbr></wbr><span><span>Ticks</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1808313622%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1808313622%2FFunctions%2F-251573632"><span class="token function">sleepTicks</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int ticks</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1451227177%2FFunctions%2F-251573632" anchor-label="sleepUntil" id="1451227177%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#1451227177%2FFunctions%2F-251573632"><span>sleep</span><wbr></wbr><span><span>Until</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1451227177%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#1451227177%2FFunctions%2F-251573632"><span class="token function">sleepUntil</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BooleanSupplier.html">BooleanSupplier</a> awaitedCondition</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2023748183%2FFunctions%2F-251573632" anchor-label="sleepUntilNextTick" id="2023748183%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#2023748183%2FFunctions%2F-251573632"><span>sleep</span><wbr></wbr><span>Until</span><wbr></wbr><span>Next</span><wbr></wbr><span><span>Tick</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2023748183%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#2023748183%2FFunctions%2F-251573632"><span class="token function">sleepUntilNextTick</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1227508368%2FFunctions%2F-251573632" anchor-label="sleepUntilNotNull" id="-1227508368%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1227508368%2FFunctions%2F-251573632"><span>sleep</span><wbr></wbr><span>Until</span><wbr></wbr><span>Not</span><wbr></wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1227508368%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1227508368%2FFunctions%2F-251573632">T</a> <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1227508368%2FFunctions%2F-251573632"><span class="token function">sleepUntilNotNull</span></a><span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Callable.html">Callable</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1227508368%2FFunctions%2F-251573632">T</a><span class="token operator">&gt;</span> method<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int timeoutMillis<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int sleepMillis</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1910985493%2FFunctions%2F-251573632" anchor-label="sleepUntilOnClientThread" id="1910985493%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#1910985493%2FFunctions%2F-251573632"><span>sleep</span><wbr></wbr><span>Until</span><wbr></wbr><span>On</span><wbr></wbr><span>Client</span><wbr></wbr><span><span>Thread</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1910985493%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#1910985493%2FFunctions%2F-251573632"><span class="token function">sleepUntilOnClientThread</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BooleanSupplier.html">BooleanSupplier</a> awaitedCondition</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1264336965%2FFunctions%2F-251573632" anchor-label="sleepUntilTrue" id="-1264336965%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1264336965%2FFunctions%2F-251573632"><span>sleep</span><wbr></wbr><span>Until</span><wbr></wbr><span><span>True</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1264336965%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1264336965%2FFunctions%2F-251573632"><span class="token function">sleepUntilTrue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/BooleanSupplier.html">BooleanSupplier</a> awaitedCondition</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="-1389519786%2FProperties%2F-251573632" anchor-label="mainScheduledFuture" id="-1389519786%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1389519786%2FProperties%2F-251573632"><span>main</span><wbr></wbr><span>Scheduled</span><wbr></wbr><span><span>Future</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1389519786%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">protected </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledFuture.html">ScheduledFuture</a><span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">&gt;</span> <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-1389519786%2FProperties%2F-251573632">mainScheduledFuture</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-333747496%2FProperties%2F-251573632" anchor-label="scheduledExecutorService" id="-333747496%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-333747496%2FProperties%2F-251573632"><span>scheduled</span><wbr></wbr><span>Executor</span><wbr></wbr><span><span>Service</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-333747496%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">protected </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a> <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-333747496%2FProperties%2F-251573632">scheduledExecutorService</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-740006019%2FProperties%2F-251573632" anchor-label="scheduledFuture" id="-740006019%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-740006019%2FProperties%2F-251573632"><span>scheduled</span><wbr></wbr><span><span>Future</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-740006019%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">protected </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledFuture.html">ScheduledFuture</a><span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">&gt;</span> <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-740006019%2FProperties%2F-251573632">scheduledFuture</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="1163871928%2FFunctions%2F-251573632" anchor-label="isRunning" id="1163871928%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx/-script/is-running.html"><span>is</span><wbr></wbr><span><span>Running</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1163871928%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>boolean <a href="../../net.runelite.client.plugins.projectx/-script/is-running.html"><span class="token function">isRunning</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-912813229%2FFunctions%2F-251573632" anchor-label="reliability" id="-912813229%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx/-script/reliability.html"><span><span>reliability</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-912813229%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">protected </span><span class="token keyword">final </span><span class="token keyword"></span><a href="../../net.runelite.client.plugins.projectx.util.reliability/-script-reliability/index.html">ScriptReliability</a> <a href="../../net.runelite.client.plugins.projectx/-script/reliability.html"><span class="token function">reliability</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">This script's reliability helper, created on first use.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1643947286%2FFunctions%2F-251573632" anchor-label="reset" id="1643947286%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="reset.html"><span><span>reset</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1643947286%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>void <a href="reset.html"><span class="token function">reset</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Drops the running countdown and any break values and goes back to waiting.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1025190106%2FFunctions%2F-251573632" anchor-label="run" id="-1025190106%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#1473055457%2FFunctions%2F-251573632"><span><span>run</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1025190106%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span>boolean <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#1473055457%2FFunctions%2F-251573632"><span class="token function">run</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><br><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>boolean <a href="../../net.runelite.client.plugins.projectx/-script/run.html"><span class="token function">run</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">The per-pass guard.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>boolean <a href="run.html"><span class="token function">run</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.breakhandler/BreakHandlerConfig///PointingToDeclaration/">BreakHandlerConfig</span> config</span></span><span class="token punctuation">)</span></div><div class="brief ">Starts the loop.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1002701473%2FFunctions%2F-251573632" anchor-label="shutdown" id="-1002701473%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="shutdown.html"><span><span>shutdown</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1002701473%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>void <a href="shutdown.html"><span class="token function">shutdown</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Stops the script.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-327942292%2FFunctions%2F-251573632" anchor-label="sleepUntilTick" id="-327942292%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-327942292%2FFunctions%2F-251573632"><span>sleep</span><wbr></wbr><span>Until</span><wbr></wbr><span><span>Tick</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-327942292%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>boolean <a href="../../net.runelite.client.plugins.projectx.statemachine/-state-machine-script/index.html#-327942292%2FFunctions%2F-251573632"><span class="token function">sleepUntilTick</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int ticksToWait</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Project X Script API 3.0.1 · client 2.12.0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

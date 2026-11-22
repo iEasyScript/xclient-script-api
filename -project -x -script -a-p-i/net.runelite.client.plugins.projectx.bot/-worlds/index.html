@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Worlds</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="../../../styles/theme.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    Project X Script API
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+3.0.1        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
+                        data-filter=":/main">jvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/main"
+                                       data-filter=":/main"/>
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+                <a class="navigation-controls--btn navigation-controls--btn_homepage" id="homepage-link"
+                   href="https://github.com/iEasyScript/xclient-script-api"></a>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    Project X Script API
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="Project X Script API::net.runelite.client.plugins.projectx.bot/Worlds///PointingToDeclaration//-251573632">
+  <div class="breadcrumbs"><a href="../../../index.html">Project X Script API</a><span class="delimiter">/</span><a href="../index.html">net.runelite.client.plugins.projectx.bot</a><span class="delimiter">/</span><span class="current">Worlds</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Worlds</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="index.html">Worlds</a></div><p class="paragraph">World lists and hopping helpers. Worlds provides advanced static utilities for world selection, accessibility checks, population and ping analysis, and intelligent world hopping for the ProjectX framework. </p><p class="paragraph"> Features: </p><ul><li>Determines accessible worlds based on membership, restrictions, and world types</li><li>Finds worlds by population, ping, or region, with exclusion and candidate filtering</li><li>Supports robust world hopping with retry logic and exponential backoff</li><li>Integrates with ProjectX's login and break handler systems for seamless automation</li><li>Offers comprehensive world statistics for debugging and analysis</li></ul><p class="paragraph"> All methods are static and thread-safe for use across plugins and scripts.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="865244649%2FConstructors%2F-251573632" anchor-label="Worlds" id="865244649%2FConstructors%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-worlds.html"><span><span>Worlds</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="865244649%2FConstructors%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>void <a href="-worlds.html"><span class="token function">Worlds</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Companion functions</h2>
+        <div class="table"><a data-name="-1944382102%2FFunctions%2F-251573632" anchor-label="canAccessWorld" id="-1944382102%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="can-access-world.html"><span>can</span><wbr></wbr><span>Access</span><wbr></wbr><span><span>World</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1944382102%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="can-access-world.html"><span class="token function">canAccessWorld</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int worldId</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player can access the specified world based on membership status, world type restrictions, and other accessibility factors.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1323684293%2FFunctions%2F-251573632" anchor-label="getAccessibleWorldsByPing" id="-1323684293%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-accessible-worlds-by-ping.html"><span>get</span><wbr></wbr><span>Accessible</span><wbr></wbr><span>Worlds</span><wbr></wbr><span>By</span><wbr></wbr><span><span>Ping</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1323684293%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> <a href="get-accessible-worlds-by-ping.html"><span class="token function">getAccessibleWorldsByPing</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int maxWorlds</span></span><span class="token punctuation">)</span></div><div class="brief ">Overloaded version of getAccessibleWorldsByPing without exclusions.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> <a href="get-accessible-worlds-by-ping.html"><span class="token function">getAccessibleWorldsByPing</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int maxWorlds<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> excludeWorlds</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets a list of worlds sorted by ping (best to worst) with optional exclusions.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1795590441%2FFunctions%2F-251573632" anchor-label="getAccessibleWorldsByPopulation" id="-1795590441%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-accessible-worlds-by-population.html"><span>get</span><wbr></wbr><span>Accessible</span><wbr></wbr><span>Worlds</span><wbr></wbr><span>By</span><wbr></wbr><span><span>Population</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1795590441%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> <a href="get-accessible-worlds-by-population.html"><span class="token function">getAccessibleWorldsByPopulation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int maxWorlds</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets a list of accessible worlds sorted by player count (highest to lowest).</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1023138055%2FFunctions%2F-251573632" anchor-label="getBestAccessibleWorldForLogin" id="1023138055%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-best-accessible-world-for-login.html"><span>get</span><wbr></wbr><span>Best</span><wbr></wbr><span>Accessible</span><wbr></wbr><span>World</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Login</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1023138055%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-best-accessible-world-for-login.html"><span class="token function">getBestAccessibleWorldForLogin</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean preferPing<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.http.api.worlds/WorldRegion///PointingToDeclaration/">WorldRegion</span> preferredRegion<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean membersOnly</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets the best accessible world for login based on multiple criteria (backward compatibility).</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-best-accessible-world-for-login.html"><span class="token function">getBestAccessibleWorldForLogin</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean preferPing<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.world/RegionPreference///PointingToDeclaration/">RegionPreference</span> preference<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean avoidEmptyWorlds<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean avoidOvercrowdedWorlds<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean membersOnly</span></span><span class="token punctuation">)</span></div><div class="brief ">As above, for a region preference that may be a group of regions (Europe).</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-best-accessible-world-for-login.html"><span class="token function">getBestAccessibleWorldForLogin</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean preferPing<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.http.api.worlds/WorldRegion///PointingToDeclaration/">WorldRegion</span> preferredRegion<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean avoidEmptyWorlds<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean avoidOvercrowdedWorlds<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean membersOnly</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets the best accessible world for login based on multiple criteria.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="439479399%2FFunctions%2F-251573632" anchor-label="getBestPingWorld" id="439479399%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-best-ping-world.html"><span>get</span><wbr></wbr><span>Best</span><wbr></wbr><span>Ping</span><wbr></wbr><span><span>World</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="439479399%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-best-ping-world.html"><span class="token function">getBestPingWorld</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Finds the world with the best (lowest) ping that is still accessible.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1460508008%2FFunctions%2F-251573632" anchor-label="getMostPopulatedAccessibleWorld" id="-1460508008%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-most-populated-accessible-world.html"><span>get</span><wbr></wbr><span>Most</span><wbr></wbr><span>Populated</span><wbr></wbr><span>Accessible</span><wbr></wbr><span><span>World</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1460508008%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-most-populated-accessible-world.html"><span class="token function">getMostPopulatedAccessibleWorld</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Finds the world with the most players that is still accessible and not full.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-824888469%2FFunctions%2F-251573632" anchor-label="getMostPopulatedWorldExclude" id="-824888469%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-most-populated-world-exclude.html"><span>get</span><wbr></wbr><span>Most</span><wbr></wbr><span>Populated</span><wbr></wbr><span>World</span><wbr></wbr><span><span>Exclude</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-824888469%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-most-populated-world-exclude.html"><span class="token function">getMostPopulatedWorldExclude</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span>int<span class="token operator">&gt;</span> excludeWorlds</span></span><span class="token punctuation">)</span></div><div class="brief ">Overloaded version of getMostPopulatedWorldExclude for convenience with array input.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-most-populated-world-exclude.html"><span class="token function">getMostPopulatedWorldExclude</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> excludeWorlds</span></span><span class="token punctuation">)</span></div><div class="brief ">Finds the world with the most players while excluding specific worlds.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1280233085%2FFunctions%2F-251573632" anchor-label="getMostPopulatedWorldFromList" id="1280233085%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-most-populated-world-from-list.html"><span>get</span><wbr></wbr><span>Most</span><wbr></wbr><span>Populated</span><wbr></wbr><span>World</span><wbr></wbr><span>From</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1280233085%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-most-populated-world-from-list.html"><span class="token function">getMostPopulatedWorldFromList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span>int<span class="token operator">&gt;</span> candidateWorlds</span></span><span class="token punctuation">)</span></div><div class="brief ">Finds the world with the most players from a specific list of worlds that is still accessible and not full.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="173320209%2FFunctions%2F-251573632" anchor-label="getMostPopulatedWorldFromListWithPing" id="173320209%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-most-populated-world-from-list-with-ping.html"><span>get</span><wbr></wbr><span>Most</span><wbr></wbr><span>Populated</span><wbr></wbr><span>World</span><wbr></wbr><span>From</span><wbr></wbr><span>List</span><wbr></wbr><span>With</span><wbr></wbr><span><span>Ping</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="173320209%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-most-populated-world-from-list-with-ping.html"><span class="token function">getMostPopulatedWorldFromListWithPing</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span>int<span class="token operator">&gt;</span> candidateWorlds</span></span><span class="token punctuation">)</span></div><div class="brief ">Backward-compatible overload that maintains original behavior.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-most-populated-world-from-list-with-ping.html"><span class="token function">getMostPopulatedWorldFromListWithPing</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span>int<span class="token operator">&gt;</span> candidateWorlds<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean preferPing</span></span><span class="token punctuation">)</span></div><div class="brief ">Enhanced version of getMostPopulatedWorldFromList that also considers ping.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-886008854%2FFunctions%2F-251573632" anchor-label="getRandomAccessibleWorld" id="-886008854%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-random-accessible-world.html"><span>get</span><wbr></wbr><span>Random</span><wbr></wbr><span>Accessible</span><wbr></wbr><span><span>World</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-886008854%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-random-accessible-world.html"><span class="token function">getRandomAccessibleWorld</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Gets a random accessible world for login (backward compatibility).</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-random-accessible-world.html"><span class="token function">getRandomAccessibleWorld</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean avoidEmptyWorlds<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean avoidOvercrowdedWorlds<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean membersOnly</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets a random accessible world for login, optimized for break handler and login systems.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1429694045%2FFunctions%2F-251573632" anchor-label="getRandomAccessibleWorldFromRegion" id="-1429694045%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-random-accessible-world-from-region.html"><span>get</span><wbr></wbr><span>Random</span><wbr></wbr><span>Accessible</span><wbr></wbr><span>World</span><wbr></wbr><span>From</span><wbr></wbr><span><span>Region</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1429694045%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-random-accessible-world-from-region.html"><span class="token function">getRandomAccessibleWorldFromRegion</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.http.api.worlds/WorldRegion///PointingToDeclaration/">WorldRegion</span> preferredRegion<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean membersOnly</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets a random accessible world from a specific region for login (backward compatibility).</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-random-accessible-world-from-region.html"><span class="token function">getRandomAccessibleWorldFromRegion</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.world/RegionPreference///PointingToDeclaration/">RegionPreference</span> preference<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean avoidEmptyWorlds<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean avoidOvercrowdedWorlds<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean membersOnly</span></span><span class="token punctuation">)</span></div><div class="brief ">As above, for a region preference that may be a group of regions (Europe).</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-random-accessible-world-from-region.html"><span class="token function">getRandomAccessibleWorldFromRegion</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.http.api.worlds/WorldRegion///PointingToDeclaration/">WorldRegion</span> preferredRegion<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean avoidEmptyWorlds<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean avoidOvercrowdedWorlds<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean membersOnly</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets a random accessible world from a specific region for login.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="828369518%2FFunctions%2F-251573632" anchor-label="getWorldStatistics" id="828369518%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-world-statistics.html"><span>get</span><wbr></wbr><span>World</span><wbr></wbr><span><span>Statistics</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="828369518%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a><span class="token operator">&gt;</span> <a href="get-world-statistics.html"><span class="token function">getWorldStatistics</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Gets comprehensive world statistics for debugging and analysis.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1670153137%2FFunctions%2F-251573632" anchor-label="hopToNextBestWorld" id="-1670153137%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hop-to-next-best-world.html"><span>hop</span><wbr></wbr><span>To</span><wbr></wbr><span>Next</span><wbr></wbr><span>Best</span><wbr></wbr><span><span>World</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1670153137%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="hop-to-next-best-world.html"><span class="token function">hopToNextBestWorld</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletableFuture.html">CompletableFuture</a><span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">&gt;</span> scheduledFuture<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int currentAttempts<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.world/WorldHoppingConfig///PointingToDeclaration/">WorldHoppingConfig</span> worldHoppingConfig<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> excludeWorlds</span></span><span class="token punctuation">)</span></div><div class="brief ">Enhanced world hopping utility that finds the best world and handles retries.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1413288099%2FFunctions%2F-251573632" anchor-label="hopWorld" id="-1413288099%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hop-world.html"><span>hop</span><wbr></wbr><span><span>World</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1413288099%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="hop-world.html"><span class="token function">hopWorld</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CompletableFuture.html">CompletableFuture</a><span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">&gt;</span> scheduledFuture<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int world<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a> currentAttempts<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.world/WorldHoppingConfig///PointingToDeclaration/">WorldHoppingConfig</span> worldHoppingConfig</span></span><span class="token punctuation">)</span></div><div class="brief ">Enhanced world hopping using WorldHoppingConfig patterns with exponential backoff.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-815682774%2FFunctions%2F-251573632" anchor-label="isMemberAccount" id="-815682774%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-member-account.html"><span>is</span><wbr></wbr><span>Member</span><wbr></wbr><span><span>Account</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-815682774%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-member-account.html"><span class="token function">isMemberAccount</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2018740929%2FFunctions%2F-251573632" anchor-label="isWorldAccessible" id="2018740929%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-world-accessible.html"><span>is</span><wbr></wbr><span>World</span><wbr></wbr><span><span>Accessible</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2018740929%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-world-accessible.html"><span class="token function">isWorldAccessible</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.http.api.worlds/World///PointingToDeclaration/">World</span> world<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean isPlayerMember<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean isInSeasonalWorld</span></span><span class="token punctuation">)</span></div><div class="brief ">Determines if a specific world is accessible based on player membership status, seasonal world status, and world type restrictions.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1325128253%2FFunctions%2F-251573632" anchor-label="measureWorldPing" id="1325128253%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="measure-world-ping.html"><span>measure</span><wbr></wbr><span>World</span><wbr></wbr><span><span>Ping</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1325128253%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>long <a href="measure-world-ping.html"><span class="token function">measureWorldPing</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.http.api.worlds/World///PointingToDeclaration/">World</span> world</span></span><span class="token punctuation">)</span></div><div class="brief ">Measures the ping to a specific world server by attempting a connection.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="57817014%2FFunctions%2F-251573632" anchor-label="performLogin" id="57817014%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="perform-login.html"><span>perform</span><wbr></wbr><span><span>Login</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="57817014%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="perform-login.html"><span class="token function">performLogin</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean useRandomWorld<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.http.api.worlds/WorldRegion///PointingToDeclaration/">WorldRegion</span> preferredRegion<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean membersOnly</span></span><span class="token punctuation">)</span></div><div class="brief ">Enhanced login utility that selects an appropriate world for login (backward compatibility).</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="perform-login.html"><span class="token function">performLogin</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean useRandomWorld<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.http.api.worlds/WorldRegion///PointingToDeclaration/">WorldRegion</span> preferredRegion<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean avoidEmptyWorlds<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean avoidOvercrowdedWorlds<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean membersOnly</span></span><span class="token punctuation">)</span></div><div class="brief ">Enhanced login utility that selects an appropriate world for login.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2023225910%2FFunctions%2F-251573632" anchor-label="rememberMembership" id="-2023225910%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="remember-membership.html"><span>remember</span><wbr></wbr><span><span>Membership</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2023225910%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="remember-membership.html"><span class="token function">rememberMembership</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Records membership while logged in.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="512875390%2FFunctions%2F-251573632" anchor-label="validateCurrentWorld" id="512875390%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="validate-current-world.html"><span>validate</span><wbr></wbr><span>Current</span><wbr></wbr><span><span>World</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="512875390%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="validate-current-world.html"><span class="token function">validateCurrentWorld</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Validates that the current world is still accessible and appropriate.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Project X Script API 3.0.1 · client 2.12.0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

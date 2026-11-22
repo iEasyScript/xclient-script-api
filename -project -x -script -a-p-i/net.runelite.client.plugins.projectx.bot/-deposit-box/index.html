@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>DepositBox</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="../../../styles/theme.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    Project X Script API
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+3.0.1        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
+                        data-filter=":/main">jvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/main"
+                                       data-filter=":/main"/>
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+                <a class="navigation-controls--btn navigation-controls--btn_homepage" id="homepage-link"
+                   href="https://github.com/iEasyScript/xclient-script-api"></a>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    Project X Script API
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="Project X Script API::net.runelite.client.plugins.projectx.bot/DepositBox///PointingToDeclaration//-251573632">
+  <div class="breadcrumbs"><a href="../../../index.html">Project X Script API</a><span class="delimiter">/</span><a href="../index.html">net.runelite.client.plugins.projectx.bot</a><span class="delimiter">/</span><span class="current">DepositBox</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Deposit</span><wbr></wbr><span><span>Box</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="index.html">DepositBox</a></div><p class="paragraph">Bank deposit boxes.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="764077417%2FConstructors%2F-251573632" anchor-label="DepositBox" id="764077417%2FConstructors%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-deposit-box.html"><span>Deposit</span><wbr></wbr><span><span>Box</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="764077417%2FConstructors%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>void <a href="-deposit-box.html"><span class="token function">DepositBox</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Companion functions</h2>
+        <div class="table"><a data-name="1655848845%2FFunctions%2F-251573632" anchor-label="bankItemsAndWalkBackToOriginalPosition" id="1655848845%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="bank-items-and-walk-back-to-original-position.html"><span>bank</span><wbr></wbr><span>Items</span><wbr></wbr><span>And</span><wbr></wbr><span>Walk</span><wbr></wbr><span>Back</span><wbr></wbr><span>To</span><wbr></wbr><span>Original</span><wbr></wbr><span><span>Position</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1655848845%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="bank-items-and-walk-back-to-original-position.html"><span class="token function">bankItemsAndWalkBackToOriginalPosition</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span> itemNames<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> initialPlayerLocation</span></span><span class="token punctuation">)</span></div><div class="brief ">Banks items if the inventory is full and returns to the initial player location.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="bank-items-and-walk-back-to-original-position.html"><span class="token function">bankItemsAndWalkBackToOriginalPosition</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span> itemNames<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> initialPlayerLocation<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int emptySlotCount</span></span><span class="token punctuation">)</span></div><div class="brief ">Banks items if your inventory does not have enough empty slots (0 empty slots being full).</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="bank-items-and-walk-back-to-original-position.html"><span class="token function">bankItemsAndWalkBackToOriginalPosition</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span> itemNames<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> initialPlayerLocation<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int emptySlotCount<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int distance</span></span><span class="token punctuation">)</span></div><div class="brief ">Banks items if the inventory does not have enough empty slots (0 empty slots being full).</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="bank-items-and-walk-back-to-original-position.html"><span class="token function">bankItemsAndWalkBackToOriginalPosition</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span> itemNames<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean exactItemNames<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> initialPlayerLocation<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int emptySlotCount<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int distance</span></span><span class="token punctuation">)</span></div><div class="brief ">Banks items at a deposit box if the inventory does not have enough empty slots (0 empty slots being full).</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="863456066%2FFunctions%2F-251573632" anchor-label="closeDepositBox" id="863456066%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="close-deposit-box.html"><span>close</span><wbr></wbr><span>Deposit</span><wbr></wbr><span><span>Box</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="863456066%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="close-deposit-box.html"><span class="token function">closeDepositBox</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Closes the deposit box interface.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1831025284%2FFunctions%2F-251573632" anchor-label="depositAll" id="1831025284%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="deposit-all.html"><span>deposit</span><wbr></wbr><span><span>All</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1831025284%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="deposit-all.html"><span class="token function">depositAll</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Deposits all items from the inventory into the deposit box, if open.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="deposit-all.html"><span class="token function">depositAll</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> ids</span></span><span class="token punctuation">)</span></div><div class="brief ">Deposits only the inventory items that match the specified IDs into the deposit box.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="deposit-all.html"><span class="token function">depositAll</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span> names</span></span><span class="token punctuation">)</span></div><div class="brief ">Deposits all inventory items into the deposit box, excluding items with the specified names.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="deposit-all.html"><span class="token function">depositAll</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span> names</span></span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="deposit-all.html"><span class="token function">depositAll</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span> names<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean exact</span></span><span class="token punctuation">)</span></div><div class="brief ">Deposits all inventory items that match the specified names into the deposit box.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="deposit-all.html"><span class="token function">depositAll</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html">Predicate</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-item/index.html">Item</a><span class="token operator">&gt;</span> predicate</span></span><span class="token punctuation">)</span></div><div class="brief ">Deposits all inventory items that match the given predicate into the deposit box.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-793557100%2FFunctions%2F-251573632" anchor-label="depositAllExcept" id="-793557100%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="deposit-all-except.html"><span>deposit</span><wbr></wbr><span>All</span><wbr></wbr><span><span>Except</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-793557100%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="deposit-all-except.html"><span class="token function">depositAllExcept</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> ids</span></span><span class="token punctuation">)</span></div><div class="brief ">Deposits all inventory items except those with the specified IDs.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="deposit-all-except.html"><span class="token function">depositAllExcept</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span> names</span></span><span class="token punctuation">)</span></div><div class="brief ">Deposits all inventory items except those with the specified names.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="deposit-all-except.html"><span class="token function">depositAllExcept</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span> names</span></span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="deposit-all-except.html"><span class="token function">depositAllExcept</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span> names<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean exact</span></span><span class="token punctuation">)</span></div><div class="brief ">Deposits all inventory items into the deposit box, excluding items with the specified names.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="9965385%2FFunctions%2F-251573632" anchor-label="depositEquipment" id="9965385%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="deposit-equipment.html"><span>deposit</span><wbr></wbr><span><span>Equipment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="9965385%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="deposit-equipment.html"><span class="token function">depositEquipment</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Deposits all equipment into the deposit box.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2034640139%2FFunctions%2F-251573632" anchor-label="depositOne" id="2034640139%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="deposit-one.html"><span>deposit</span><wbr></wbr><span><span>One</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2034640139%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="deposit-one.html"><span class="token function">depositOne</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId</span></span><span class="token punctuation">)</span></div><div class="brief ">Deposits a specific item by its ID.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="deposit-one.html"><span class="token function">depositOne</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> itemName</span></span><span class="token punctuation">)</span></div><div class="brief ">Deposits a specific item by its name.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="deposit-one.html"><span class="token function">depositOne</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-item/index.html">Item</a> rs2Item</span></span><span class="token punctuation">)</span></div><div class="brief ">Deposits a specific item by its <a href="../-item/index.html">Item</a> reference.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="deposit-one.html"><span class="token function">depositOne</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> itemName<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean exact</span></span><span class="token punctuation">)</span></div><div class="brief ">Deposits a specific item by its name, with an option for partial or exact matching.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="783127319%2FFunctions%2F-251573632" anchor-label="depositX" id="783127319%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="deposit-x.html"><span>deposit</span><wbr></wbr><span><span>X</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="783127319%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="deposit-x.html"><span class="token function">depositX</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int amount</span></span><span class="token punctuation">)</span></div><div class="brief ">Deposits a specified quantity of an item by its ID into the deposit box.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="deposit-x.html"><span class="token function">depositX</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> itemName<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int amount</span></span><span class="token punctuation">)</span></div><div class="brief ">Deposits a specified quantity of an item by its name into the deposit box.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="deposit-x.html"><span class="token function">depositX</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-item/index.html">Item</a> rs2Item<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int amount</span></span><span class="token punctuation">)</span></div><div class="brief ">Deposits a specified quantity of an item by its <a href="../-item/index.html">Item</a> reference into the deposit box.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="deposit-x.html"><span class="token function">depositX</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> itemName<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int amount<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean exact</span></span><span class="token punctuation">)</span></div><div class="brief ">Deposits a specified quantity of an item by its name into the deposit box, with an option for partial or exact name matching.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1346345583%2FFunctions%2F-251573632" anchor-label="getDepositBoxBounds" id="1346345583%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-deposit-box-bounds.html"><span>get</span><wbr></wbr><span>Deposit</span><wbr></wbr><span>Box</span><wbr></wbr><span><span>Bounds</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1346345583%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Rectangle.html">Rectangle</a> <a href="get-deposit-box-bounds.html"><span class="token function">getDepositBoxBounds</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the bounding rectangle of the deposit box widget.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1413731456%2FFunctions%2F-251573632" anchor-label="getDepositBoxWidget" id="1413731456%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-deposit-box-widget.html"><span>get</span><wbr></wbr><span>Deposit</span><wbr></wbr><span>Box</span><wbr></wbr><span><span>Widget</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1413731456%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.widgets/Widget///PointingToDeclaration/">Widget</span> <a href="get-deposit-box-widget.html"><span class="token function">getDepositBoxWidget</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the widget for the deposit box if it is currently open.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="311642255%2FFunctions%2F-251573632" anchor-label="getItems" id="311642255%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-items.html"><span>get</span><wbr></wbr><span><span>Items</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="311642255%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.widgets/Widget///PointingToDeclaration/">Widget</span><span class="token operator">&gt;</span> <a href="get-items.html"><span class="token function">getItems</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the list of item widgets in the deposit box container.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1662011297%2FFunctions%2F-251573632" anchor-label="getItemWidget" id="-1662011297%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-item-widget.html"><span>get</span><wbr></wbr><span>Item</span><wbr></wbr><span><span>Widget</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1662011297%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.widgets/Widget///PointingToDeclaration/">Widget</span> <a href="get-item-widget.html"><span class="token function">getItemWidget</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int slotId</span></span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the widget of an item based on the specified slot ID in the deposit box.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="388551856%2FFunctions%2F-251573632" anchor-label="getNearestDepositBox" id="388551856%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-nearest-deposit-box.html"><span>get</span><wbr></wbr><span>Nearest</span><wbr></wbr><span>Deposit</span><wbr></wbr><span><span>Box</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="388551856%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.depositbox/DepositBoxLocation///PointingToDeclaration/">DepositBoxLocation</span> <a href="get-nearest-deposit-box.html"><span class="token function">getNearestDepositBox</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Returns the nearest accessible deposit box to the local player’s current location.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.depositbox/DepositBoxLocation///PointingToDeclaration/">DepositBoxLocation</span> <a href="get-nearest-deposit-box.html"><span class="token function">getNearestDepositBox</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> worldPoint</span></span><span class="token punctuation">)</span></div><div class="brief ">Returns the nearest accessible deposit box to the specified world point, using a default search radius of 15 tiles.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.depositbox/DepositBoxLocation///PointingToDeclaration/">DepositBoxLocation</span> <a href="get-nearest-deposit-box.html"><span class="token function">getNearestDepositBox</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> worldPoint<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int maxObjectSearchRadius</span></span><span class="token punctuation">)</span></div><div class="brief ">Finds the nearest accessible deposit box from the given world point.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1258553861%2FFunctions%2F-251573632" anchor-label="isOpen" id="1258553861%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-open.html"><span>is</span><wbr></wbr><span><span>Open</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1258553861%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-open.html"><span class="token function">isOpen</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the deposit box interface is open.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1736791894%2FFunctions%2F-251573632" anchor-label="itemBounds" id="-1736791894%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="item-bounds.html"><span>item</span><wbr></wbr><span><span>Bounds</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1736791894%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Rectangle.html">Rectangle</a> <a href="item-bounds.html"><span class="token function">itemBounds</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-item/index.html">Item</a> rs2Item</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets the bounding rectangle for the slot of the specified item in the deposit box.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1908461698%2FFunctions%2F-251573632" anchor-label="openDepositBox" id="1908461698%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="open-deposit-box.html"><span>open</span><wbr></wbr><span>Deposit</span><wbr></wbr><span><span>Box</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1908461698%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="open-deposit-box.html"><span class="token function">openDepositBox</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Opens the deposit box interface by interacting with a nearby deposit box.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="614439250%2FFunctions%2F-251573632" anchor-label="walkToAndUseDepositBox" id="614439250%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="walk-to-and-use-deposit-box.html"><span>walk</span><wbr></wbr><span>To</span><wbr></wbr><span>And</span><wbr></wbr><span>Use</span><wbr></wbr><span>Deposit</span><wbr></wbr><span><span>Box</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="614439250%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="walk-to-and-use-deposit-box.html"><span class="token function">walkToAndUseDepositBox</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Walk to the nearest deposit box location</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="walk-to-and-use-deposit-box.html"><span class="token function">walkToAndUseDepositBox</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.depositbox/DepositBoxLocation///PointingToDeclaration/">DepositBoxLocation</span> depositBoxLocation</span></span><span class="token punctuation">)</span></div><div class="brief ">Walk to deposit box location &use deposit box</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1296252846%2FFunctions%2F-251573632" anchor-label="walkToDepositBox" id="-1296252846%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="walk-to-deposit-box.html"><span>walk</span><wbr></wbr><span>To</span><wbr></wbr><span>Deposit</span><wbr></wbr><span><span>Box</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1296252846%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="walk-to-deposit-box.html"><span class="token function">walkToDepositBox</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Walk to the nearest deposit box location</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="walk-to-deposit-box.html"><span class="token function">walkToDepositBox</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.depositbox/DepositBoxLocation///PointingToDeclaration/">DepositBoxLocation</span> depositBoxLocation</span></span><span class="token punctuation">)</span></div><div class="brief ">Walk to deposit box location</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Project X Script API 3.0.1 · client 2.12.0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

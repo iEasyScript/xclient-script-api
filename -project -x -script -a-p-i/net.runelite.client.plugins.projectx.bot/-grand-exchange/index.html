@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>GrandExchange</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<link href="../../../styles/theme.css" rel="Stylesheet">
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    Project X Script API
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+3.0.1        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
+                        data-filter=":/main">jvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/main"
+                                       data-filter=":/main"/>
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+                <a class="navigation-controls--btn navigation-controls--btn_homepage" id="homepage-link"
+                   href="https://github.com/iEasyScript/xclient-script-api"></a>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    Project X Script API
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="Project X Script API::net.runelite.client.plugins.projectx.bot/GrandExchange///PointingToDeclaration//-251573632">
+  <div class="breadcrumbs"><a href="../../../index.html">Project X Script API</a><span class="delimiter">/</span><a href="../index.html">net.runelite.client.plugins.projectx.bot</a><span class="delimiter">/</span><span class="current">GrandExchange</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Grand</span><wbr></wbr><span><span>Exchange</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="index.html">GrandExchange</a></div><p class="paragraph">The Grand Exchange: buy, sell, collect.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="-1732654039%2FConstructors%2F-251573632" anchor-label="GrandExchange" id="-1732654039%2FConstructors%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-grand-exchange.html"><span>Grand</span><wbr></wbr><span><span>Exchange</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1732654039%2FConstructors%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>void <a href="-grand-exchange.html"><span class="token function">GrandExchange</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Companion functions</h2>
+        <div class="table"><a data-name="1432378787%2FFunctions%2F-251573632" anchor-label="abortAllOffers" id="1432378787%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="abort-all-offers.html"><span>abort</span><wbr></wbr><span>All</span><wbr></wbr><span><span>Offers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1432378787%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="abort-all-offers.html"><span class="token function">abortAllOffers</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean collectToBank</span></span><span class="token punctuation">)</span></div><div class="brief ">Aborts all active Grand Exchange offers.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="923841775%2FFunctions%2F-251573632" anchor-label="abortOffer" id="923841775%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="abort-offer.html"><span>abort</span><wbr></wbr><span><span>Offer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="923841775%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="abort-offer.html"><span class="token function">abortOffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> name<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean collectToBank</span></span><span class="token punctuation">)</span></div><div class="brief ">Aborts an active Grand Exchange offer for the specified item name.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1785747062%2FFunctions%2F-251573632" anchor-label="backToOverview" id="-1785747062%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="back-to-overview.html"><span>back</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Overview</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1785747062%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="back-to-overview.html"><span class="token function">backToOverview</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Back button.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1519869605%2FFunctions%2F-251573632" anchor-label="buyItem" id="1519869605%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="buy-item.html"><span>buy</span><wbr></wbr><span><span>Item</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1519869605%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="buy-item.html"><span class="token function">buyItem</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> itemName<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int price<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int quantity</span></span><span class="token punctuation">)</span></div><div class="brief ">Creates and processes a <span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeRequest///PointingToDeclaration/">GrandExchangeRequest</span> to buy an item on the Grand Exchange.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1999913691%2FFunctions%2F-251573632" anchor-label="cancelSpecificOffers" id="1999913691%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="cancel-specific-offers.html"><span>cancel</span><wbr></wbr><span>Specific</span><wbr></wbr><span><span>Offers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1999913691%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span> <a href="cancel-specific-offers.html"><span class="token function">cancelSpecificOffers</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span><span class="token operator">&gt;</span> slotsToCancel<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean collectToBank</span></span><span class="token punctuation">)</span></div><div class="brief ">Enhanced slot management: Cancels only specific Grand Exchange slots instead of all offers.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-485669568%2FFunctions%2F-251573632" anchor-label="closeExchange" id="-485669568%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="close-exchange.html"><span>close</span><wbr></wbr><span><span>Exchange</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-485669568%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="close-exchange.html"><span class="token function">closeExchange</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">close the grand exchange interface</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1751452466%2FFunctions%2F-251573632" anchor-label="collectAll" id="1751452466%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="collect-all.html"><span>collect</span><wbr></wbr><span><span>All</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1751452466%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="collect-all.html"><span class="token function">collectAll</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean collectToBank</span></span><span class="token punctuation">)</span></div><div class="brief ">Collects all completed Grand Exchange offers either into the bank or inventory.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1951637897%2FFunctions%2F-251573632" anchor-label="collectAllToBank" id="-1951637897%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="collect-all-to-bank.html"><span>collect</span><wbr></wbr><span>All</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Bank</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1951637897%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="collect-all-to-bank.html"><span class="token function">collectAllToBank</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Collects all completed Grand Exchange offers directly into the bank.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="887957393%2FFunctions%2F-251573632" anchor-label="collectAllToInventory" id="887957393%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="collect-all-to-inventory.html"><span>collect</span><wbr></wbr><span>All</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Inventory</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="887957393%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="collect-all-to-inventory.html"><span class="token function">collectAllToInventory</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Collects all completed Grand Exchange offers into the inventory.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="927396176%2FFunctions%2F-251573632" anchor-label="collectOffer" id="927396176%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="collect-offer.html"><span>collect</span><wbr></wbr><span><span>Offer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="927396176%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="collect-offer.html"><span class="token function">collectOffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> slot<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean toBank</span></span><span class="token punctuation">)</span></div><div class="brief ">Collects items from a specific Grand Exchange slot.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1018613222%2FFunctions%2F-251573632" anchor-label="collectOfferAndGetQuantity" id="-1018613222%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="collect-offer-and-get-quantity.html"><span>collect</span><wbr></wbr><span>Offer</span><wbr></wbr><span>And</span><wbr></wbr><span>Get</span><wbr></wbr><span><span>Quantity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1018613222%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="collect-offer-and-get-quantity.html"><span class="token function">collectOfferAndGetQuantity</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> slot<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean toBank<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int itemId</span></span><span class="token punctuation">)</span></div><div class="brief ">Collects a specific offer and returns the exact number of items obtained.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="375633690%2FFunctions%2F-251573632" anchor-label="findSlotForItem" id="375633690%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="find-slot-for-item.html"><span>find</span><wbr></wbr><span>Slot</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Item</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="375633690%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> <a href="find-slot-for-item.html"><span class="token function">findSlotForItem</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean isSelling</span></span><span class="token punctuation">)</span></div><div class="brief ">Finds the Grand Exchange slot currently holding an offer for the specified item.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> <a href="find-slot-for-item.html"><span class="token function">findSlotForItem</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> itemName<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean isSelling</span></span><span class="token punctuation">)</span></div><div class="brief ">Finds the Grand Exchange slot currently holding an offer for the specified item name.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-70166874%2FFunctions%2F-251573632" anchor-label="getActiveOfferSlots" id="-70166874%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-active-offer-slots.html"><span>get</span><wbr></wbr><span>Active</span><wbr></wbr><span>Offer</span><wbr></wbr><span><span>Slots</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-70166874%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span><span class="token operator">&gt;</span> <a href="get-active-offer-slots.html"><span class="token function">getActiveOfferSlots</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Returns all slots with active offers</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1612036322%2FFunctions%2F-251573632" anchor-label="getActiveOfferSlotsByProgress" id="1612036322%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-active-offer-slots-by-progress.html"><span>get</span><wbr></wbr><span>Active</span><wbr></wbr><span>Offer</span><wbr></wbr><span>Slots</span><wbr></wbr><span>By</span><wbr></wbr><span><span>Progress</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1612036322%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span><span class="token operator">&gt;</span> <a href="get-active-offer-slots-by-progress.html"><span class="token function">getActiveOfferSlotsByProgress</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Enhanced slot management: Returns a list of slots with active offers, sorted by progress.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-196054757%2FFunctions%2F-251573632" anchor-label="getAdaptiveBuyPrice" id="-196054757%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-adaptive-buy-price.html"><span>get</span><wbr></wbr><span>Adaptive</span><wbr></wbr><span>Buy</span><wbr></wbr><span><span>Price</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-196054757%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-adaptive-buy-price.html"><span class="token function">getAdaptiveBuyPrice</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>double basePercentage<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int retryAttempt</span></span><span class="token punctuation">)</span></div><div class="brief ">Calculates an intelligent buy price based on market conditions and retry attempts.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1894576919%2FFunctions%2F-251573632" anchor-label="getAdaptiveSellPrice" id="-1894576919%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-adaptive-sell-price.html"><span>get</span><wbr></wbr><span>Adaptive</span><wbr></wbr><span>Sell</span><wbr></wbr><span><span>Price</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1894576919%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-adaptive-sell-price.html"><span class="token function">getAdaptiveSellPrice</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>double basePercentage<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int retryAttempt</span></span><span class="token punctuation">)</span></div><div class="brief ">Calculates an intelligent sell price based on market conditions and retry attempts.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="956923188%2FFunctions%2F-251573632" anchor-label="getAvailableSlot" id="956923188%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-available-slot.html"><span>get</span><wbr></wbr><span>Available</span><wbr></wbr><span><span>Slot</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="956923188%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> <a href="get-available-slot.html"><span class="token function">getAvailableSlot</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves the first available Grand Exchange slot.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1038373049%2FFunctions%2F-251573632" anchor-label="getAvailableSlots" id="1038373049%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-available-slots.html"><span>get</span><wbr></wbr><span>Available</span><wbr></wbr><span><span>Slots</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1038373049%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span><span class="token operator">&gt;</span> <a href="get-available-slots.html"><span class="token function">getAvailableSlots</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Retrieves all currently available Grand Exchange slots.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-279830440%2FFunctions%2F-251573632" anchor-label="getAvailableSlotsCount" id="-279830440%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-available-slots-count.html"><span>get</span><wbr></wbr><span>Available</span><wbr></wbr><span>Slots</span><wbr></wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-279830440%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-available-slots-count.html"><span class="token function">getAvailableSlotsCount</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Returns the count of currently available Grand Exchange slots.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2116504866%2FFunctions%2F-251573632" anchor-label="getAveragePrice" id="2116504866%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-average-price.html"><span>get</span><wbr></wbr><span>Average</span><wbr></wbr><span><span>Price</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2116504866%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-average-price.html"><span class="token function">getAveragePrice</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets average price with default 1-hour interval.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-average-price.html"><span class="token function">getAveragePrice</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange.models/TimeSeriesInterval///PointingToDeclaration/">TimeSeriesInterval</span> interval</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets average price over a specific time period using time-series data.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-348497238%2FFunctions%2F-251573632" anchor-label="getBuyingVolume" id="-348497238%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-buying-volume.html"><span>get</span><wbr></wbr><span>Buying</span><wbr></wbr><span><span>Volume</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-348497238%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-buying-volume.html"><span class="token function">getBuyingVolume</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1677842745%2FFunctions%2F-251573632" anchor-label="getCompletedOffers" id="1677842745%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-completed-offers.html"><span>get</span><wbr></wbr><span>Completed</span><wbr></wbr><span><span>Offers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1677842745%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange.models/GrandExchangeOfferDetails///PointingToDeclaration/">GrandExchangeOfferDetails</span><span class="token operator">&gt;</span> <a href="get-completed-offers.html"><span class="token function">getCompletedOffers</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Finds and returns all slots that have completed offers ready for collection.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="388437123%2FFunctions%2F-251573632" anchor-label="getItemMappingData" id="388437123%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-item-mapping-data.html"><span>get</span><wbr></wbr><span>Item</span><wbr></wbr><span>Mapping</span><wbr></wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="388437123%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange.models/ItemMappingData///PointingToDeclaration/">ItemMappingData</span> <a href="get-item-mapping-data.html"><span class="token function">getItemMappingData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets item mapping data including trade limits from OSRS Wiki API.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1224023840%2FFunctions%2F-251573632" anchor-label="getItemsBoughtFromOffer" id="-1224023840%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-items-bought-from-offer.html"><span>get</span><wbr></wbr><span>Items</span><wbr></wbr><span>Bought</span><wbr></wbr><span>From</span><wbr></wbr><span><span>Offer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1224023840%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-items-bought-from-offer.html"><span class="token function">getItemsBoughtFromOffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> slot</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets the exact number of items bought from a specific Grand Exchange slot offer.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1441665719%2FFunctions%2F-251573632" anchor-label="getItemsSoldFromOffer" id="-1441665719%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-items-sold-from-offer.html"><span>get</span><wbr></wbr><span>Items</span><wbr></wbr><span>Sold</span><wbr></wbr><span>From</span><wbr></wbr><span><span>Offer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1441665719%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-items-sold-from-offer.html"><span class="token function">getItemsSoldFromOffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> slot</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets the exact number of items sold from a specific Grand Exchange slot offer.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1125560255%2FFunctions%2F-251573632" anchor-label="getOfferDetails" id="-1125560255%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-offer-details.html"><span>get</span><wbr></wbr><span>Offer</span><wbr></wbr><span><span>Details</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1125560255%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange.models/GrandExchangeOfferDetails///PointingToDeclaration/">GrandExchangeOfferDetails</span> <a href="get-offer-details.html"><span class="token function">getOfferDetails</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> slot</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets detailed information about a Grand Exchange offer in the specified slot.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1725821161%2FFunctions%2F-251573632" anchor-label="getOfferDetailsForCancellation" id="-1725821161%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-offer-details-for-cancellation.html"><span>get</span><wbr></wbr><span>Offer</span><wbr></wbr><span>Details</span><wbr></wbr><span>For</span><wbr></wbr><span><span>Cancellation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1725821161%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a><span class="token operator">&gt;</span> <a href="get-offer-details-for-cancellation.html"><span class="token function">getOfferDetailsForCancellation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> slot</span></span><span class="token punctuation">)</span></div><div class="brief ">Enhanced slot management: Gets detailed information about an offer before cancelling it.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="821222221%2FFunctions%2F-251573632" anchor-label="getOfferPrice" id="821222221%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-offer-price.html"><span>get</span><wbr></wbr><span>Offer</span><wbr></wbr><span><span>Price</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="821222221%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>long <a href="get-offer-price.html"><span class="token function">getOfferPrice</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-offer-price.html"><span class="token function">getOfferPrice</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-988201849%2FFunctions%2F-251573632" anchor-label="getPrice" id="-988201849%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-price.html"><span>get</span><wbr></wbr><span><span>Price</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-988201849%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-price.html"><span class="token function">getPrice</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1445728119%2FFunctions%2F-251573632" anchor-label="getRealTimePrices" id="-1445728119%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-real-time-prices.html"><span>get</span><wbr></wbr><span>Real</span><wbr></wbr><span>Time</span><wbr></wbr><span><span>Prices</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1445728119%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange.models/WikiPrice///PointingToDeclaration/">WikiPrice</span> <a href="get-real-time-prices.html"><span class="token function">getRealTimePrices</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets real-time price data with caching from OSRS Wiki API (primary) or GE Tracker (fallback).</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1187940530%2FFunctions%2F-251573632" anchor-label="getSearchResultWidget" id="1187940530%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-search-result-widget.html"><span>get</span><wbr></wbr><span>Search</span><wbr></wbr><span>Result</span><wbr></wbr><span><span>Widget</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1187940530%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="org.apache.commons.lang3.tuple/Pair///PointingToDeclaration/">Pair</span><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.widgets/Widget///PointingToDeclaration/">Widget</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> <a href="get-search-result-widget.html"><span class="token function">getSearchResultWidget</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> search<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean exact</span></span><span class="token punctuation">)</span></div><div class="brief ">Searches the Grand Exchange item search results widget for an entry matching the specified search text.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="7078920%2FFunctions%2F-251573632" anchor-label="getSellingVolume" id="7078920%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-selling-volume.html"><span>get</span><wbr></wbr><span>Selling</span><wbr></wbr><span><span>Volume</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="7078920%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-selling-volume.html"><span class="token function">getSellingVolume</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2121149269%2FFunctions%2F-251573632" anchor-label="getSellPrice" id="2121149269%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-sell-price.html"><span>get</span><wbr></wbr><span>Sell</span><wbr></wbr><span><span>Price</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2121149269%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-sell-price.html"><span class="token function">getSellPrice</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2047075432%2FFunctions%2F-251573632" anchor-label="getSlotFromIndex" id="2047075432%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-slot-from-index.html"><span>get</span><wbr></wbr><span>Slot</span><wbr></wbr><span>From</span><wbr></wbr><span><span>Index</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2047075432%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> <a href="get-slot-from-index.html"><span class="token function">getSlotFromIndex</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int index</span></span><span class="token punctuation">)</span></div><div class="brief ">Helper method to get a GrandExchangeSlots enum value from its index.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1094636439%2FFunctions%2F-251573632" anchor-label="getSlotIndex" id="-1094636439%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-slot-index.html"><span>get</span><wbr></wbr><span>Slot</span><wbr></wbr><span><span>Index</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1094636439%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-slot-index.html"><span class="token function">getSlotIndex</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> slot</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets the index (0-7) of the slot in the GE interface.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1583861303%2FFunctions%2F-251573632" anchor-label="getTimeSeriesData" id="-1583861303%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-time-series-data.html"><span>get</span><wbr></wbr><span>Time</span><wbr></wbr><span>Series</span><wbr></wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1583861303%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange.models/TimeSeriesAnalysis///PointingToDeclaration/">TimeSeriesAnalysis</span> <a href="get-time-series-data.html"><span class="token function">getTimeSeriesData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange.models/TimeSeriesInterval///PointingToDeclaration/">TimeSeriesInterval</span> interval</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets time-series data starting from current time going back.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange.models/TimeSeriesAnalysis///PointingToDeclaration/">TimeSeriesAnalysis</span> <a href="get-time-series-data.html"><span class="token function">getTimeSeriesData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange.models/TimeSeriesInterval///PointingToDeclaration/">TimeSeriesInterval</span> interval<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Long.html">Long</a> fromTimestamp</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets time-series price data from OSRS Wiki API.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="496459506%2FFunctions%2F-251573632" anchor-label="hasBoughtOffer" id="496459506%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-bought-offer.html"><span>has</span><wbr></wbr><span>Bought</span><wbr></wbr><span><span>Offer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="496459506%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-bought-offer.html"><span class="token function">hasBoughtOffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><br><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-bought-offer.html"><span class="token function">hasBoughtOffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> slot</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if a specific Grand Exchange slot has a completed buy offer ready to collect.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1962021390%2FFunctions%2F-251573632" anchor-label="hasBuyOffer" id="1962021390%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-buy-offer.html"><span>has</span><wbr></wbr><span>Buy</span><wbr></wbr><span><span>Offer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1962021390%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange.models/GrandExchangeOfferDetails///PointingToDeclaration/">GrandExchangeOfferDetails</span> <a href="has-buy-offer.html"><span class="token function">hasBuyOffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if there is an active buy offer for the specified item ID.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-507520612%2FFunctions%2F-251573632" anchor-label="hasFinishedBuyingOffers" id="-507520612%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-finished-buying-offers.html"><span>has</span><wbr></wbr><span>Finished</span><wbr></wbr><span>Buying</span><wbr></wbr><span><span>Offers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-507520612%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-finished-buying-offers.html"><span class="token function">hasFinishedBuyingOffers</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-653772438%2FFunctions%2F-251573632" anchor-label="hasFinishedSellingOffers" id="-653772438%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-finished-selling-offers.html"><span>has</span><wbr></wbr><span>Finished</span><wbr></wbr><span>Selling</span><wbr></wbr><span><span>Offers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-653772438%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-finished-selling-offers.html"><span class="token function">hasFinishedSellingOffers</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-468464285%2FFunctions%2F-251573632" anchor-label="hasOffer" id="-468464285%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-offer.html"><span>has</span><wbr></wbr><span><span>Offer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-468464285%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-offer.html"><span class="token function">hasOffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if there is any active buy offer.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="932104804%2FFunctions%2F-251573632" anchor-label="hasSellOffer" id="932104804%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-sell-offer.html"><span>has</span><wbr></wbr><span>Sell</span><wbr></wbr><span><span>Offer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="932104804%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange.models/GrandExchangeOfferDetails///PointingToDeclaration/">GrandExchangeOfferDetails</span> <a href="has-sell-offer.html"><span class="token function">hasSellOffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int itemId</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if there is an active sell offer for the specified item ID.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-461776572%2FFunctions%2F-251573632" anchor-label="hasSoldOffer" id="-461776572%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-sold-offer.html"><span>has</span><wbr></wbr><span>Sold</span><wbr></wbr><span><span>Offer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-461776572%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-sold-offer.html"><span class="token function">hasSoldOffer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><br><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-sold-offer.html"><span class="token function">hasSoldOffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> slot</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if a specific Grand Exchange slot has a completed sell offer ready to collect.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="931805868%2FFunctions%2F-251573632" anchor-label="isAllSlotsEmpty" id="931805868%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-all-slots-empty.html"><span>is</span><wbr></wbr><span>All</span><wbr></wbr><span>Slots</span><wbr></wbr><span><span>Empty</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="931805868%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-all-slots-empty.html"><span class="token function">isAllSlotsEmpty</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if all Grand Exchange slots are currently empty (available).</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1370904296%2FFunctions%2F-251573632" anchor-label="isCancelledOfferWithItems" id="-1370904296%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-cancelled-offer-with-items.html"><span>is</span><wbr></wbr><span>Cancelled</span><wbr></wbr><span>Offer</span><wbr></wbr><span>With</span><wbr></wbr><span><span>Items</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1370904296%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-cancelled-offer-with-items.html"><span class="token function">isCancelledOfferWithItems</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> slot</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if an offer was cancelled and still has items that can be collected.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-137909485%2FFunctions%2F-251573632" anchor-label="isOfferScreenOpen" id="-137909485%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-offer-screen-open.html"><span>is</span><wbr></wbr><span>Offer</span><wbr></wbr><span>Screen</span><wbr></wbr><span><span>Open</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-137909485%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-offer-screen-open.html"><span class="token function">isOfferScreenOpen</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Check if the offer screen is open (buy/sell offer screen)</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1652861617%2FFunctions%2F-251573632" anchor-label="isOpen" id="1652861617%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-open.html"><span>is</span><wbr></wbr><span><span>Open</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1652861617%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-open.html"><span class="token function">isOpen</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">check if the grand exchange screen is open</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1831539268%2FFunctions%2F-251573632" anchor-label="isSlotAvailable" id="-1831539268%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-slot-available.html"><span>is</span><wbr></wbr><span>Slot</span><wbr></wbr><span><span>Available</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1831539268%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-slot-available.html"><span class="token function">isSlotAvailable</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> slot</span></span><span class="token punctuation">)</span></div><div class="brief ">Checks if a specified Grand Exchange slot is available for a new offer.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-464710568%2FFunctions%2F-251573632" anchor-label="openExchange" id="-464710568%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="open-exchange.html"><span>open</span><wbr></wbr><span><span>Exchange</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-464710568%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="open-exchange.html"><span class="token function">openExchange</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Opens the grand exchange</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="96900736%2FFunctions%2F-251573632" anchor-label="processOffer" id="96900736%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="process-offer.html"><span>process</span><wbr></wbr><span><span>Offer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="96900736%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="process-offer.html"><span class="token function">processOffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeRequest///PointingToDeclaration/">GrandExchangeRequest</span> request</span></span><span class="token punctuation">)</span></div><div class="brief ">Processes a Grand Exchange offer request based on the action specified in the <span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeRequest///PointingToDeclaration/">GrandExchangeRequest</span>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="192815092%2FFunctions%2F-251573632" anchor-label="restoreOffer" id="192815092%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="restore-offer.html"><span>restore</span><wbr></wbr><span><span>Offer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="192815092%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="restore-offer.html"><span class="token function">restoreOffer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a><span class="token operator">&gt;</span> offerDetails<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeSlots///PointingToDeclaration/">GrandExchangeSlots</span> targetSlot</span></span><span class="token punctuation">)</span></div><div class="brief ">Enhanced slot management: Attempts to restore a cancelled offer using the provided details.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1763141391%2FFunctions%2F-251573632" anchor-label="sellInventory" id="-1763141391%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="sell-inventory.html"><span>sell</span><wbr></wbr><span><span>Inventory</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1763141391%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="sell-inventory.html"><span class="token function">sellInventory</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Attempts to sell all tradeable items currently in the player's inventory on the Grand Exchange.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1380131005%2FFunctions%2F-251573632" anchor-label="sellItem" id="-1380131005%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="sell-item.html"><span>sell</span><wbr></wbr><span><span>Item</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1380131005%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="sell-item.html"><span class="token function">sellItem</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> itemName<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int quantity<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int price</span></span><span class="token punctuation">)</span></div><div class="brief ">Creates and processes a <span data-unresolved-link="net.runelite.client.plugins.projectx.util.grandexchange/GrandExchangeRequest///PointingToDeclaration/">GrandExchangeRequest</span> to sell an item on the Grand Exchange.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="118105924%2FFunctions%2F-251573632" anchor-label="sellLoot" id="118105924%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="sell-loot.html"><span>sell</span><wbr></wbr><span><span>Loot</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="118105924%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="sell-loot.html"><span class="token function">sellLoot</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> npcName<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a><span class="token operator">&gt;</span> itemsToNotSell</span></span><span class="token punctuation">)</span></div><div class="brief ">sells all the tradeable loot items from a specific npc name</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1011503774%2FFunctions%2F-251573632" anchor-label="setChatboxValue" id="1011503774%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-chatbox-value.html"><span>set</span><wbr></wbr><span>Chatbox</span><wbr></wbr><span><span>Value</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1011503774%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="set-chatbox-value.html"><span class="token function">setChatboxValue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int value</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="986189744%2FFunctions%2F-251573632" anchor-label="walkToGrandExchange" id="986189744%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="walk-to-grand-exchange.html"><span>walk</span><wbr></wbr><span>To</span><wbr></wbr><span>Grand</span><wbr></wbr><span><span>Exchange</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="986189744%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="walk-to-grand-exchange.html"><span class="token function">walkToGrandExchange</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Project X Script API 3.0.1 · client 2.12.0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
