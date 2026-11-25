@@ -110,7 +110,7 @@
   <div class="breadcrumbs"><a href="../../../index.html">Project X Script API</a><span class="delimiter">/</span><a href="../index.html">net.runelite.client.plugins.projectx.bot</a><span class="delimiter">/</span><span class="current">LogBasket</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Log</span><wbr></wbr><span><span>Basket</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="index.html">LogBasket</a></div><p class="paragraph">The log basket. General utility for log basket operations Can be used by any plugin that needs log basket functionality</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="index.html">LogBasket</a></div><p class="paragraph">The log basket (open or closed): filling it, emptying it at a bank, and reading what it holds through its &quot;Check&quot; option. </p><p class="paragraph">Reading the contents clicks in game every time, so those methods must run on a script thread.</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
@@ -146,7 +146,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="-basket-contents/index.html">BasketContents</a></div><div class="brief ">data class to hold basket contents information</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="-basket-contents/index.html">BasketContents</a></div><div class="brief ">What a check of the basket reported.</div></div></div>
                 </div>
               </div>
             </div>
@@ -184,7 +184,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="-basket-contents/index.html">LogBasket.BasketContents</a> <a href="check-basket-contents.html"><span class="token function">checkBasketContents</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">check log basket contents using the &quot;check&quot; action parses widget text to determine quantity and log type</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="-basket-contents/index.html">LogBasket.BasketContents</a> <a href="check-basket-contents.html"><span class="token function">checkBasketContents</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Uses &quot;Check&quot; on the basket and reads the message.</div></div></div>
                 </div>
               </div>
             </div>
@@ -199,7 +199,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="empty-log-basket-at-bank.html"><span class="token function">emptyLogBasketAtBank</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">empty log basket at bank</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="empty-log-basket-at-bank.html"><span class="token function">emptyLogBasketAtBank</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -214,7 +214,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="fill-log-basket.html"><span class="token function">fillLogBasket</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">fill log basket with logs from inventory</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="fill-log-basket.html"><span class="token function">fillLogBasket</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -229,7 +229,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="-basket-contents/index.html">LogBasket.BasketContents</a> <a href="get-current-basket-contents.html"><span class="token function">getCurrentBasketContents</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">get current basket contents without performing check action uses cached information if available, otherwise performs check</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="-basket-contents/index.html">LogBasket.BasketContents</a> <a href="get-current-basket-contents.html"><span class="token function">getCurrentBasketContents</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Same as <a href="check-basket-contents.html">checkBasketContents</a>; nothing is cached.</div></div></div>
                 </div>
               </div>
             </div>
@@ -244,7 +244,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-effective-log-capacity.html"><span class="token function">getEffectiveLogCapacity</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">estimate total log capacity with basket</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-effective-log-capacity.html"><span class="token function">getEffectiveLogCapacity</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Logs that can be carried at once: 53 with a basket, 25 without.</div></div></div>
                 </div>
               </div>
             </div>
@@ -259,7 +259,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-log-basket-id.html"><span class="token function">getLogBasketId</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">get current log basket item id (closed or open)</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-log-basket-id.html"><span class="token function">getLogBasketId</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">The open basket's id when one is carried, otherwise the closed basket's id (even with none).</div></div></div>
                 </div>
               </div>
             </div>
@@ -274,7 +274,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> <a href="get-log-basket-status.html"><span class="token function">getLogBasketStatus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int logId</span></span><span class="token punctuation">)</span></div><div class="brief ">get status string for overlay/debugging</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> <a href="get-log-basket-status.html"><span class="token function">getLogBasketStatus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int logId</span></span><span class="token punctuation">)</span></div><div class="brief ">Overlay text such as &quot; | Basket: Open (12 logs)&quot;.</div></div></div>
                 </div>
               </div>
             </div>
@@ -289,7 +289,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-log-count.html"><span class="token function">getLogCount</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int logId</span></span><span class="token punctuation">)</span></div><div class="brief ">get count of specific log type in inventory</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-log-count.html"><span class="token function">getLogCount</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int logId</span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -304,7 +304,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="handle-log-basket-banking.html"><span class="token function">handleLogBasketBanking</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int logId<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int logsToWithdraw</span></span><span class="token punctuation">)</span></div><div class="brief ">comprehensive log basket management for banking workflows</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="handle-log-basket-banking.html"><span class="token function">handleLogBasketBanking</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int logId<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int logsToWithdraw</span></span><span class="token punctuation">)</span></div><div class="brief ">At an open bank: empties the basket, withdraws up to <code class="lang-java">logsToWithdraw</code> logs (at most 27), then withdraws more and fills the basket with them.</div></div></div>
                 </div>
               </div>
             </div>
@@ -319,7 +319,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-log-basket.html"><span class="token function">hasLogBasket</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">check if player has log basket in inventory</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-log-basket.html"><span class="token function">hasLogBasket</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -334,7 +334,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-logs.html"><span class="token function">hasLogs</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">check if basket has logs without performing check action uses inventory state and basket capacity estimation</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="has-logs.html"><span class="token function">hasLogs</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">An open basket counts as holding logs without checking; a closed one is checked in game.</div></div></div>
                 </div>
               </div>
             </div>
@@ -349,7 +349,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-basket-empty.html"><span class="token function">isBasketEmpty</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">check if basket is empty</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-basket-empty.html"><span class="token function">isBasketEmpty</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Also true when the contents could not be read.</div></div></div>
                 </div>
               </div>
             </div>
@@ -364,7 +364,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-basket-full.html"><span class="token function">isBasketFull</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">check if basket is full (contains maximum capacity)</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-basket-full.html"><span class="token function">isBasketFull</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -379,7 +379,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-inventory-near-full.html"><span class="token function">isInventoryNearFull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int logId</span></span><span class="token punctuation">)</span></div><div class="brief ">check if inventory is getting full and we should consider using basket</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-inventory-near-full.html"><span class="token function">isInventoryNearFull</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int logId</span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -394,7 +394,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="should-fill-basket.html"><span class="token function">shouldFillBasket</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int logId</span></span><span class="token punctuation">)</span></div><div class="brief ">check if we should fill the log basket (generic version) uses default threshold of 15 logs</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="should-fill-basket.html"><span class="token function">shouldFillBasket</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int logId<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int minLogsToFill</span></span><span class="token punctuation">)</span></div><div class="brief ">check if we should fill the log basket with specific log type considers basket capacity and current contents</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="should-fill-basket.html"><span class="token function">shouldFillBasket</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int logId</span></span><span class="token punctuation">)</span></div><br><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="should-fill-basket.html"><span class="token function">shouldFillBasket</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int logId<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int minLogsToFill</span></span><span class="token punctuation">)</span></div><div class="brief ">Whether to fill the basket now: it has room (checked in game) and the inventory holds at least <code class="lang-java">minLogsToFill</code> of the log or is nearly full.</div></div></div>
                 </div>
               </div>
             </div>
@@ -409,7 +409,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="should-use-log-basket.html"><span class="token function">shouldUseLogBasket</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean willBank</span></span><span class="token punctuation">)</span></div><div class="brief ">check if we should use log basket for banking workflow</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="should-use-log-basket.html"><span class="token function">shouldUseLogBasket</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean willBank</span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -428,7 +428,7 @@
                     <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
                         Dokka
                     </a>
-                    <div>Project X Script API 3.2.0 · client 2.21.0</div>
+                    <div>Project X Script API 3.2.0 · client 2.22.0</div>
                 </div>
             </div>
         </div>

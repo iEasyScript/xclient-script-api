@@ -110,7 +110,7 @@
   <div class="breadcrumbs"><a href="../../../index.html">Project X Script API</a><span class="delimiter">/</span><a href="../index.html">net.runelite.client.plugins.projectx.bot</a><span class="delimiter">/</span><span class="current">Spells</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Spells</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">enum </span><a href="index.html">Spells</a><span class="token keyword"> implements </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.magic/Spell///PointingToDeclaration/">Spell</span></div><p class="paragraph">Every standard, ancient, lunar and arceuus spell. TODO: Add Tele-other spells from modern spellbook</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">enum </span><a href="index.html">Spells</a><span class="token keyword"> implements </span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.magic/Spell///PointingToDeclaration/">Spell</span></div><p class="paragraph">Non-combat spells of all four spellbooks, plus the standard book's curses and binds. </p><p class="paragraph">Each constant carries its spellbook and its rune cost per cast; name and level come from the matching <span data-unresolved-link="net.runelite.client.plugins.skillcalculator.skills/MagicAction///PointingToDeclaration/">MagicAction</span>. Lookups by partial name walk <span data-unresolved-link="//values/#/companion/PointingToDeclaration/">values</span> in order and take the first hit, so the declaration order is significant and must be kept.</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="ENTRY">Entries</button></div>
@@ -2284,7 +2284,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.magic/Runes///PointingToDeclaration/">Runes</span><span class="token operator">&gt;</span> <a href="get-elemental-runes.html"><span class="token function">getElementalRunes</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Returns only the elemental runes (Air, Water, Earth, Fire) required for this spell.</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.magic/Runes///PointingToDeclaration/">Runes</span><span class="token operator">&gt;</span> <a href="get-elemental-runes.html"><span class="token function">getElementalRunes</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">The air, water, earth and fire runes this spell costs, each once, in a new mutable list.</div></div></div>
                 </div>
               </div>
             </div>
@@ -2314,7 +2314,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> <a href="get-name.html"><span class="token function">getName</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> <a href="get-name.html"><span class="token function">getName</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Display name, as given by the spell's <span data-unresolved-link="net.runelite.client.plugins.skillcalculator.skills/MagicAction///PointingToDeclaration/">MagicAction</span>.</div></div></div>
                 </div>
               </div>
             </div>
@@ -2329,7 +2329,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>int <a href="get-required-level.html"><span class="token function">getRequiredLevel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span>int <a href="index.html#949112485%2FFunctions%2F-251573632"><span class="token function">getRequiredLevel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>int <a href="get-required-level.html"><span class="token function">getRequiredLevel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Magic level needed, as given by the spell's <span data-unresolved-link="net.runelite.client.plugins.skillcalculator.skills/MagicAction///PointingToDeclaration/">MagicAction</span>.</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">abstract </span><span class="token keyword"></span>int <a href="index.html#949112485%2FFunctions%2F-251573632"><span class="token function">getRequiredLevel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -2344,7 +2344,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html">HashMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.magic/Runes///PointingToDeclaration/">Runes</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> <a href="get-required-runes.html"><span class="token function">getRequiredRunes</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html">HashMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="net.runelite.client.plugins.projectx.util.magic/Runes///PointingToDeclaration/">Runes</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token operator">&gt;</span> <a href="get-required-runes.html"><span class="token function">getRequiredRunes</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Runes needed for one cast.</div></div></div>
                 </div>
               </div>
             </div>
@@ -2423,7 +2423,7 @@
                     <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
                         Dokka
                     </a>
-                    <div>Project X Script API 3.2.0 · client 2.21.0</div>
+                    <div>Project X Script API 3.2.0 · client 2.22.0</div>
                 </div>
             </div>
         </div>

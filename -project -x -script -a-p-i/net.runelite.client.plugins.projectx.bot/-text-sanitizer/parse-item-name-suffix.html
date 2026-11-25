@@ -111,7 +111,7 @@
   <div class="cover ">
     <h1 class="cover"><span>parse</span><wbr></wbr><span>Item</span><wbr></wbr><span>Name</span><wbr></wbr><span><span>Suffix</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html">Optional</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-item-name-with-suffix/index.html">TextSanitizer.ItemNameWithSuffix</a><span class="token operator">&gt;</span> <a href="parse-item-name-suffix.html"><span class="token function">parseItemNameSuffix</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> raw</span></span><span class="token punctuation">)</span></div><p class="paragraph">Parses a name optionally suffixed with &quot;(N)&quot; (e.g. potion doses). Strips tags and trims before matching.</p></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html">Optional</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-item-name-with-suffix/index.html">TextSanitizer.ItemNameWithSuffix</a><span class="token operator">&gt;</span> <a href="parse-item-name-suffix.html"><span class="token function">parseItemNameSuffix</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> raw</span></span><span class="token punctuation">)</span></div><p class="paragraph">Splits an item name such as <code class="lang-java">&quot;Super attack (4)&quot;</code> into its base name and the number in brackets at the end. Tags are removed first. Names without such a number parse with no suffix. Empty when the input is null or blank, the base name is empty or spans lines, or the number does not fit in an <code class="lang-java">int</code>.</p></div></div>
 </div>
     <div class="footer">
         <div class="footer--container">
@@ -122,7 +122,7 @@
                     <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
                         Dokka
                     </a>
-                    <div>Project X Script API 3.2.0 · client 2.21.0</div>
+                    <div>Project X Script API 3.2.0 · client 2.22.0</div>
                 </div>
             </div>
         </div>

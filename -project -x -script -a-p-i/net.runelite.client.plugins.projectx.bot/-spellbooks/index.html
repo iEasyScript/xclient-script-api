@@ -110,7 +110,7 @@
   <div class="breadcrumbs"><a href="../../../index.html">Project X Script API</a><span class="delimiter">/</span><a href="../index.html">net.runelite.client.plugins.projectx.bot</a><span class="delimiter">/</span><span class="current">Spellbooks</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Spellbooks</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">enum </span><a href="index.html">Spellbooks</a></div><p class="paragraph">The spellbooks, and switching between them. Enum representing the different spellbooks in RuneScape with switching mechanics. The integer values correspond to the varbit <span data-unresolved-link="net.runelite.api.gameval/VarbitID/SPELLBOOK/#/companion/PointingToDeclaration/">SPELLBOOK</span>. </p><p class="paragraph"> Enhanced with spellbook switching information including locations, methods, object IDs, NPC IDs, and dialogue requirements.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">enum </span><a href="index.html">Spellbooks</a></div><p class="paragraph">The four spellbooks, how to tell which one is active, and how to switch between them. </p><p class="paragraph">Ancient and Lunar are reached by praying at their altar (and praying there again returns to the standard book). Arceuus is joined and left by talking to Tyss at the Dark Altar. </p><p class="paragraph">This enum must not depend on <a href="../-spells/index.html">Spells</a>, <a href="../-combat-spells/index.html">CombatSpells</a> or the skill calculator's magic actions during class initialisation: those refer back to these constants.</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="ENTRY">Entries</button></div>
@@ -127,7 +127,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-m-o-d-e-r-n/index.html">MODERN</a></div><div class="brief "><p class="paragraph">Standard/Modern Spellbook - Default spellbook available to all players Can be accessed from any other spellbook altar or via Magic cape</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-m-o-d-e-r-n/index.html">MODERN</a></div></div></div>
                 </div>
               </div>
             </div>
@@ -142,7 +142,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-a-n-c-i-e-n-t/index.html">ANCIENT</a></div><div class="brief "><p class="paragraph">Ancient Magicks Spellbook - Unlocked after Desert Treasure I quest Located in Ancient Pyramid (Level 4 altar room)</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-a-n-c-i-e-n-t/index.html">ANCIENT</a></div></div></div>
                 </div>
               </div>
             </div>
@@ -157,7 +157,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-l-u-n-a-r/index.html">LUNAR</a></div><div class="brief "><p class="paragraph">Lunar Spellbook - Unlocked after Lunar Diplomacy quest Located at Astral Altar on Lunar Isle</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-l-u-n-a-r/index.html">LUNAR</a></div></div></div>
                 </div>
               </div>
             </div>
@@ -172,7 +172,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-a-r-c-e-u-u-s/index.html">ARCEUUS</a></div><div class="brief "><p class="paragraph">Arceuus Spellbook - No quest requirement, accessible to all players Located at Dark Altar north of Arceuus - requires speaking to Tyss NPC</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><a href="-a-r-c-e-u-u-s/index.html">ARCEUUS</a></div></div></div>
                 </div>
               </div>
             </div>
@@ -191,7 +191,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="can-switch-in-p-o-h.html"><span class="token function">canSwitchInPOH</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks if the player can switch spellbooks in their Player Owned House</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="can-switch-in-p-o-h.html"><span class="token function">canSwitchInPOH</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">True whenever the player is inside a house.</div></div></div>
                 </div>
               </div>
             </div>
@@ -206,7 +206,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="index.html">Spellbooks</a> <a href="from-value.html"><span class="token function">fromValue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int value</span></span><span class="token punctuation">)</span></div><div class="brief ">Get the spellbook from its value</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="index.html">Spellbooks</a> <a href="from-value.html"><span class="token function">fromValue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>int value</span></span><span class="token punctuation">)</span></div><div class="brief ">The constant whose varbit value matches, or <a href="-m-o-d-e-r-n/index.html">MODERN</a> when none does.</div></div></div>
                 </div>
               </div>
             </div>
@@ -221,7 +221,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="index.html">Spellbooks</a> <a href="get-current-spellbook.html"><span class="token function">getCurrentSpellbook</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Get the current active spellbook</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="index.html">Spellbooks</a> <a href="get-current-spellbook.html"><span class="token function">getCurrentSpellbook</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">The active spellbook, read from the spellbook varbit.</div></div></div>
                 </div>
               </div>
             </div>
@@ -236,7 +236,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> <a href="get-nearest-switch-location.html"><span class="token function">getNearestSwitchLocation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean includeBankeItems</span></span><span class="token punctuation">)</span></div><div class="brief ">Gets the nearest location where spellbooks can be switched to MODERN spellbook</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> <a href="get-nearest-switch-location.html"><span class="token function">getNearestSwitchLocation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean includeBankItems</span></span><span class="token punctuation">)</span></div><div class="brief ">The closest reachable switch location, or null when the player could teleport to their house instead (house tablet in the inventory, or runes for Teleport to House), when the player's position is unknown, or when nothing can be reached.</div></div></div>
                 </div>
               </div>
             </div>
@@ -251,7 +251,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-altar-nearby.html"><span class="token function">isAltarNearby</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Check if a spellbook altar switching option is available at current location Useful for determining if player can switch spellbooks</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-altar-nearby.html"><span class="token function">isAltarNearby</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">True when the Ancient or Lunar altar is within 10 tiles.</div></div></div>
                 </div>
               </div>
             </div>
@@ -266,7 +266,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-ancient-spell-book-unlocked.html"><span class="token function">isAncientSpellBookUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Check if the Ancient Magicks spellbook is unlocked (requires Desert Treasure I quest completion)</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-ancient-spell-book-unlocked.html"><span class="token function">isAncientSpellBookUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -281,7 +281,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-arceuus-spell-book-fully-unlocked.html"><span class="token function">isArceuusSpellBookFullyUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-arceuus-spell-book-fully-unlocked.html"><span class="token function">isArceuusSpellBookFullyUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">True once A Kingdom Divided is complete.</div></div></div>
                 </div>
               </div>
             </div>
@@ -296,7 +296,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-arceuus-spell-book-unlocked.html"><span class="token function">isArceuusSpellBookUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Check if the Arceuus spellbook is unlocked Note: Arceuus spellbook is available to all players by default, no quest requirement -> full unlock required a kingdom divided quest completion</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-arceuus-spell-book-unlocked.html"><span class="token function">isArceuusSpellBookUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Always true: the Arceuus book can be used without any quest.</div></div></div>
                 </div>
               </div>
             </div>
@@ -311,7 +311,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-lunar-spell-book-unlocked.html"><span class="token function">isLunarSpellBookUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Check if the Lunar spellbook is unlocked (requires Lunar Diplomacy quest completion) Note: His Faithful Servants quest was merged into Lunar Diplomacy</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-lunar-spell-book-unlocked.html"><span class="token function">isLunarSpellBookUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -326,7 +326,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-spellbook-changed-by-lunar.html"><span class="token function">isSpellbookChangedByLunar</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Check if spellbook was changed by Lunar magic (for spellbook swap spell)</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-spellbook-changed-by-lunar.html"><span class="token function">isSpellbookChangedByLunar</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">True while the book was changed with the Lunar Spellbook Swap spell.</div></div></div>
                 </div>
               </div>
             </div>
@@ -341,7 +341,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-tyss-nearby.html"><span class="token function">isTyssNearby</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Check if Tyss NPC (for Arceuus spellbook switching) is nearby</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="is-tyss-nearby.html"><span class="token function">isTyssNearby</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">True when Tyss is loaded nearby.</div></div></div>
                 </div>
               </div>
             </div>
@@ -356,7 +356,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="switch-via-npc.html"><span class="token function">switchViaNpc</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Switch spellbook by speaking to an NPC (Arceuus method)</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="switch-via-npc.html"><span class="token function">switchViaNpc</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Joins the Arceuus book from the standard book, or leaves it, by talking to Tyss.</div></div></div>
                 </div>
               </div>
             </div>
@@ -499,7 +499,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="get-game-i-d.html"><span class="token function">getGameID</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a> <a href="get-game-i-d.html"><span class="token function">getGameID</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Object id of the altar, or for Arceuus the NPC id of Tyss.</div></div></div>
                 </div>
               </div>
             </div>
@@ -514,7 +514,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Quest///PointingToDeclaration/">Quest</span> <a href="get-required-quest.html"><span class="token function">getRequiredQuest</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api/Quest///PointingToDeclaration/">Quest</span> <a href="get-required-quest.html"><span class="token function">getRequiredQuest</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Quest that unlocks the book, or null when none is checked.</div></div></div>
                 </div>
               </div>
             </div>
@@ -529,7 +529,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> <a href="get-switch-location.html"><span class="token function">getSwitchLocation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> <a href="get-switch-location.html"><span class="token function">getSwitchLocation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Where the book is switched to (altar or Tyss), or null for the standard book.</div></div></div>
                 </div>
               </div>
             </div>
@@ -544,7 +544,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>int <a href="get-value.html"><span class="token function">getValue</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>int <a href="get-value.html"><span class="token function">getValue</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Value of the spellbook varbit while this book is active.</div></div></div>
                 </div>
               </div>
             </div>
@@ -559,7 +559,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>boolean <a href="is-unlocked.html"><span class="token function">isUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Check if this spellbook is currently unlocked/available to the player</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>boolean <a href="is-unlocked.html"><span class="token function">isUnlocked</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Whether this book is available to the player.</div></div></div>
                 </div>
               </div>
             </div>
@@ -574,7 +574,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>boolean <a href="switch-to.html"><span class="token function">switchTo</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Attempt to switch to this spellbook using the appropriate method Tries multiple methods in order of preference and availability</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword"></span>boolean <a href="switch-to.html"><span class="token function">switchTo</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Switches to this book.</div></div></div>
                 </div>
               </div>
             </div>
@@ -593,7 +593,7 @@
                     <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
                         Dokka
                     </a>
-                    <div>Project X Script API 3.2.0 · client 2.21.0</div>
+                    <div>Project X Script API 3.2.0 · client 2.22.0</div>
                 </div>
             </div>
         </div>
