@@ -110,7 +110,7 @@
   <div class="breadcrumbs"><a href="../../../index.html">Project X Script API</a><span class="delimiter">/</span><a href="../index.html">net.runelite.client.plugins.projectx.bot</a><span class="delimiter">/</span><span class="current">Tabs</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Tabs</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="index.html">Tabs</a></div><p class="paragraph">Switching the side-panel tabs (inventory, prayer, magic...).</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="index.html">Tabs</a></div><p class="paragraph">Side-panel tabs: which one is open and how to open another. </p><p class="paragraph">The open tab is tracked from <code class="lang-java">TOPLEVEL_PANEL</code> varc changes, which <code class="lang-java">ProjectXPlugin</code> forwards here on the client thread. Until the first such change after start-up the tab is <a href="../../net.runelite.client.plugins.projectx.globval.enums/-interface-tab/-n-o-t-h-i-n-g_-s-e-l-e-c-t-e-d/index.html">NOTHING_SELECTED</a>.</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
@@ -146,7 +146,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../net.runelite.client.plugins.projectx.globval.enums/-interface-tab/index.html">InterfaceTab</a><span class="token operator">&gt;</span> <a href="index.html#-1461482196%2FProperties%2F-251573632">INDEX_TO_TAB</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">final </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">Integer</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../net.runelite.client.plugins.projectx.globval.enums/-interface-tab/index.html">InterfaceTab</a><span class="token operator">&gt;</span> <a href="index.html#-1461482196%2FProperties%2F-251573632">INDEX_TO_TAB</a></div><div class="brief ">Every real tab keyed by the panel index the game reports for it.</div></div></div>
                 </div>
               </div>
             </div>
@@ -165,7 +165,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="../../net.runelite.client.plugins.projectx.globval.enums/-interface-tab/index.html">InterfaceTab</a> <a href="get-current-tab.html"><span class="token function">getCurrentTab</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="../../net.runelite.client.plugins.projectx.globval.enums/-interface-tab/index.html">InterfaceTab</a> <a href="get-current-tab.html"><span class="token function">getCurrentTab</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">The tab last reported open.</div></div></div>
                 </div>
               </div>
             </div>
@@ -180,7 +180,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.widgets/Widget///PointingToDeclaration/">Widget</span> <a href="get-spell-book-tab.html"><span class="token function">getSpellBookTab</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.widgets/Widget///PointingToDeclaration/">Widget</span> <a href="get-spell-book-tab.html"><span class="token function">getSpellBookTab</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">The magic tab's stone button for the current frame layout, or null.</div></div></div>
                 </div>
               </div>
             </div>
@@ -210,7 +210,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="on-var-client-int-changed.html"><span class="token function">onVarClientIntChanged</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.events/VarClientIntChanged///PointingToDeclaration/">VarClientIntChanged</span> event</span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>void <a href="on-var-client-int-changed.html"><span class="token function">onVarClientIntChanged</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.events/VarClientIntChanged///PointingToDeclaration/">VarClientIntChanged</span> event</span></span><span class="token punctuation">)</span></div><div class="brief ">Updates the open tab.</div></div></div>
                 </div>
               </div>
             </div>
@@ -225,7 +225,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="switch-to.html"><span class="token function">switchTo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../../net.runelite.client.plugins.projectx.globval.enums/-interface-tab/index.html">InterfaceTab</a> tab</span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="switch-to.html"><span class="token function">switchTo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../../net.runelite.client.plugins.projectx.globval.enums/-interface-tab/index.html">InterfaceTab</a> tab</span></span><span class="token punctuation">)</span></div><div class="brief ">Opens a tab and waits (up to the default wait) for the game to report it open.</div></div></div>
                 </div>
               </div>
             </div>
@@ -244,7 +244,7 @@
                     <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
                         Dokka
                     </a>
-                    <div>Project X Script API 3.2.0 · client 2.20.0</div>
+                    <div>Project X Script API 3.2.0 · client 2.21.0</div>
                 </div>
             </div>
         </div>

@@ -111,7 +111,7 @@
   <div class="cover ">
     <h1 class="cover"><span>use</span><wbr></wbr><span><span>Food</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="use-food.html"><span class="token function">useFood</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><p class="paragraph">Finds and consumes the best available food item from the player's inventory. </p><p class="paragraph">If in the Wilderness, prioritizes blighted food items but falls back to regular food if none are available.</p><p class="paragraph">If the selected food is a &quot;Jug of Wine,&quot; the player will drink it instead of eating.</p><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph"><code class="lang-java">true</code> if food was consumed, <code class="lang-java">false</code> if no food was available.</p></span></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="use-food.html"><span class="token function">useFood</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><p class="paragraph">Eats the first regular food; blighted food is only eaten inside the Wilderness, where it comes first.</p></div></div>
 </div>
     <div class="footer">
         <div class="footer--container">
@@ -122,7 +122,7 @@
                     <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
                         Dokka
                     </a>
-                    <div>Project X Script API 3.2.0 · client 2.20.0</div>
+                    <div>Project X Script API 3.2.0 · client 2.21.0</div>
                 </div>
             </div>
         </div>

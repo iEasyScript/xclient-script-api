@@ -111,7 +111,7 @@
   <div class="cover ">
     <h1 class="cover"><span>sell</span><wbr></wbr><span><span>Inventory</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="sell-inventory.html"><span class="token function">sellInventory</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><p class="paragraph">Attempts to sell all tradeable items currently in the player's inventory on the Grand Exchange. </p><p class="paragraph"> For each tradeable item, this method: </p><ul><li>Checks if there is an available Grand Exchange slot; if not, collects all completed offers to the bank.</li><li>Creates a sell request at 5% below the current market offer price for the item.</li><li>Processes the sell offer through <a href="process-offer.html">processOffer</a>.</li></ul> The method returns <code class="lang-java">true</code> if the inventory is empty after attempting to sell all items.<span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph"><code class="lang-java">true</code> if the inventory is empty after selling attempts; <code class="lang-java">false</code> otherwise</p></span></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="sell-inventory.html"><span class="token function">sellInventory</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><p class="paragraph">Offers every tradeable inventory item at the guide price minus 5%, collecting to the bank when all slots are busy and something has sold. Returns whether the inventory is now empty.</p></div></div>
 </div>
     <div class="footer">
         <div class="footer--container">
@@ -122,7 +122,7 @@
                     <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
                         Dokka
                     </a>
-                    <div>Project X Script API 3.2.0 · client 2.20.0</div>
+                    <div>Project X Script API 3.2.0 · client 2.21.0</div>
                 </div>
             </div>
         </div>

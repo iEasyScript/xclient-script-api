@@ -111,7 +111,7 @@
   <div class="cover ">
     <h1 class="cover"><span>get</span><wbr></wbr><span>World</span><wbr></wbr><span>Location_</span><wbr></wbr><span>Internal</span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> <a href="get-world-location_-internal.html"><span class="token function">getWorldLocation_Internal</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><p class="paragraph">Retrieves the player's current world location as a <span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> from the client thread. </p><p class="paragraph">If the player is in an instanced world, the method converts the local position to an instanced <span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span>. Otherwise, it returns the player's standard world location.</p><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">The <span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> representing the player's current location, or <code class="lang-java">null</code> if unavailable.</p></span></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> <a href="get-world-location_-internal.html"><span class="token function">getWorldLocation_Internal</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><p class="paragraph">The local player's tile, read on the client thread. Inside an instance this is the template (real-world) tile rather than the instance copy. Used by the player state cache.</p></div></div>
 </div>
     <div class="footer">
         <div class="footer--container">
@@ -122,7 +122,7 @@
                     <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
                         Dokka
                     </a>
-                    <div>Project X Script API 3.2.0 · client 2.20.0</div>
+                    <div>Project X Script API 3.2.0 · client 2.21.0</div>
                 </div>
             </div>
         </div>

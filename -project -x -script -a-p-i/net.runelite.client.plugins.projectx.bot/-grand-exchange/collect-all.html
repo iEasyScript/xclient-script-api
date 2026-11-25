@@ -111,7 +111,7 @@
   <div class="cover ">
     <h1 class="cover"><span>collect</span><wbr></wbr><span><span>All</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="collect-all.html"><span class="token function">collectAll</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean collectToBank</span></span><span class="token punctuation">)</span></div><p class="paragraph">Collects all completed Grand Exchange offers either into the bank or inventory. </p><p class="paragraph"> This method first checks if all Grand Exchange slots are empty; if so, it returns <code class="lang-java">true</code> immediately. If the inventory is full, it attempts to open the bank and deposit all items before continuing. Then, it ensures the Grand Exchange interface is open, locates the &quot;Collect all&quot; button, and invokes the appropriate menu action to collect all items either to the bank or inventory.</p><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph"><code class="lang-java">true</code> if the collect action was successfully initiated; <code class="lang-java">false</code> if the collect button was not found</p></span><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>collect</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Bank</span></span></u></div></span></div><div><div class="title"><p class="paragraph"><code class="lang-java">true</code> to collect items directly to the bank, <code class="lang-java">false</code> to collect into inventory</p></div></div></div></div></div></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="collect-all.html"><span class="token function">collectAll</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean collectToBank</span></span><span class="token punctuation">)</span></div><p class="paragraph">Collects every finished offer with the collect-all button. Returns true straight after the click (or when every slot is already empty); a full inventory is banked first.</p></div></div>
 </div>
     <div class="footer">
         <div class="footer--container">
@@ -122,7 +122,7 @@
                     <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
                         Dokka
                     </a>
-                    <div>Project X Script API 3.2.0 · client 2.20.0</div>
+                    <div>Project X Script API 3.2.0 · client 2.21.0</div>
                 </div>
             </div>
         </div>

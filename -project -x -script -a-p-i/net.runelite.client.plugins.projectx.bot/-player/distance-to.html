@@ -111,7 +111,7 @@
   <div class="cover ">
     <h1 class="cover"><span>distance</span><wbr></wbr><span><span>To</span></span></h1>
   </div>
-  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="distance-to.html"><span class="token function">distanceTo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> endpoint</span></span><span class="token punctuation">)</span></div><p class="paragraph">Calculates the distance from the player's current location to a specified endpoint. </p><p class="paragraph"><b>Note:</b> This method uses the ShortestPath algorithm and does not work in instanced regions. If the player is in an instance, it falls back to a direct <span data-unresolved-link="net.runelite.api.coords/WorldPoint/distanceTo/#net.runelite.api.coords.WorldPoint/PointingToDeclaration/">distanceTo</span> calculation.</p><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">The distance between the player's current location and the endpoint.</p></span><h4 class="tableheader">Parameters</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":/main" data-filterable-set=":/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>endpoint</span></span></u></div></span></div><div><div class="title"><p class="paragraph">The target <span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> to measure the distance to.</p></div></div></div></div></div></div></div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="distance-to.html"><span class="token function">distanceTo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.coords/WorldPoint///PointingToDeclaration/">WorldPoint</span> endpoint</span></span><span class="token punctuation">)</span></div><p class="paragraph">Inside an instance the straight-line tile distance; elsewhere the walker's path distance, which is <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html#MAX_VALUE">MAX_VALUE</a> when no path or no position is known.</p></div></div>
 </div>
     <div class="footer">
         <div class="footer--container">
@@ -122,7 +122,7 @@
                     <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
                         Dokka
                     </a>
-                    <div>Project X Script API 3.2.0 · client 2.20.0</div>
+                    <div>Project X Script API 3.2.0 · client 2.21.0</div>
                 </div>
             </div>
         </div>

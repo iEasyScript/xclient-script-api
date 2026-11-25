@@ -110,7 +110,7 @@
   <div class="breadcrumbs"><a href="../../../index.html">Project X Script API</a><span class="delimiter">/</span><a href="../index.html">net.runelite.client.plugins.projectx.bot</a><span class="delimiter">/</span><span class="current">Combat</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Combat</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="index.html">Combat</a></div><p class="paragraph">Combat state, attack styles and special attack.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">public </span><span class="token keyword">class </span><a href="index.html">Combat</a></div><p class="paragraph">Combat helpers: the special attack orb, combat state, attack range, attack style, autocast and auto retaliate. </p><p class="paragraph">Every member is static. Game state that needs the client thread is read through <code class="lang-java">ClientThread.runOnClientThreadOptional</code>; option varps come from the player state cache. Waits use <span data-unresolved-link="net.runelite.client.plugins.projectx.util/Global///PointingToDeclaration/">Global</span> and so give up at once when called on the client thread.</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
@@ -146,7 +146,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-attack-range.html"><span class="token function">getAttackRange</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Computes the player's default attack range (excluding manual-cast and special attacks).</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-attack-range.html"><span class="token function">getAttackRange</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean includeManualCast<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean includeSpecialAttack</span></span><span class="token punctuation">)</span></div><div class="brief ">Computes the player's current attack range based on equipped weapon, chosen attack style, and whether manual-cast or special attacks should be included.</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-attack-range.html"><span class="token function">getAttackRange</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><br><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-attack-range.html"><span class="token function">getAttackRange</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean includeManualCast<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean includeSpecialAttack</span></span><span class="token punctuation">)</span></div><div class="brief ">The attack distance of the wielded weapon in tiles, at least 1.</div></div></div>
                 </div>
               </div>
             </div>
@@ -161,7 +161,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-spec-energy.html"><span class="token function">getSpecEnergy</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">get special attack energy (1000 is full spec bar)</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>int <a href="get-spec-energy.html"><span class="token function">getSpecEnergy</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Special attack energy from the cache; 1000 is a full bar.</div></div></div>
                 </div>
               </div>
             </div>
@@ -176,7 +176,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="get-spec-state.html"><span class="token function">getSpecState</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Checks the state of the spec widget</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="get-spec-state.html"><span class="token function">getSpecState</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">True while the orb shows the special attack as armed.</div></div></div>
                 </div>
               </div>
             </div>
@@ -191,7 +191,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> <a href="get-weapon-attack-style.html"><span class="token function">getWeaponAttackStyle</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Resolves the string name of the currently selected attack style for a weapon.</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> <a href="get-weapon-attack-style.html"><span class="token function">getWeaponAttackStyle</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">The display name of the selected attack style, such as &quot;Slash&quot; or &quot;Magic&quot;.</div></div></div>
                 </div>
               </div>
             </div>
@@ -206,7 +206,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="in-combat.html"><span class="token function">inCombat</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="in-combat.html"><span class="token function">inCombat</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief ">Whether the local player is targeting an actor that has a combat level.</div></div></div>
                 </div>
               </div>
             </div>
@@ -221,7 +221,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="set-attack-style.html"><span class="token function">setAttackStyle</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.widgets/WidgetInfo///PointingToDeclaration/">WidgetInfo</span> style</span></span><span class="token punctuation">)</span></div><div class="brief ">Sets the attack style</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="set-attack-style.html"><span class="token function">setAttackStyle</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><span data-unresolved-link="net.runelite.api.widgets/WidgetInfo///PointingToDeclaration/">WidgetInfo</span> style</span></span><span class="token punctuation">)</span></div><div class="brief ">Clicks an attack style button.</div></div></div>
                 </div>
               </div>
             </div>
@@ -236,7 +236,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="set-auto-cast-spell.html"><span class="token function">setAutoCastSpell</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-combat-spells/index.html">CombatSpells</a> combatSpell<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean useDefensiveCast</span></span><span class="token punctuation">)</span></div><div class="brief ">Sets the auto-cast spell with an option to use defensive casting.</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="set-auto-cast-spell.html"><span class="token function">setAutoCastSpell</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span><a href="../-combat-spells/index.html">CombatSpells</a> combatSpell<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>boolean useDefensiveCast</span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -251,7 +251,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="set-auto-retaliate.html"><span class="token function">setAutoRetaliate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean enable</span></span><span class="token punctuation">)</span></div><div class="brief ">Sets the auto retaliate state</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="set-auto-retaliate.html"><span class="token function">setAutoRetaliate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean enable</span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -266,7 +266,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="set-spec-state.html"><span class="token function">setSpecState</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean state</span></span><span class="token punctuation">)</span></div><div class="brief ">Sets the special attack state</div><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="set-spec-state.html"><span class="token function">setSpecState</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean state<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int specialAttackEnergyRequired</span></span><span class="token punctuation">)</span></div><div class="brief ">Sets the special attack state if currentSpecEnergy >= specialAttackEnergyRequired</div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="set-spec-state.html"><span class="token function">setSpecState</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean state</span></span><span class="token punctuation">)</span></div><br><div class="symbol monospace block"><span class="token keyword">public </span><span class="token keyword">static </span>boolean <a href="set-spec-state.html"><span class="token function">setSpecState</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword"></span>boolean state<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword"></span>int specialAttackEnergyRequired</span></span><span class="token punctuation">)</span></div><div class="brief ">Clicks the special attack orb unless it already shows <code class="lang-java">state</code>.</div></div></div>
                 </div>
               </div>
             </div>
@@ -285,7 +285,7 @@
                     <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
                         Dokka
                     </a>
-                    <div>Project X Script API 3.2.0 · client 2.20.0</div>
+                    <div>Project X Script API 3.2.0 · client 2.21.0</div>
                 </div>
             </div>
         </div>
